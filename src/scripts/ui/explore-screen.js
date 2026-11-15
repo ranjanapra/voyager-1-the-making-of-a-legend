@@ -1,5 +1,5 @@
 import { EXPLORE_CATEGORIES } from '../story/explore-data.js';
-import { ASSET_CONFIG } from '../../config/assets.js';
+import { ASSET_CONFIG, getAssetUrl } from '../../config/assets.js';
 import { getImageManifestBySubtopicCode } from '../../config/image-manifest.js';
 import { renderSpacecraftExplorer } from './spacecraft-explorer.js';
 import { renderGoldenRecordExplorer } from './golden-record-explorer.js';
@@ -299,36 +299,35 @@ export function initExploreScreen(scrollController) {
 
         <!-- Subtopics Responsive Grid -->
         <div class="subtopic-cards-grid">
-          ${category.subtopics.map(sub => `
-            <div class="subtopic-card" data-subtopic-id="${sub.id}" tabindex="0" role="button" aria-label="Inspect ${sub.title}">
-              <div class="subtopic-card-header">
-                <span class="subtopic-code">SUBTOPIC ${sub.code}</span>
-                <span class="phase-led" aria-hidden="true"></span>
-              </div>
+          ${category.subtopics.map(sub => {
+            const manifestItem = getImageManifestBySubtopicCode(sub.code);
+            const outerImageUrl = (manifestItem && manifestItem.url) ? manifestItem.url : (ASSET_CONFIG.explore[sub.imageSlotKey]?.url || null);
+            const outerImageCaption = (manifestItem && manifestItem.title) ? manifestItem.title : sub.title;
 
-              <div class="subtopic-visual-placeholder">
-                <div class="placeholder-icon-frame">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                    <rect x="3" y="3" width="18" height="18" rx="2"/>
-                    <circle cx="8.5" cy="8.5" r="1.5"/>
-                    <polyline points="21 15 16 10 5 21"/>
-                  </svg>
+            return `
+              <div class="subtopic-card" data-subtopic-id="${sub.id}" tabindex="0" role="button" aria-label="Inspect ${sub.title}">
+                <div class="subtopic-card-header">
+                  <span class="subtopic-code">SUBTOPIC ${sub.code}</span>
+                  <span class="phase-led" aria-hidden="true"></span>
                 </div>
-                <span class="placeholder-tag">[CONFIGURABLE ASSET SLOT]</span>
-              </div>
 
-              <div class="subtopic-card-body">
-                <h4 class="subtopic-card-title">${sub.title}</h4>
-                <div class="subtopic-focus-pill">${sub.shortSubtitle}</div>
-                <p class="subtopic-card-preview">${sub.preview}</p>
-              </div>
+                <div class="subtopic-card-image-frame">
+                  <img src="${getAssetUrl(outerImageUrl)}" alt="${outerImageCaption}" class="subtopic-card-img" loading="lazy" decoding="async" />
+                </div>
 
-              <div class="subtopic-card-action">
-                <span class="action-text">INSPECT RESEARCH DOSSIER</span>
-                <span class="action-arrow" aria-hidden="true">&rarr;</span>
+                <div class="subtopic-card-body">
+                  <h4 class="subtopic-card-title">${sub.title}</h4>
+                  <div class="subtopic-focus-pill">${sub.shortSubtitle}</div>
+                  <p class="subtopic-card-preview">${sub.preview}</p>
+                </div>
+
+                <div class="subtopic-card-action">
+                  <span class="action-text">INSPECT RESEARCH DOSSIER</span>
+                  <span class="action-arrow" aria-hidden="true">&rarr;</span>
+                </div>
               </div>
-            </div>
-          `).join('')}
+            `;
+          }).join('')}
         </div>
 
         <!-- Level 2 Bottom Return Action -->
@@ -381,6 +380,10 @@ export function initExploreScreen(scrollController) {
 
     const imgAsset = ASSET_CONFIG.explore[subtopic.imageSlotKey] || {};
     const manifestItem = getImageManifestBySubtopicCode(subtopic.code);
+    const effectiveImageUrl = (manifestItem && manifestItem.url) ? manifestItem.url : (imgAsset ? imgAsset.url : null);
+    const effectiveCaption = (manifestItem && manifestItem.title) ? manifestItem.title : subtopic.imageSlotLabel;
+    const effectiveDesc = (manifestItem && manifestItem.description) ? manifestItem.description : (imgAsset.caption || subtopic.catalogRef);
+    const effectiveCredit = (manifestItem && manifestItem.nasaSource) ? manifestItem.nasaSource : (imgAsset.credit || 'NASA/JPL Archives');
     const taskId = SUBTOPIC_TASK_MAP[subtopic.id];
     const matchingTask = taskId ? TaskEngine.getTaskById(taskId) : null;
     const missionState = missionStore.getState();
@@ -427,10 +430,10 @@ export function initExploreScreen(scrollController) {
             <!-- LEFT COLUMN: RELEVANT IMAGE -->
             <div class="page3-image-col">
               <div class="page3-image-frame">
-                ${imgAsset.url ? `
-                  <img src="${imgAsset.url}" alt="${subtopic.imageSlotLabel}" class="page3-slot-img" loading="lazy" decoding="async" />
+                ${effectiveImageUrl ? `
+                  <img src="${getAssetUrl(effectiveImageUrl)}" alt="${effectiveCaption}" class="page3-slot-img" loading="lazy" decoding="async" />
                   <div class="page3-image-caption">
-                    <strong style="color: #fbbf24;">${subtopic.imageSlotLabel}:</strong> ${imgAsset.caption || subtopic.catalogRef} &bull; ${imgAsset.credit || 'NASA/JPL Archives'}
+                    <strong style="color: #fbbf24;">${effectiveCaption}:</strong> ${effectiveDesc} &bull; <span style="color: #94a3b8;">${effectiveCredit}</span>
                   </div>
                 ` : `
                   <div class="dossier-image-placeholder">
@@ -443,9 +446,9 @@ export function initExploreScreen(scrollController) {
                       [STATUS: AWAITING IMAGE // VERIFIED NASA ARCHIVE SLOT]
                     </div>
                     <p style="font-size: 0.75rem; color: #94a3b8; max-width: 380px; line-height: 1.4; margin: 0 auto 0.5rem auto;">
-                      ${manifestItem ? manifestItem.description : 'Expected archival imagery designated for Batch 04 verification.'}
+                      ${manifestItem ? manifestItem.description : 'Expected archival imagery designated for future verification.'}
                     </p>
-                    <div class="placeholder-credit">Target: <code>${manifestItem ? manifestItem.expectedPath : subtopic.catalogRef}</code> &bull; Source: ${manifestItem ? manifestItem.nasaSource : 'NASA/JPL Documentation'}</div>
+                    <div class="placeholder-credit">Target: <code>${manifestItem ? (manifestItem.expectedPath || manifestItem.fileName) : subtopic.catalogRef}</code> &bull; Source: ${manifestItem ? manifestItem.nasaSource : 'NASA/JPL Documentation'}</div>
                   </div>
                 `}
               </div>

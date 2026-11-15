@@ -73,6 +73,15 @@
   justify-content: center;
 }
 
+.explore-boy-frame:empty,
+.explore-poster-frame:empty {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  min-height: 0;
+  padding: 0;
+}
+
 .explore-boy-img,
 .explore-poster-img {
   width: 100%;
@@ -726,6 +735,29 @@
   font-weight: 700;
   color: #fbbf24;
   letter-spacing: 0.08em;
+}
+
+.subtopic-card-image-frame {
+  width: 100%;
+  height: 150px;
+  background: #020409;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 1.15rem;
+}
+
+.subtopic-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.subtopic-card:hover .subtopic-card-img,
+.subtopic-card:focus-visible .subtopic-card-img {
+  transform: scale(1.05);
 }
 
 .subtopic-visual-placeholder {
@@ -1706,6 +1738,11 @@
   height: 100%;
   object-fit: contain;
   display: block;
+}
+
+/* Minor Golden Record Gold-Disc color adjustment: authentic warm golden luster */
+.gr-active-image[data-view="disc"] {
+  filter: contrast(1.03) saturate(1.05) brightness(1.01);
 }
 
 .gr-image-overlay-badge {

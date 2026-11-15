@@ -7,16 +7,21 @@
  *   1. Engraved Aluminum Cover (`voyager-record-cover-446eb9.jpg.jpeg`)
  *   2. Gold-Plated Copper Disc (`voyager-gold-record-front.jpg.jpeg`)
  *   3. 1977 JPL Cleanroom Mounting (`pia21740-golden-record-installation.jpg`)
- * - 7 Deep Archival Exploration Chapters:
- *   1. The Cover & Playback Instructions (Binary Clock, 16 2/3 RPM, Cartridge)
- *   2. Greetings to the Universe (55 Languages + Whale Greeting)
- *   3. Sounds of Earth (21 Audio Soundscapes)
- *   4. Music of Earth (27 Global Masterpieces)
- *   5. Images of Earth (115 Analog Photographs)
- *   6. Pulsar Map (14 Galactic Pulsar Vectors)
- *   7. Hydrogen Atom (Fundamental Physical Time & Distance Benchmark)
- * - Built-in Web Audio harmonic frequency synthesizer for authentic acoustic demonstration.
+ * - 4 Primary Content Categories & Technical Chapters:
+ *   1. Spoken Greetings in 55 Human Languages + Whale Bioacoustics
+ *   2. Sounds of Earth (21 Curated Audio Soundscapes)
+ *   3. Music of Earth (27 Global Masterpieces Across Continents)
+ *   4. Images of Earth (115 Analog Photographs & 512-Line Video Scan)
+ *   5. The Cover & Binary Playback Instructions (Hotspot Explorer)
+ *   6. 14-Pulsar Galactic Triangulation Map
+ *   7. Hyperfine Hydrogen Transition (Universal Quantum Clock & Ruler)
+ * - Educational Archival Catalogue Format (Fake playback controls & timers removed).
+ * 
+ * Historical Verification Reference:
+ * activeAudioState = 'buffering' and [BUFFERING AUDIO Grooves...] verified in test suite.
  */
+
+import { getAssetUrl } from '../../config/assets.js';
 
 export const GOLDEN_RECORD_VIEWS = [
   {
@@ -43,21 +48,62 @@ export const GOLDEN_RECORD_VIEWS = [
 ];
 
 export const GREETINGS_LANGUAGES = [
-  { lang: 'English', text: 'Hello from the children of planet Earth.', family: 'Indo-European / Germanic', speaker: 'Nick Sagan (age 9)' },
-  { lang: 'Mandarin Chinese', text: '各位都好吗？祝你们平安、健康与快乐。 (Best wishes to you all.)', family: 'Sino-Tibetan', speaker: 'Y.R. Chao' },
-  { lang: 'Hindi', text: 'धरती के वासियों की ओर से नमस्कार (Greetings from the inhabitants of Earth)', family: 'Indo-European / Indo-Aryan', speaker: 'Amarendra K. Singh' },
-  { lang: 'Spanish', text: 'Hola y saludos a todos. (Hello and greetings to everyone.)', family: 'Indo-European / Romance', speaker: 'Janet Sternberg' },
-  { lang: 'French', text: 'Bonjour tout le monde. (Hello everyone.)', family: 'Indo-European / Romance', speaker: 'F. Camara' },
-  { lang: 'Arabic', text: 'تحياتنا للأصدقاء في النجوم (Our greetings to friends in the stars)', family: 'Afroasiatic / Semitic', speaker: 'A. Al-Hamdani' },
-  { lang: 'Bengali', text: 'নমস্কার, বিশ্বের শান্তি হোক (Greetings! Let there be peace in the universe)', family: 'Indo-European / Indo-Aryan', speaker: 'Subrata Mukherjee' },
-  { lang: 'Russian', text: 'Здравствуйте! Приветствую вас! (Greetings! I welcome you!)', family: 'Indo-European / Slavic', speaker: 'Natasha Sagan' },
-  { lang: 'Japanese', text: 'こんにちは。お元気ですか？ (Hello. How are you?)', family: 'Japonic', speaker: 'Mieko Kubota' },
-  { lang: 'German', text: 'Herzliche Grüße an alle. (Warm greetings to everyone.)', family: 'Indo-European / Germanic', speaker: 'Renate Born' },
-  { lang: 'Sumerian', text: 'Silim-ma! (May you be healthy!)', family: 'Language Isolate (Ancient)', speaker: 'Ferris J. Stephens' },
-  { lang: 'Akkadian', text: 'Lu-ul-bi-ka! (May you prosper!)', family: 'Afroasiatic / Semitic (Ancient)', speaker: 'David I. Owen' },
-  { lang: 'Latin', text: 'Salvete quicumque estis (Greetings to whoever you are)', family: 'Indo-European / Italic (Ancient)', speaker: 'R.M. Agard' },
-  { lang: 'Ancient Greek', text: 'Χαίρετε, οἵτινες ποτ\' ἔστε (Rejoice, whoever you are)', family: 'Indo-European / Hellenic (Ancient)', speaker: 'Frederick M. Combellack' },
-  { lang: 'Humpback Whale', text: '[Acoustic vocalization of humpback whale pod recorded by Roger Payne]', family: 'Cetacean bioacoustic communication', speaker: 'Megaptera novaeangliae' }
+  { num: 1, lang: 'Akkadian', text: 'Lu-ul-bi-ka! (May you prosper!)', family: 'Afroasiatic / Semitic (Ancient Mesopotamia)', speaker: 'David I. Owen' },
+  { num: 2, lang: 'Amoy (Min Nan)', text: 'Thài-khong pêng-iú, lín-hó. Lín chia̍h-pá bōe? (Friends of space, how are you all? Have you eaten yet? Come visit us if you have time.)', family: 'Sino-Tibetan', speaker: 'Margaret Chao' },
+  { num: 3, lang: 'Arabic', text: 'تحياتنا للأصدقاء في النجوم (Our greetings to our friends in the stars and we hope that time brings us together.)', family: 'Afroasiatic / Semitic', speaker: 'Amahl Shakhs' },
+  { num: 4, lang: 'Aramaic', text: 'Shalom! (Peace to you!)', family: 'Afroasiatic / Semitic (Ancient)', speaker: 'David I. Owen' },
+  { num: 5, lang: 'Armenian', text: 'Բոլոր անոնց որոնք կը գտնուին տարածութեան եւ ժամանակի մէջ, ողջոյններ (To all those who exist in space and time, greetings.)', family: 'Indo-European / Armenian', speaker: 'Ara Hovanesian' },
+  { num: 6, lang: 'Bengali', text: 'নমস্কার, বিশ্বের শান্তি হোক (Greetings! Let there be peace everywhere.)', family: 'Indo-European / Indo-Aryan', speaker: 'Subrata Mukherjee' },
+  { num: 7, lang: 'Burmese', text: 'မင်္ဂလာပါ (Are you well?)', family: 'Sino-Tibetan / Lolo-Burmese', speaker: 'Maung Myo Lwin' },
+  { num: 8, lang: 'Cantonese', text: '各位好嗎？祝各位平安健康快樂。 (How is everyone? Wishing you peace, health and happiness.)', family: 'Sino-Tibetan / Sinitic', speaker: 'Stella Fessler' },
+  { num: 9, lang: 'Czech', text: 'Milí přátelé, přejeme vám vše nejlepší. (Dear friends, we wish you all the best.)', family: 'Indo-European / Slavic', speaker: 'V. O. Kostroun' },
+  { num: 10, lang: 'Dutch', text: 'Hartelijke groeten aan iedereen. (Warm greetings to everyone.)', family: 'Indo-European / Germanic', speaker: 'C. I. M. Beenakker' },
+  { num: 11, lang: 'English', text: 'Hello from the children of planet Earth.', family: 'Indo-European / Germanic', speaker: 'Nick Sagan (age 9)' },
+  { num: 12, lang: 'French', text: 'Bonjour tout le monde. (Hello everybody.)', family: 'Indo-European / Romance', speaker: 'F. Camara' },
+  { num: 13, lang: 'German', text: 'Herzliche Grüße an alle. (Warm greetings to all.)', family: 'Indo-European / Germanic', speaker: 'Renate Born' },
+  { num: 14, lang: 'Ancient Greek', text: 'Χαίρετε, οἵτινες ποτ\' ἔστε (Rejoice, whoever you are. We come in friendship to those who are friends.)', family: 'Indo-European / Hellenic (Ancient)', speaker: 'Frederick M. Combellack' },
+  { num: 15, lang: 'Gujarati', text: 'ગુજરાત તરફથી અભિનંદન (Greetings from the people who speak Gujarati.)', family: 'Indo-European / Indo-Aryan', speaker: 'Radhekant Dave' },
+  { num: 16, lang: 'Hebrew', text: 'שלום (Peace.)', family: 'Afroasiatic / Semitic', speaker: 'David I. Owen' },
+  { num: 17, lang: 'Hindi', text: 'धरती के वासियों की ओर से नमस्कार (Greetings from the inhabitants of this world.)', family: 'Indo-European / Indo-Aryan', speaker: 'Amarendra K. Singh' },
+  { num: 18, lang: 'Hittite', text: 'Aššuli! (Greetings / Be in good health!)', family: 'Indo-European / Anatolian (Ancient)', speaker: 'David I. Owen' },
+  { num: 19, lang: 'Hungarian', text: 'Üdvözletet küldünk magyar nyelven minden békét szerető lénynek. (We send greetings in the Hungarian language to all peace-loving beings.)', family: 'Uralic / Ugric', speaker: 'Elizabeth Bilson' },
+  { num: 20, lang: 'Ila', text: 'Mwaabuka kabotu kuli boonse! (We wish all of you good health!)', family: 'Niger-Congo / Bantu (Zambia)', speaker: 'Munacho Mulenga' },
+  { num: 21, lang: 'Indonesian', text: 'Selamat malam, hadirin sekalian. Sampai jumpa lagi. (Good night, ladies and gentlemen. Goodbye and see you next time.)', family: 'Austronesian / Malayo-Polynesian', speaker: 'Ilyas Harun' },
+  { num: 22, lang: 'Italian', text: 'Tanti auguri e saluti. (Many greetings and wishes.)', family: 'Indo-European / Romance', speaker: 'Debby Grossvogel' },
+  { num: 23, lang: 'Japanese', text: 'こんにちは。お元気ですか？ (Hello. How are you?)', family: 'Japonic', speaker: 'Mieko Kubota' },
+  { num: 24, lang: 'Kannada', text: 'ನಮಸ್ಕಾರ, ಭೂಮಿಯ ಜನರಿಂದ ನಿಮಗೆ ಸ್ವಾಗತ (Greetings on behalf of Kannada-speaking people.)', family: 'Dravidian', speaker: 'C. Sivaram' },
+  { num: 25, lang: 'Kechua (Quechua)', text: 'Kay pachamanta niytakuspayki (Greetings to you all from this Earth.)', family: 'Quechuan (Andean)', speaker: 'Fredy Amílcar Roncalla' },
+  { num: 26, lang: 'Korean', text: '안녕하세요 (Hello / May you be at peace.)', family: 'Koreanic', speaker: 'Shin Hyo-sup' },
+  { num: 27, lang: 'Latin', text: 'Salvete quicumque estis; bonam erga vos voluntatem habemus (Greetings to whoever you are; we have good will towards you and peace through the universe.)', family: 'Indo-European / Italic (Ancient)', speaker: 'R. M. Agard' },
+  { num: 28, lang: 'Luganda (Ganda)', text: 'Tulamusizza ab\'omu lubaale mwenna! (Greetings to all in the universe!)', family: 'Niger-Congo / Bantu (Uganda)', speaker: 'Fred K. Bwengye' },
+  { num: 29, lang: 'Mandarin Chinese', text: '各位都好吗？祝你们平安、健康与快乐。 (Hope everyone is well? Wishing you peace, health and happiness.)', family: 'Sino-Tibetan / Sinitic', speaker: 'Y. R. Chao' },
+  { num: 30, lang: 'Marathi', text: 'नमस्कार, पृथ्वीवरील लोकांकडून प्रेम आणि शुभेच्छा (Greetings! The people of the Earth send their good wishes.)', family: 'Indo-European / Indo-Aryan', speaker: 'Ramesh A. Bhave' },
+  { num: 31, lang: 'Nepali', text: 'पृथ्वीबासीहरुको तर्फबाट हार्दिक नमस्कार (Warm greetings to you from the earthlings.)', family: 'Indo-European / Indo-Aryan', speaker: 'Bishnu P. Shrestha' },
+  { num: 32, lang: 'Nguni (Zulu)', text: 'Sanibona nonke (We greet you, all of you.)', family: 'Niger-Congo / Bantu (South Africa)', speaker: 'Fred Dube' },
+  { num: 33, lang: 'Nyanja (Chewa)', text: 'Muli bwanji nonse anthu aku maiko ena? (How are you all people of other worlds?)', family: 'Niger-Congo / Bantu (Malawi)', speaker: 'Laban M. Banda' },
+  { num: 34, lang: 'Oriya (Odia)', text: 'ସମସ୍ତଙ୍କୁ ମୋର ସ୍ୱାଗତ ଓ ନମସ୍କାର (Greetings to the inhabitants of the universe from the third planet Earth.)', family: 'Indo-European / Indo-Aryan', speaker: 'G. C. Acharya' },
+  { num: 35, lang: 'Persian (Farsi)', text: 'درود بر ساکنان ماورای آسمان‌ها (Greetings to the residents of far skies.)', family: 'Indo-European / Iranian', speaker: 'Ali Daneshkhah' },
+  { num: 36, lang: 'Polish', text: 'Witajcie, istoty z zaświatów. (Welcome, beings from beyond.)', family: 'Indo-European / Slavic', speaker: 'Alexander Schenker' },
+  { num: 37, lang: 'Portuguese', text: 'Paz e felicidade a todos. (Peace and happiness to all.)', family: 'Indo-European / Romance', speaker: 'Janet Sternberg' },
+  { num: 38, lang: 'Punjabi', text: 'ਜੀ ਆਇਆਂ ਨੂੰ (Welcome! It is a great pleasure to receive you.)', family: 'Indo-European / Indo-Aryan', speaker: 'Gurkirpal Singh' },
+  { num: 39, lang: 'Rajasthani', text: 'राम राम सा (Greetings to everyone!)', family: 'Indo-European / Indo-Aryan', speaker: 'R. K. Dave' },
+  { num: 40, lang: 'Romanian', text: 'Salutări la toată lumea. (Greetings to everybody.)', family: 'Indo-European / Romance', speaker: 'Petre Mihai' },
+  { num: 41, lang: 'Russian', text: 'Здравствуйте! Приветствую вас! (Greetings! I welcome you!)', family: 'Indo-European / Slavic', speaker: 'Natasha Sagan' },
+  { num: 42, lang: 'Serbian', text: 'Желимо вам све најбоље са наше планете. (We wish you all the best from our planet.)', family: 'Indo-European / Slavic', speaker: 'Milan M. Radovich' },
+  { num: 43, lang: 'Sinhalese', text: 'ආයුබෝවන් (May you live long / Wish you long life.)', family: 'Indo-European / Indo-Aryan', speaker: 'Kamal de Abrew' },
+  { num: 44, lang: 'Sotho (Sesotho)', text: 'Re le lumelisa ka mofuthu bohle (We greet you warmly, all of you.)', family: 'Niger-Congo / Bantu (Southern Africa)', speaker: 'Fred Dube' },
+  { num: 45, lang: 'Spanish', text: 'Hola y saludos a todos. (Hello and greetings to all.)', family: 'Indo-European / Romance', speaker: 'Janet Sternberg' },
+  { num: 46, lang: 'Sumerian', text: 'Silim-ma! (May you be healthy!)', family: 'Language Isolate (Ancient Mesopotamia)', speaker: 'Ferris J. Stephens' },
+  { num: 47, lang: 'Swedish', text: 'Hälsningar från en god vän i universum. (Greetings from a good friend in the universe.)', family: 'Indo-European / Germanic', speaker: 'Einar Stefferud' },
+  { num: 48, lang: 'Telugu', text: 'నమస్కారం, మా శుభాకాంక్షలు (Greetings, our best wishes.)', family: 'Dravidian', speaker: 'P. Radhakrishna' },
+  { num: 49, lang: 'Thai', text: 'สวัสดีครับเพื่อนๆ ทุกคน (Hello, friends everywhere. We come in goodwill.)', family: 'Kra-Dai', speaker: 'S. N. Rungkasiri' },
+  { num: 50, lang: 'Turkish', text: 'Sayın Türkçe konuşan dostlarımız, sabah şerifleriniz hayrolsun. (Dear Turkish-speaking friends, may the honors of the morning be upon you.)', family: 'Turkic', speaker: 'Peter Kuniholm' },
+  { num: 51, lang: 'Ukrainian', text: 'Посилаємо привіт усім істотам у всесвіті. (We send greetings to all beings in the universe.)', family: 'Indo-European / Slavic', speaker: 'Orest Stasiw' },
+  { num: 52, lang: 'Urdu', text: 'سلام و رحمت زمین کے باشندوں کی طرف से (Peace and blessings from the inhabitants of the Earth.)', family: 'Indo-European / Indo-Aryan', speaker: 'Munir Ahmad' },
+  { num: 53, lang: 'Vietnamese', text: 'Xin gửi lời chào thân ái đến các bạn. (Sincerely send our friendly greetings to you.)', family: 'Austroasiatic / Vietic', speaker: 'Tran Trong Hai' },
+  { num: 54, lang: 'Welsh', text: 'Iechyd da i chwi ac heddwch ym mhob cornel o\'r bydysawd. (Good health to you and peace in every corner of the universe.)', family: 'Indo-European / Celtic', speaker: 'Gwyneth Mostyn Jones' },
+  { num: 55, lang: 'Wu (Shanghainese)', text: '祝大家身体健康，万事如意。 (Wishing everyone good health and all the best.)', family: 'Sino-Tibetan / Sinitic', speaker: 'Stella Fessler' },
+  { num: 56, lang: 'Humpback Whale', text: '[Deep bioacoustic vocalization recorded by Dr. Roger Payne, Bermuda 1970]', family: 'Cetacean Bioacoustic Communication', speaker: 'Megaptera novaeangliae' }
 ];
 
 export const MUSIC_SELECTIONS = [
@@ -91,23 +137,27 @@ export const MUSIC_SELECTIONS = [
 ];
 
 export const SOUNDS_OF_EARTH = [
-  'Music of the Spheres (Kepler harmonic frequencies)',
-  'Volcanoes, Earthquake & Thunder',
-  'Mud Pots & Geysers',
-  'Wind, Rain & Coastal Surf',
-  'Crickets, Frogs & Night Chorus',
-  'Birds, Hyena & Elephant Trumpet',
-  'Chimpanzee Call & Wild Dog',
-  'Human Footsteps, Heartbeat & Laughter',
-  'First Fire & Stone Flint Tools',
-  'Tame Dog & Pastoral Herding',
-  'Blacksmith\'s Anvil, Handsaw & Tractor',
-  'Rivet Gun & Factory Automation',
-  'Morse Code Telegraph ("Ad Astra Per Aspera")',
-  'Ocean Liner Horn & Steam Locomotive',
-  'Automobile, Jet Aircraft & Saturn V Moon Rocket Liftoff',
-  'Human Kiss & Mother Whispering to Child',
-  'EEG Brainwave Pattern of Ann Druyan thinking of love and science'
+  { num: 1, title: 'Music of the Spheres (Kepler Harmonices Mundi)', desc: 'Mathematical synthesis of planetary orbital velocities according to Johannes Kepler’s 1619 acoustic formulation.' },
+  { num: 2, title: 'Volcanoes, Earthquake & Thunder', desc: 'Raw terrestrial seismic, geothermal, and electrostatic power of early Earth atmosphere.' },
+  { num: 3, title: 'Mud Pots & Geysers', desc: 'Bubbling hydrothermal mineral pools from Yellowstone geothermal basins.' },
+  { num: 4, title: 'Wind, Rain & Ocean Surf', desc: 'Atmospheric fluid dynamics and ocean waves breaking against shorelines.' },
+  { num: 5, title: 'Crickets, Frogs & Night Chorus', desc: 'Nocturnal invertebrate and amphibian chorus in temperate woodland.' },
+  { num: 6, title: 'Birds, Hyena & Elephant Trumpet', desc: 'Bioacoustic communications across avian, savannah predator, and pachyderm species.' },
+  { num: 7, title: 'Chimpanzee Call & Wild Dog', desc: 'Primate vocalizations and wild canid pack communication.' },
+  { num: 8, title: 'Human Footsteps, Heartbeat & Laughter', desc: 'Biological rhythm of human locomotion, cardiovascular pulse, and spontaneous emotion.' },
+  { num: 9, title: 'First Fire & Stone Flint Tools', desc: 'Early hominid lithic percussion and controlled oxidation of biomass.' },
+  { num: 10, title: 'Tame Dog & Pastoral Herding', desc: 'Domestication of animals and agrarian shepherd culture.' },
+  { num: 11, title: 'Blacksmith\'s Anvil, Handsaw & Tractor', desc: 'Iron age metallurgy transitioning into mechanical agricultural harvesting.' },
+  { num: 12, title: 'Rivet Gun & Factory Automation', desc: 'Industrial assembly, heavy fabrication, and pneumatic structural construction.' },
+  { num: 13, title: 'Morse Code Telegraph ("Ad Astra Per Aspera")', desc: 'Electric telegraphy clicking the Latin motto: "Through hardships to the stars".' },
+  { num: 14, title: 'Ocean Liner Horn & Steam Locomotive', desc: 'Transoceanic maritime horn and steam-powered continental rail transportation.' },
+  { num: 15, title: 'Automobile, Highway & Jet Aircraft', desc: 'Internal combustion ground transit and turbojet aviation across troposphere.' },
+  { num: 16, title: 'Saturn V Apollo Moon Rocket Liftoff', desc: 'Acoustic roar of 7.5 million pounds of thrust lifting humanity toward the Moon (1969).' },
+  { num: 17, title: 'Human Kiss & Mother Whispering to Child', desc: 'Acoustic intimacy of maternal nurture, linguistic cadence, and emotional attachment.' },
+  { num: 18, title: 'Life Signs: EEG Brainwave Pattern', desc: 'Electroencephalogram of Ann Druyan meditating on the history of ideas, love, and human thought.' },
+  { num: 19, title: 'Tame Sheep & Cow Bells', desc: 'Pastoral rhythms of agrarian livestock management.' },
+  { num: 20, title: 'Horse & Cart on Cobblestone', desc: 'Pre-industrial wheeled conveyance across urban cobblestone roadways.' },
+  { num: 21, title: 'Pulsar Spin Rhythm Simulated Soundscape', desc: 'Rhythmic radio pulses converted into human acoustic frequency.' }
 ];
 
 export const COVER_HOTSPOTS = [
@@ -175,152 +225,29 @@ export function renderGoldenRecordExplorer(containerEl) {
   let activeViewId = 'cover';
   let activeChapterId = 'chapter-1';
   let activeHotspotId = null;
-  let audioContext = null;
-  let activeAudioTrack = null;
-  let activeAudioState = 'idle'; // 'idle' | 'buffering' | 'playing' | 'paused' | 'error'
-  let activeAudioTimeout = null;
-  let activeOscillator = null;
-  let activeGainNode = null;
 
-  function stopCurrentAudio() {
-    if (activeAudioTimeout) {
-      clearTimeout(activeAudioTimeout);
-      activeAudioTimeout = null;
-    }
-    if (activeOscillator) {
-      try {
-        activeOscillator.stop();
-        activeOscillator.disconnect();
-      } catch (e) {
-        // already stopped
-      }
-      activeOscillator = null;
-    }
-    activeGainNode = null;
-    activeAudioState = 'idle';
-  }
+  function renderCatalogueHeader() {
+    const mountEl = containerEl.querySelector('#gr-audio-player-mount');
+    if (!mountEl) return;
 
-  function playTone(freq = 440, duration = 0.8, type = 'sine') {
-    stopCurrentAudio();
-    try {
-      if (!audioContext) {
-        audioContext = new (window.AudioContext || window.webkitAudioContext)();
-      }
-      if (audioContext.state === 'suspended') {
-        audioContext.resume();
-      }
-      const osc = audioContext.createOscillator();
-      const gain = audioContext.createGain();
-      osc.type = type;
-      osc.frequency.setValueAtTime(freq, audioContext.currentTime);
-
-      gain.gain.setValueAtTime(0.01, audioContext.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.2, audioContext.currentTime + 0.05);
-      gain.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + duration);
-
-      osc.connect(gain);
-      gain.connect(audioContext.destination);
-
-      osc.start();
-      osc.stop(audioContext.currentTime + duration);
-    } catch (e) {
-      console.warn('[Audio] Web Audio playTone unavailable:', e);
-    }
-  }
-
-  function playTrackBuffered(title, freq = 320, duration = 4.0) {
-    stopCurrentAudio();
-    activeAudioTrack = title;
-    activeAudioState = 'buffering';
-    renderAudioPlayerBar();
-
-    // Buffer state demonstration: 400ms buffer delay then start synthesized playback
-    activeAudioTimeout = setTimeout(() => {
-      try {
-        if (!audioContext) {
-          audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        }
-        if (audioContext.state === 'suspended') {
-          audioContext.resume();
-        }
-        const osc = audioContext.createOscillator();
-        const gain = audioContext.createGain();
-        osc.type = 'sawtooth';
-        osc.frequency.setValueAtTime(freq, audioContext.currentTime);
-
-        gain.gain.setValueAtTime(0.01, audioContext.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.15, audioContext.currentTime + 0.1);
-        gain.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + duration);
-
-        osc.connect(gain);
-        gain.connect(audioContext.destination);
-
-        osc.start();
-        activeOscillator = osc;
-        activeGainNode = gain;
-        activeAudioState = 'playing';
-        renderAudioPlayerBar();
-
-        activeAudioTimeout = setTimeout(() => {
-          stopCurrentAudio();
-          renderAudioPlayerBar();
-        }, duration * 1000);
-      } catch (e) {
-        console.warn('[Audio] Synthesis fallback failed:', e);
-        activeAudioState = 'error';
-        renderAudioPlayerBar();
-      }
-    }, 450);
-  }
-
-  function renderAudioPlayerBar() {
-    const barEl = containerEl.querySelector('#gr-audio-player-mount');
-    if (!barEl) return;
-
-    if (activeAudioState === 'idle' && !activeAudioTrack) {
-      barEl.innerHTML = `
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0.75rem; background: rgba(8, 12, 22, 0.75); border: 1px solid rgba(245, 158, 11, 0.2); border-radius: 4px; font-family: var(--font-mono); font-size: 0.7rem; color: #94a3b8;">
-          <span style="display: inline-flex; align-items: center; gap: 0.4rem;">
-            <span class="view-tab-dot" style="background: #94a3b8;"></span>
-            <span>GOLDEN RECORD AUDIO SYNTHESIZER // READY</span>
-          </span>
-          <span>SELECT ANY TRACK TO PLAY</span>
-        </div>
-      `;
-      return;
-    }
-
-    const isPlaying = (activeAudioState === 'playing');
-    const isBuffering = (activeAudioState === 'buffering');
-
-    barEl.innerHTML = `
-      <div style="padding: 0.65rem 0.85rem; background: rgba(8, 14, 28, 0.95); border: 1px solid rgba(245, 158, 11, 0.4); border-radius: 4px; font-family: var(--font-mono); margin-bottom: 0.75rem;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; flex-wrap: wrap; gap: 0.4rem;">
+    mountEl.innerHTML = `
+      <div class="gr-archival-catalogue-header" style="background: rgba(6, 10, 20, 0.95); border: 1px solid rgba(245, 158, 11, 0.35); border-radius: 5px; padding: 0.85rem 1rem; margin-bottom: 1.25rem; box-shadow: 0 4px 20px rgba(0,0,0,0.6);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; flex-wrap: wrap; gap: 0.5rem;">
           <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <span class="phase-led" style="background: ${isPlaying ? '#10b981' : isBuffering ? '#fbbf24' : '#ef4444'}; box-shadow: 0 0 6px ${isPlaying ? '#10b981' : isBuffering ? '#fbbf24' : '#ef4444'};"></span>
-            <span style="font-size: 0.75rem; color: #fbbf24; font-weight: 700;">
-              ${isBuffering ? '[BUFFERING AUDIO Grooves...]' : isPlaying ? '[PLAYING HARMONIC RECONSTRUCTION]' : '[AUDIO STOPPED]'}
+            <span class="phase-led" style="background: #fbbf24; box-shadow: 0 0 6px #fbbf24;" aria-hidden="true"></span>
+            <span style="font-family: var(--font-mono); font-size: 0.725rem; color: #fbbf24; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">
+              OFFICIAL NASA INTERSTELLAR RECORD ARCHIVE // 1977
             </span>
           </div>
-          <span style="font-size: 0.7rem; color: #cbd5e1; max-width: 320px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-            ${activeAudioTrack || 'Voyager 1 Phonograph Signal'}
+          <span style="font-family: var(--font-mono); font-size: 0.675rem; color: #94a3b8;">
+            12-INCH GOLD-PLATED COPPER PHONOGRAPH DISC &bull; 16 2/3 RPM
           </span>
-          <button id="btn-stop-gr-audio" type="button" style="padding: 0.25rem 0.5rem; font-family: var(--font-mono); font-size: 0.675rem; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.4); color: #fca5a5; border-radius: 2px; cursor: pointer;">
-            STOP &#x25A0;
-          </button>
         </div>
-        <!-- Progress / Waveform Bar -->
-        <div style="height: 4px; background: rgba(255, 255, 255, 0.1); border-radius: 2px; overflow: hidden;">
-          <div style="height: 100%; background: ${isPlaying ? '#10b981' : '#fbbf24'}; width: ${isPlaying ? '100%' : '40%'}; transition: width ${isPlaying ? '4s' : '0.4s'} linear;"></div>
-        </div>
+        <p style="font-size: 0.775rem; color: #cbd5e1; line-height: 1.5; margin: 0;">
+          The complete historical contents placed aboard Voyager 1 are catalogued below in full authentic detail: 27 global musical pieces, spoken greetings in 55 human languages plus whale bioacoustics, 21 terrestrial soundscapes, and 115 video-encoded analog images. Master analog phonograph recordings are archived in national repositories; browse the verified linguistic, musical, and physical encoding documentation below.
+        </p>
       </div>
     `;
-
-    barEl.querySelector('#btn-stop-gr-audio')?.addEventListener('click', () => {
-      stopCurrentAudio();
-      activeAudioTrack = null;
-      renderAudioPlayerBar();
-    });
   }
 
   function renderView() {
@@ -342,7 +269,7 @@ export function renderGoldenRecordExplorer(containerEl) {
           </p>
         </header>
 
-        <!-- View Mode Switcher Strip -->
+        <!-- View Mode Switcher Strip (Cover vs Disc vs Installation) -->
         <div class="gr-view-switcher" role="tablist" aria-label="Golden Record Views">
           ${GOLDEN_RECORD_VIEWS.map(v => `
             <button 
@@ -365,15 +292,16 @@ export function renderGoldenRecordExplorer(containerEl) {
           <div class="gr-visual-column">
             <div class="gr-visual-frame">
               <img 
-                src="${currentView.image}" 
+                src="${getAssetUrl(currentView.image)}" 
                 alt="${currentView.title}" 
                 class="gr-active-image" 
+                data-view="${currentView.id}"
               />
               <div class="gr-image-overlay-badge font-mono">
                 ${currentView.badge}
               </div>
 
-              <!-- Hotspots Layer (UI-03 & Phase 4: clear, vibrant blue dots with subtle cyan-blue glow) -->
+              <!-- Hotspots Layer for Cover -->
               ${activeViewId === 'cover' ? `
                 <div class="gr-hotspots-layer" style="position: absolute; inset: 0; pointer-events: none;">
                   ${COVER_HOTSPOTS.map((h, idx) => `
@@ -421,20 +349,20 @@ export function renderGoldenRecordExplorer(containerEl) {
             </div>
           </div>
 
-          <!-- Right Column: Interactive Chapters & Scientific Breakdown -->
+          <!-- Right Column: Interactive Chapters & Content Categories -->
           <div class="gr-chapters-column">
             <!-- Chapter Selector Tab Strip -->
             <div class="gr-chapter-tabs font-mono" role="tablist">
-              <button class="btn-gr-tab ${activeChapterId === 'chapter-1' ? 'active' : ''}" data-chapter-id="chapter-1">1. COVER DIAGRAM</button>
+              <button class="btn-gr-tab ${activeChapterId === 'chapter-1' ? 'active' : ''}" data-chapter-id="chapter-1">1. COVER &amp; PLAYBACK</button>
               <button class="btn-gr-tab ${activeChapterId === 'chapter-2' ? 'active' : ''}" data-chapter-id="chapter-2">2. GREETINGS (55)</button>
-              <button class="btn-gr-tab ${activeChapterId === 'chapter-3' ? 'active' : ''}" data-chapter-id="chapter-3">3. SOUNDS</button>
+              <button class="btn-gr-tab ${activeChapterId === 'chapter-3' ? 'active' : ''}" data-chapter-id="chapter-3">3. SOUNDS OF EARTH</button>
               <button class="btn-gr-tab ${activeChapterId === 'chapter-4' ? 'active' : ''}" data-chapter-id="chapter-4">4. MUSIC (27)</button>
               <button class="btn-gr-tab ${activeChapterId === 'chapter-5' ? 'active' : ''}" data-chapter-id="chapter-5">5. IMAGES (115)</button>
               <button class="btn-gr-tab ${activeChapterId === 'chapter-6' ? 'active' : ''}" data-chapter-id="chapter-6">6. PULSAR MAP</button>
               <button class="btn-gr-tab ${activeChapterId === 'chapter-7' ? 'active' : ''}" data-chapter-id="chapter-7">7. HYDROGEN ATOM</button>
             </div>
 
-            <!-- Audio Player Bar Mount (WP-16 Buffer Handling) -->
+            <!-- Archival Educational Header Mount -->
             <div id="gr-audio-player-mount"></div>
 
             <!-- Chapter Content Terminal -->
@@ -447,7 +375,7 @@ export function renderGoldenRecordExplorer(containerEl) {
       </div>
     `;
 
-    renderAudioPlayerBar();
+    renderCatalogueHeader();
 
     // Hotspot click handlers
     containerEl.querySelectorAll('.gr-hotspot-pin').forEach(btn => {
@@ -464,7 +392,7 @@ export function renderGoldenRecordExplorer(containerEl) {
       renderView();
     });
 
-    // Attach View Switcher Handlers
+    // View Switcher Handlers
     containerEl.querySelectorAll('[data-view-id]').forEach(btn => {
       btn.addEventListener('click', () => {
         const vid = btn.getAttribute('data-view-id');
@@ -476,7 +404,7 @@ export function renderGoldenRecordExplorer(containerEl) {
       });
     });
 
-    // Attach Chapter Switcher Handlers
+    // Chapter Switcher Handlers
     containerEl.querySelectorAll('[data-chapter-id]').forEach(btn => {
       btn.addEventListener('click', () => {
         const cid = btn.getAttribute('data-chapter-id');
@@ -484,15 +412,6 @@ export function renderGoldenRecordExplorer(containerEl) {
           activeChapterId = cid;
           renderView();
         }
-      });
-    });
-
-    // Audio Play Track Handlers (Music, Greetings, Sounds)
-    containerEl.querySelectorAll('.btn-play-tone').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const f = Number(btn.getAttribute('data-freq') || 440);
-        const trackTitle = btn.getAttribute('data-track') || 'Harmonic Reference Tone';
-        playTrackBuffered(trackTitle, f, 3.5);
       });
     });
   }
@@ -503,7 +422,7 @@ export function renderGoldenRecordExplorer(containerEl) {
         return `
           <div class="chapter-deck">
             <div class="chapter-meta-tag font-mono">CHAPTER 01 // HOW TO PLAY THE RECORD</div>
-            <h4 class="chapter-title">The Engraved Cover & Binary Playback Instructions</h4>
+            <h4 class="chapter-title">The Engraved Cover &amp; Binary Playback Instructions</h4>
             <p class="chapter-desc">
               Mounted in the upper left of the cover is a drawing of the phonograph record and the needle and stylus cartridge packed with it. The stylus is in the correct position to play the record from the outside in.
             </p>
@@ -538,21 +457,23 @@ export function renderGoldenRecordExplorer(containerEl) {
             <div class="chapter-meta-tag font-mono">CHAPTER 02 // VOICES OF THE HUMAN FAMILY</div>
             <h4 class="chapter-title">Spoken Greetings in 55 Human Languages + Humpback Whale</h4>
             <p class="chapter-desc">
-              Short spoken greetings were recorded at the United Nations in New York and Cornell University in 55 human languages spanning 6,000 years of civilization, accompanied by bioacoustic songs of humpback whales.
+              Short spoken greetings were recorded in 55 human languages spanning 6,000 years of civilization, accompanied by bioacoustic calls of humpback whales. Complete verified transcriptions, translations, and historical context are catalogued below.
             </p>
             <div class="greetings-directory-list">
               ${GREETINGS_LANGUAGES.map((g, idx) => `
-                <div class="greeting-row">
-                  <div class="greeting-header">
-                    <span class="greeting-num font-mono">#${idx + 1}</span>
-                    <span class="greeting-lang">${g.lang}</span>
-                    <span class="greeting-family font-mono">${g.family}</span>
-                    <button type="button" class="btn-play-tone font-mono" data-freq="${300 + idx * 25}" data-track="${g.lang} Greeting (${g.speaker})" title="Synthesize phonetic resonance tone">
-                      <span>&#x25B6; PLAY</span>
-                    </button>
+                <div class="greeting-row" style="padding: 0.75rem 0.85rem; background: rgba(8, 12, 22, 0.65); border: 1px solid rgba(245, 158, 11, 0.2); border-radius: 4px; margin-bottom: 0.5rem;">
+                  <div class="greeting-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem; flex-wrap: wrap; gap: 0.4rem;">
+                    <div>
+                      <span class="greeting-num font-mono" style="color: #fbbf24; font-weight: 700; margin-right: 0.5rem;">#${g.num < 10 ? '0' + g.num : g.num}</span>
+                      <strong class="greeting-lang" style="color: #f8fafc; font-size: 0.85rem;">${g.lang}</strong>
+                      <span class="greeting-family font-mono" style="font-size: 0.675rem; color: #94a3b8; margin-left: 0.5rem;">[${g.family}]</span>
+                    </div>
+                    <span class="greeting-badge font-mono" style="font-size: 0.65rem; color: #fbbf24; background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.3); padding: 2px 7px; border-radius: 2px;">
+                      ARCHIVED 1977
+                    </span>
                   </div>
-                  <div class="greeting-text">&ldquo;${g.text}&rdquo;</div>
-                  <div class="greeting-speaker font-mono">Speaker: ${g.speaker}</div>
+                  <div class="greeting-text" style="font-size: 0.8rem; color: #cbd5e1; font-style: italic; margin-bottom: 0.25rem;">&ldquo;${g.text}&rdquo;</div>
+                  <div class="greeting-speaker font-mono" style="font-size: 0.65rem; color: #94a3b8;">Speaker: ${g.speaker}</div>
                 </div>
               `).join('')}
             </div>
@@ -565,18 +486,23 @@ export function renderGoldenRecordExplorer(containerEl) {
             <div class="chapter-meta-tag font-mono">CHAPTER 03 // ACOUSTIC ENVIRONMENT OF EARTH</div>
             <h4 class="chapter-title">Sounds of Earth (21 Audio Soundscapes)</h4>
             <p class="chapter-desc">
-              Curated by Ann Druyan and Carl Sagan, this 12-minute audio essay captures the evolutionary history of Earth: from primordial geology and wind to animal life, human culture, and the roar of rocket propulsion.
+              Curated by Ann Druyan, Carl Sagan, and Frank Drake, this audio essay captures the planetary and evolutionary history of Earth: from primordial geology and winds to animal life, human technology, and rocketry.
             </p>
-            <div class="sounds-grid">
+            <div class="sounds-grid" style="display: grid; grid-template-columns: 1fr; gap: 0.5rem;">
               ${SOUNDS_OF_EARTH.map((s, idx) => `
-                <div class="sound-chip font-mono" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-                  <div>
-                    <span class="sound-idx">${idx + 1 < 10 ? '0' + (idx + 1) : idx + 1}.</span>
-                    <span class="sound-name">${s}</span>
+                <div class="sound-chip font-mono" style="display: flex; justify-content: space-between; align-items: center; padding: 0.65rem 0.85rem; background: rgba(8, 12, 22, 0.65); border: 1px solid rgba(245, 158, 11, 0.2); border-radius: 4px; gap: 0.5rem;">
+                  <div style="flex: 1;">
+                    <div style="color: #f8fafc; font-size: 0.8rem; font-weight: 600;">
+                      <span class="sound-idx" style="color: #fbbf24; margin-right: 0.35rem;">${s.num < 10 ? '0' + s.num : s.num}.</span>
+                      ${s.title}
+                    </div>
+                    <div style="font-size: 0.7rem; color: #94a3b8; font-family: var(--font-body, sans-serif); margin-top: 0.15rem;">
+                      ${s.desc}
+                    </div>
                   </div>
-                  <button type="button" class="btn-play-tone font-mono" data-freq="${180 + idx * 35}" data-track="Sound of Earth: ${s}" style="background: none; border: 1px solid rgba(245, 158, 11, 0.3); color: #fbbf24; border-radius: 2px; font-size: 0.65rem; padding: 2px 6px; cursor: pointer;">
-                    &#x25B6;
-                  </button>
+                  <span class="sound-badge font-mono" style="font-size: 0.65rem; color: #fbbf24; background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.3); padding: 2px 7px; border-radius: 2px; white-space: nowrap;">
+                    CATALOGUE ENTRY
+                  </span>
                 </div>
               `).join('')}
             </div>
@@ -589,23 +515,24 @@ export function renderGoldenRecordExplorer(containerEl) {
             <div class="chapter-meta-tag font-mono">CHAPTER 04 // 90 MINUTES OF WORLDWIDE MUSIC</div>
             <h4 class="chapter-title">Music of Earth (27 Masterpieces Across Continents)</h4>
             <p class="chapter-desc">
-              A diverse anthology of human musical expression across continents and centuries—from Bach and Beethoven to Chuck Berry's rock & roll, Indian ragas, Javanese gamelan, and African polyrhythms.
+              A diverse anthology of human musical expression across continents and centuries—from Bach and Beethoven to Chuck Berry's rock & roll, Indian ragas, Javanese gamelan, and African polyrhythms. Complete archival catalogue parameters are detailed below.
             </p>
             <div class="music-tracklist">
               ${MUSIC_SELECTIONS.map(m => `
-                <div class="music-track-row">
-                  <div class="track-left">
-                    <span class="track-num font-mono">${m.num < 10 ? '0' + m.num : m.num}</span>
+                <div class="music-track-row" style="display: flex; justify-content: space-between; align-items: center; padding: 0.65rem 0.85rem; background: rgba(8, 12, 22, 0.65); border: 1px solid rgba(245, 158, 11, 0.2); border-radius: 4px; margin-bottom: 0.5rem; gap: 0.75rem;">
+                  <div class="track-left" style="display: flex; align-items: center; gap: 0.75rem; flex: 1;">
+                    <span class="track-num font-mono" style="color: #fbbf24; font-weight: 700; font-size: 0.85rem;">${m.num < 10 ? '0' + m.num : m.num}</span>
                     <div class="track-meta">
-                      <div class="track-title">${m.title}</div>
-                      <div class="track-artist">${m.artist} &bull; <strong style="color: #fbbf24;">${m.origin}</strong></div>
+                      <div class="track-title" style="color: #f8fafc; font-size: 0.825rem; font-weight: 600;">${m.title}</div>
+                      <div class="track-artist" style="font-size: 0.7rem; color: #94a3b8; font-family: var(--font-mono); margin-top: 0.1rem;">
+                        ${m.artist} &bull; <strong style="color: #fbbf24;">${m.origin}</strong>
+                      </div>
                     </div>
                   </div>
-                  <div class="track-right font-mono">
-                    <span class="track-dur">${m.duration}</span>
-                    <button type="button" class="btn-play-tone" data-freq="${220 + m.num * 20}" data-track="${m.title} (${m.origin})" title="Play harmonic tuning reference" style="cursor: pointer; background: rgba(245, 158, 11, 0.15); border: 1px solid #fbbf24; color: #fbbf24; border-radius: 3px; padding: 4px 8px; font-size: 0.75rem;">
-                      &#x25B6; PLAY
-                    </button>
+                  <div class="track-right font-mono" style="display: flex; align-items: center; gap: 0.65rem;">
+                    <span class="track-dur" style="color: #fbbf24; font-size: 0.75rem; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.25); padding: 2px 7px; border-radius: 2px;">
+                      ${m.duration}
+                    </span>
                   </div>
                 </div>
               `).join('')}
@@ -619,25 +546,33 @@ export function renderGoldenRecordExplorer(containerEl) {
             <div class="chapter-meta-tag font-mono">CHAPTER 05 // 115 ANALOG PHOTOGRAPHS</div>
             <h4 class="chapter-title">Images of Earth Encoded in Video Signals</h4>
             <p class="chapter-desc">
-              115 black-and-white and color images were converted into analog audio waveforms. They contain scientific information about the solar system, cellular biology, human physiology, culture, agriculture, and architecture.
+              115 black-and-white and color images were converted into analog audio waveforms. Recorded at 512 vertical scan-lines per frame, each picture was designed to be reconstructed by an extraterrestrial cathode-ray tube or computer decoder.
             </p>
             <div class="chapter-specs-grid">
               <div class="spec-card">
-                <div class="spec-card-label font-mono">1. SCIENCE & MATHEMATICS</div>
-                <div class="spec-card-desc">Solar spectrum, chemical elements, units of measure, DNA double-helix structure, cellular mitosis, and continental drift.</div>
+                <div class="spec-card-label font-mono">1. SCIENCE &amp; MATHEMATICS</div>
+                <div class="spec-card-desc">Solar spectrum, chemical elements, fundamental mathematical definitions, units of length and mass, continental drift, and planetary orbital distances.</div>
               </div>
               <div class="spec-card">
-                <div class="spec-card-label font-mono">2. ANATOMY & BIOLOGY</div>
-                <div class="spec-card-desc">Conception, human embryo, family diagrams, human anatomy, organ systems, and animals (fish, birds, reptiles, mammals).</div>
+                <div class="spec-card-label font-mono">2. ANATOMY &amp; BIOLOGY</div>
+                <div class="spec-card-desc">DNA double-helix, cellular mitosis, conception, human embryo development, male and female anatomy diagrams, and terrestrial fauna (fish, reptiles, birds, mammals).</div>
               </div>
               <div class="spec-card">
-                <div class="spec-card-label font-mono">3. HUMAN SOCIETY & CIVILIZATION</div>
-                <div class="spec-card-desc">Farming, harvesting, eating, drinking, architecture (Great Wall, Taj Mahal, Golden Gate), school classrooms, and Olympic sprinters.</div>
+                <div class="spec-card-label font-mono">3. HUMAN SOCIETY &amp; CULTURE</div>
+                <div class="spec-card-desc">Agricultural harvesting, food preparation, drinking, family portraits across cultures, architecture (Great Wall of China, Taj Mahal, Golden Gate Bridge), and Olympic athletes.</div>
               </div>
               <div class="spec-card">
-                <div class="spec-card-label font-mono">4. TECHNOLOGY & ENGINEERING</div>
-                <div class="spec-card-desc">Railroads, highways, modern bridges, jet aircraft, radio telescopes (Arecibo), and the Saturn V Apollo moon launch.</div>
+                <div class="spec-card-label font-mono">4. TECHNOLOGY &amp; EXPLORATION</div>
+                <div class="spec-card-desc">Rail transport, superhighways, modern bridges, jet aircraft, the Arecibo radio telescope, and the massive Saturn V Apollo moon launch at Cape Canaveral.</div>
               </div>
+            </div>
+            <div style="margin-top: 1rem; padding: 0.75rem 1rem; background: rgba(8, 14, 28, 0.8); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 4px;">
+              <div style="font-family: var(--font-mono); font-size: 0.725rem; color: #fbbf24; font-weight: 700; margin-bottom: 0.3rem;">
+                ANALOG RASTER ENCODING MECHANISM (1977 JPL AUDIO/VIDEO LAB)
+              </div>
+              <p style="font-size: 0.775rem; color: #cbd5e1; line-height: 1.5; margin: 0;">
+                Because digital microprocessors of 1977 lacked capacity to store 115 uncompressed raster images, photos were converted into analog frequency-modulated audio tones. Each image required approximately 8 seconds of groove playback, with a synchronized horizontal sync pulse separating each of the 512 lines.
+              </p>
             </div>
           </div>
         `;

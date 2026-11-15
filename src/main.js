@@ -8,6 +8,7 @@ import { initExploreScreen } from './scripts/ui/explore-screen.js';
 import { initBuildScreen } from './scripts/ui/build-screen.js';
 import { initAboutScreen } from './scripts/ui/about-screen.js';
 import { initSilentArchiveScreen } from './scripts/ui/silent-archive-screen.js';
+import { bgAudioEngine } from './scripts/audio/background-music.js';
 
 let isBooted = false;
 
@@ -82,6 +83,14 @@ function bootApplication() {
 
   // 5. Start Scroll Tracking & Hash Observer
   scrollController.init();
+
+  // 6. Initialize Continuous Background Audio Engine
+  try {
+    bgAudioEngine.init();
+    window.__bgAudioEngine = bgAudioEngine;
+  } catch (err) {
+    console.error('[Audio] Background music initialization error:', err);
+  }
 }
 
 // Resilient Boot Guard: Execute immediately if DOM is already ready

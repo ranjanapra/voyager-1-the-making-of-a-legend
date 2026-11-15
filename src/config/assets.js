@@ -6,6 +6,22 @@
  * Unverified image slots are cleanly marked as pending verification without fake facts.
  */
 
+/**
+ * Resolves an asset path against the application base URL (e.g. for GitHub Pages subpaths).
+ * @param {string} path - Absolute or relative path to the asset.
+ * @returns {string} Fully-qualified path respecting BASE_URL.
+ */
+export function getAssetUrl(path) {
+  if (!path) return '';
+  if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('data:') || path.startsWith('blob:')) {
+    return path;
+  }
+  const base = (typeof import.meta !== 'undefined' && import.meta && import.meta.env && import.meta.env.BASE_URL) ? import.meta.env.BASE_URL : '/';
+  const cleanBase = base.endsWith('/') ? base : base + '/';
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  return cleanBase + cleanPath;
+}
+
 export const ASSET_CONFIG = {
   // Configurable Website Metadata Placeholders
   meta: {
@@ -60,6 +76,13 @@ export const ASSET_CONFIG = {
       caption: "Voyager 1 // Candidate Mission Poster",
       credit: "Voyager 1 Historical Mission Archive",
       dimensions: "1672x941",
+      verified: true
+    },
+    landingPoster: {
+      url: "/assets/images/explore voyger 1 page image .jpeg",
+      alt: "Voyager 1 Historical Mission Exploration",
+      caption: "Voyager 1 // Historical Exploration Overview",
+      credit: "NASA/JPL Mission Archive",
       verified: true
     },
     topic01_parts: {

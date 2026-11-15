@@ -34,6 +34,7 @@ import { MathLabEngine } from '../labs/math-lab.js';
 import { GraphLabEngine } from '../labs/graph-lab.js';
 import { MissionReportEngine } from '../completion/mission-report.js';
 import { getImageManifestById } from '../../config/image-manifest.js';
+import { getAssetUrl } from '../../config/assets.js';
 import { UnlockEngine } from '../core/unlock-engine.js';
 import { announceForScreenReader } from './router.js';
 
@@ -1002,16 +1003,23 @@ export function initBuildScreen(scrollController) {
                 </div>
 
                 ${stageImageManifest ? `
-                  <div class="stage-assigned-image-slot" style="margin-top: 0.75rem; border: 1px dashed rgba(245, 158, 11, 0.4); border-radius: 4px; padding: 0.65rem 0.85rem; background: rgba(8, 12, 22, 0.65);">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem; gap: 0.5rem;">
-                      <span style="font-family: var(--font-mono); font-size: 0.65rem; color: #fbbf24; font-weight: 700;">ASSIGNED ARCHIVE IMAGE // ${stageImageManifest.id}</span>
-                      <span style="font-family: var(--font-mono); font-size: 0.625rem; color: #f59e0b; background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.3); padding: 1px 6px; border-radius: 2px;">${stageImageManifest.status}</span>
+                  <div class="stage-assigned-image-slot" style="margin-top: 0.75rem; border: 1px solid rgba(245, 158, 11, 0.45); border-radius: 4px; padding: 0.65rem 0.85rem; background: rgba(8, 12, 22, 0.75);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; gap: 0.5rem;">
+                      <span style="font-family: var(--font-mono); font-size: 0.65rem; color: #fbbf24; font-weight: 700;">NASA ARCHIVE IMAGE // ${stageImageManifest.id}</span>
+                      <span style="font-family: var(--font-mono); font-size: 0.625rem; color: ${stageImageManifest.url ? '#34d399' : '#f59e0b'}; background: ${stageImageManifest.url ? 'rgba(52, 211, 153, 0.15)' : 'rgba(245, 158, 11, 0.15)'}; border: 1px solid ${stageImageManifest.url ? 'rgba(52, 211, 153, 0.3)' : 'rgba(245, 158, 11, 0.3)'}; padding: 1px 6px; border-radius: 2px;">
+                        ${stageImageManifest.url ? '✓ INTEGRATED' : stageImageManifest.status}
+                      </span>
                     </div>
+                    ${stageImageManifest.url ? `
+                      <div style="margin-bottom: 0.5rem; border-radius: 3px; overflow: hidden; background: #020409; border: 1px solid rgba(245, 158, 11, 0.25);">
+                        <img src="${getAssetUrl(stageImageManifest.url)}" alt="${stageImageManifest.title}" style="width: 100%; height: auto; max-height: 180px; object-fit: cover; display: block;" loading="lazy" decoding="async" />
+                      </div>
+                    ` : ''}
                     <div style="font-size: 0.75rem; color: #cbd5e1; line-height: 1.4;">
                       <strong>${stageImageManifest.title}:</strong> ${stageImageManifest.description}
                     </div>
                     <div style="font-family: var(--font-mono); font-size: 0.65rem; color: #94a3b8; margin-top: 0.3rem;">
-                      Target: <code>${stageImageManifest.expectedPath}</code> &bull; Source: ${stageImageManifest.nasaSource}
+                      Source: ${stageImageManifest.nasaSource} &bull; Ref: ${stageImageManifest.catalogRef}
                     </div>
                   </div>
                 ` : ''}

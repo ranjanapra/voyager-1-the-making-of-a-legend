@@ -56,7 +56,6 @@ export function initStarfield(canvasId = 'bg-canvas') {
   const foregroundGroup = new THREE.Group();  // Nearby stars, subtle responsive parallax
   const celestialGroup = new THREE.Group();   // Distant planet silhouette
   const meteorGroup = new THREE.Group();      // Dedicated Meteor / Shooting-Star System
-  const blackHoleGroup = new THREE.Group();   // Dedicated Black Hole with Rotating Accretion Ring
   const spacecraftGroup = new THREE.Group();  // Voyager 1 Spacecraft 3D model
 
   scene.add(deepFieldGroup);
@@ -65,7 +64,6 @@ export function initStarfield(canvasId = 'bg-canvas') {
   scene.add(foregroundGroup);
   scene.add(celestialGroup);
   scene.add(meteorGroup);
-  scene.add(blackHoleGroup);
   scene.add(spacecraftGroup);
 
   // Group for Page 04 — Receding Earth (Pale Blue Dot Perspective)
@@ -497,49 +495,6 @@ export function initStarfield(canvasId = 'bg-canvas') {
   // Positioned slightly to the right of Milky Way and lower: (560, -160, -320).
   // Total cycle: 7 minutes (420s). Exactly 2 min visible, 5 min hidden.
   // Global timer uses Date.now() so page navigation does not reset it.
-  function createAccretionTexture() {
-    const c = document.createElement('canvas');
-    c.width = 128;
-    c.height = 128;
-    const ctx = c.getContext('2d');
-    const center = 64;
-    const grad = ctx.createRadialGradient(center, center, 22, center, center, 64);
-    grad.addColorStop(0, 'rgba(255, 255, 255, 0.95)');
-    grad.addColorStop(0.25, 'rgba(251, 191, 36, 0.85)');
-    grad.addColorStop(0.6, 'rgba(245, 158, 11, 0.45)');
-    grad.addColorStop(0.88, 'rgba(180, 83, 9, 0.15)');
-    grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, 128, 128);
-    return new THREE.CanvasTexture(c);
-  }
-
-  const accretionTexture = createAccretionTexture();
-  const ringGeom = new THREE.RingGeometry(16, 42, 64);
-  const ringMat = new THREE.MeshBasicMaterial({
-    map: accretionTexture,
-    side: THREE.DoubleSide,
-    transparent: true,
-    opacity: 0,
-    blending: THREE.AdditiveBlending,
-    depthWrite: false
-  });
-  const accretionRing = new THREE.Mesh(ringGeom, ringMat);
-
-  const horizonGeom = new THREE.SphereGeometry(14, 32, 32);
-  const horizonMat = new THREE.MeshBasicMaterial({
-    color: 0x000000,
-    depthWrite: true
-  });
-  const eventHorizon = new THREE.Mesh(horizonGeom, horizonMat);
-
-  blackHoleGroup.position.set(560, -160, -320);
-  blackHoleGroup.rotation.x = 0.65;
-  blackHoleGroup.rotation.y = -0.35;
-  blackHoleGroup.add(eventHorizon);
-  blackHoleGroup.add(accretionRing);
-  blackHoleGroup.visible = false;
-
   // Position Milky Way primarily on the RIGHT side of the viewport
   galaxyGroup.position.set(360, 20, -320);
 
@@ -555,12 +510,15 @@ export function initStarfield(canvasId = 'bg-canvas') {
   let baseVoyagerRotY = -0.68;
   let baseVoyagerRotZ = 0.10;
 
+  const base = (typeof import.meta !== 'undefined' && import.meta && import.meta.env && import.meta.env.BASE_URL) ? import.meta.env.BASE_URL : '/';
+  const cleanBase = base.endsWith('/') ? base : base + '/';
+
   const dracoLoader = new DRACOLoader();
-  dracoLoader.setDecoderPath('/draco/');
+  dracoLoader.setDecoderPath(`${cleanBase}draco/`);
 
   const gltfLoader = new GLTFLoader();
   gltfLoader.setDRACOLoader(dracoLoader);
-  const modelUrl = '/assets/models/voyager-probe-b.glb';
+  const modelUrl = `${cleanBase}assets/models/voyager-probe-b.glb`;
 
   function setupModel(gltf, sourceName) {
     // Prevent duplicate attachment if called twice
@@ -617,7 +575,7 @@ export function initStarfield(canvasId = 'bg-canvas') {
       console.warn('[Three.js] Probe-B load error, attempting standard uncompressed VTAD asset...', error);
       // Fallback to standard uncompressed Voyager model
       gltfLoader.load(
-        '/assets/models/voyager-vtad.glb',
+        `${cleanBase}assets/models/voyager-vtad.glb`,
         (fallbackGltf) => {
           setupModel(fallbackGltf, 'voyager-vtad');
         },
@@ -625,7 +583,10 @@ export function initStarfield(canvasId = 'bg-canvas') {
         (secondError) => {
           console.warn('[Three.js] All 3D model loads failed. Preserving fallback visual.', secondError);
           const fallbackImg = document.getElementById('spacecraft-fallback');
-          if (fallbackImg) fallbackImg.style.display = 'block';
+          if (fallbackImg) {
+            fallbackImg.src = `${cleanBase}assets/images/voyager1-jpl-pia17046.jpg`;
+            fallbackImg.style.display = 'block';
+          }
           const loader = document.getElementById('spacecraft-loader');
           if (loader) loader.style.display = 'none';
         }
@@ -914,29 +875,6 @@ export function initStarfield(canvasId = 'bg-canvas') {
         }
       }
 
-      // ----------------------------------------------------------------------
-      // BLACK HOLE SYSTEM (2 min ON, 5 min OFF Wall-Clock Synchronized Cycle)
-      // ----------------------------------------------------------------------
-      // Total cycle: 420 seconds (7 minutes). 0..120s = VISIBLE, 120..420s = HIDDEN.
-      const bhCycleSec = (Date.now() / 1000) % 420;
-      if (bhCycleSec < 120) {
-        blackHoleGroup.visible = true;
-        // Smooth 4s fade in and 4s fade out at cycle boundaries
-        let bhAlpha = 1.0;
-        if (bhCycleSec < 4) {
-          bhAlpha = bhCycleSec / 4;
-        } else if (bhCycleSec > 116) {
-          bhAlpha = (120 - bhCycleSec) / 4;
-        }
-        ringMat.opacity = 0.85 * bhAlpha;
-
-        // Gentle, non-flashing accretion rotation
-        accretionRing.rotation.z += delta * 0.35;
-      } else {
-        blackHoleGroup.visible = false;
-        ringMat.opacity = 0;
-      }
-
       // Damped Cursor Parallax Easing
       targetParallaxX += (normMouseX - targetParallaxX) * 0.035;
       targetParallaxY += (normMouseY - targetParallaxY) * 0.035;
@@ -950,9 +888,6 @@ export function initStarfield(canvasId = 'bg-canvas') {
       // Milky Way placed on the right side with slow ambient float
       galaxyGroup.position.x = 360 + targetParallaxX * 8 + Math.cos(time * 0.18) * 6;
       galaxyGroup.position.y = 20 + targetParallaxY * 5 + Math.sin(time * 0.22) * 8;
-
-      blackHoleGroup.position.x = 560 + targetParallaxX * 7;
-      blackHoleGroup.position.y = -160 + targetParallaxY * 4;
 
       midgroundGroup.position.x = targetParallaxX * 16;
       midgroundGroup.position.y = targetParallaxY * 11;

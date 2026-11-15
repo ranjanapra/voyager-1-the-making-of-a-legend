@@ -1,4 +1,5 @@
 import { ABOUT_DATA } from '../story/about-data.js';
+import { getAssetUrl } from '../../config/assets.js';
 
 /**
  * Section 04 — About Us & Credits Controller
@@ -27,7 +28,7 @@ export function initAboutScreen() {
           style="position: relative; flex-shrink: 0; width: 220px; height: 160px; border-radius: 6px; overflow: hidden; border: 1.5px solid rgba(56, 189, 248, 0.6); box-shadow: 0 0 20px rgba(56, 189, 248, 0.25); background: #020409; cursor: pointer; padding: 0; display: block;"
         >
           <img 
-            src="/assets/images/story/pale-blue-dot-pia00452.png" 
+            src="${getAssetUrl('/assets/images/story/pale-blue-dot-pia00452.png')}" 
             alt="The Pale Blue Dot (NASA Catalog PIA00452)" 
             style="width: 100%; height: 100%; object-fit: contain; display: block; transition: transform 0.25s ease;" 
             class="pbd-thumb-img"
@@ -77,7 +78,7 @@ export function initAboutScreen() {
           </div>
           <div class="pbd-lightbox-body">
             <img 
-              src="/assets/images/story/pale-blue-dot-pia00452.png" 
+              src="${getAssetUrl('/assets/images/story/pale-blue-dot-pia00452.png')}" 
               alt="Authentic Voyager 1 Pale Blue Dot (NASA Catalog PIA00452)" 
               class="pbd-enlarged-img"
               id="pbd-enlarged-img"
@@ -160,11 +161,11 @@ export function initAboutScreen() {
         <span class="placeholder-value">${ABOUT_DATA.placeholders.websiteTitle}</span>
       </div>
       <div class="meta-placeholder-card">
-        <span class="placeholder-label">TEAM / INSTITUTION PLACEHOLDER:</span>
+        <span class="placeholder-label">SELECTED CHALLENGE:</span>
         <span class="placeholder-value">${ABOUT_DATA.placeholders.teamName}</span>
       </div>
       <div class="meta-placeholder-card">
-        <span class="placeholder-label">MAKER / DEVELOPER PLACEHOLDER:</span>
+        <span class="placeholder-label">PROJECT AUTHORS &amp; TOOLS:</span>
         <span class="placeholder-value">${ABOUT_DATA.placeholders.makerName}</span>
       </div>
     `;

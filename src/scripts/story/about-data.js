@@ -13,8 +13,8 @@ export const ABOUT_DATA = {
 
   placeholders: {
     websiteTitle: "VOYAGER 1 — THE MAKING OF A LEGEND",
-    teamName: "[PROJECT TEAM / INSTITUTION PLACEHOLDER]",
-    makerName: "[PROJECT CREATORS / DEVELOPER PLACEHOLDER]"
+    teamName: "Selected NASA Space Apps Challenge: \"Abandoned but Not Forgotten: Storytelling About AI\"",
+    makerName: "Ranjana Prajapati & Vidhi Patidar (AI tools were used during project development)"
   },
 
   vision: {
@@ -24,28 +24,40 @@ export const ABOUT_DATA = {
     missionDignity: "Voyager 1 is not an abandoned or discarded spacecraft. It remains an operating interstellar mission. Some of its scientific instruments have been switched off to conserve power, but its engineering core and fields-and-particles payload continue returning valuable scientific data from the interstellar medium beyond the heliosphere."
   },
 
-  // Editable Team Profile Placeholders (Exactly 2 Team Members)
+  // Project Team Members
   teamMembers: [
     {
       id: "member-1",
-      name: "[TEAM MEMBER 01]",
-      role: "Lead Systems Architect & 3D Visualization",
-      callsign: "SYSTEMS-01",
-      bio: "[Editable Profile] Directs overall web application architecture, Three.js WebGL spacecraft engine, and historical engineering pipeline fidelity.",
-      responsibilities: ["Three.js Graphics Engine", "Spacecraft Model Integration", "Project Architecture"]
+      name: "Ranjana Prajapati",
+      role: "Project Lead & Web Development",
+      callsign: "LEAD-01",
+      bio: "Led website planning, UI/UX design, storytelling and complete website development. Conducted Voyager 1 research and collected NASA resources, research materials and scientific datasets. Managed technical implementation, data integration and overall project execution.",
+      responsibilities: [
+        "Led website planning, UI/UX design, storytelling and complete website development.",
+        "Conducted Voyager 1 research and collected NASA resources, research materials and scientific datasets.",
+        "Managed technical implementation, data integration and overall project execution."
+      ]
     },
     {
       id: "member-2",
-      name: "[TEAM MEMBER 02]",
-      role: "Historical Research Lead & Archival Specialist",
-      callsign: "ARCHIVE-02",
-      bio: "[Editable Profile] Curates and cross-references verified NASA technical publications, JPL mission logs, and historical specifications.",
-      responsibilities: ["Technical Fact Verification", "Historical Chronology", "Citation Management"]
+      name: "Vidhi Patidar",
+      role: "Visual Design & Research Verification",
+      callsign: "DESIGN-02",
+      bio: "Generated and prepared project-related images and visual resources. Assisted in preparing supporting visual documentation. Verified research information, scientific references and visual assets.",
+      responsibilities: [
+        "Generated and prepared project-related images and visual resources.",
+        "Assisted in preparing supporting visual documentation.",
+        "Verified research information, scientific references and visual assets."
+      ]
     }
   ],
 
   // Verified Archival Credits & Documentation References
   credits: [
+    {
+      organization: "NASA Space Apps Challenge",
+      description: "Selected NASA Space Apps Challenge: \"Abandoned but Not Forgotten: Storytelling About AI\". AI tools were used during project development."
+    },
     {
       organization: "NASA Jet Propulsion Laboratory (JPL-Caltech)",
       description: "Spacecraft design documentation, technical blueprints, and public domain historical photography."
@@ -64,5 +76,5 @@ export const ABOUT_DATA = {
     }
   ],
 
-  disclaimer: "This website is an independent educational historical simulation. It is not affiliated with, sponsored by, or endorsed by NASA or the Jet Propulsion Laboratory. All NASA historical imagery and 3D geometries are utilized under NASA Media Usage Guidelines."
+  disclaimer: "This website is an independent educational historical simulation developed for the NASA Space Apps Challenge (Selected Challenge: \"Abandoned but Not Forgotten: Storytelling About AI\"). AI tools were used during project development. It is not affiliated with, sponsored by, or endorsed by NASA or the Jet Propulsion Laboratory. All NASA historical imagery and 3D geometries are utilized under NASA Media Usage Guidelines."
 };

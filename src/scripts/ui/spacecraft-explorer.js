@@ -13,6 +13,8 @@
  * - Fully responsive: two-column layout on desktop, stacked on mobile.
  */
 
+import { getAssetUrl } from '../../config/assets.js';
+
 export const SPACECRAFT_HOTSPOTS = [
   {
     id: 'hga',
@@ -302,7 +304,7 @@ export function renderSpacecraftExplorer(containerEl) {
             <div class="diagram-canvas-box" id="diagram-canvas-box">
               <!-- High-resolution authentic Voyager 1 spacecraft diagram -->
               <img 
-                src="/assets/images/spacecraft-profile.jpg.jpeg" 
+                src="${getAssetUrl('/assets/images/spacecraft-profile.jpg.jpeg')}" 
                 alt="Voyager 1 Spacecraft Labeled Schematic Diagram" 
                 class="spacecraft-diagram-image" 
                 id="spacecraft-diagram-img"

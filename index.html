@@ -95,6 +95,18 @@
             <span class="edu-badge-pulse" aria-hidden="true"></span>
             <span>EDUCATIONAL SIMULATION</span>
           </div>
+
+          <!-- Continuous Background Music ON/OFF Control -->
+          <div class="hud-audio-controls">
+            <button id="btn-audio-toggle" type="button" class="btn-audio-toggle" aria-label="Toggle continuous background audio" aria-pressed="false" title="Continuous Background Music (ON/OFF)">
+              <span class="audio-wave-icon" aria-hidden="true">
+                <span class="audio-bar bar-1"></span>
+                <span class="audio-bar bar-2"></span>
+                <span class="audio-bar bar-3"></span>
+              </span>
+              <span id="audio-toggle-label" class="audio-toggle-label font-mono">AUDIO: OFF</span>
+            </button>
+          </div>
         </header>
 
       <!-- Main Natural Vertical Content Flow -->
@@ -163,7 +175,7 @@
 
                   <!-- Fallback Image (hidden by default, displayed only if WebGL fails) -->
                   <img id="spacecraft-fallback" class="spacecraft-fallback-img" 
-                       src="/assets/images/voyager1-jpl-pia17046.jpg" 
+                       src="%BASE_URL%assets/images/voyager1-jpl-pia17046.jpg" 
                        alt="Authentic NASA/JPL rendering of the Voyager 1 spacecraft in space (Catalog PIA17046)"
                        loading="eager"
                        decoding="async"
@@ -215,7 +227,7 @@
                 <div class="milestone-disc-col" aria-label="Floating Voyager Golden Record Visual">
                   <div class="homepage-golden-disc-wrapper">
                     <div class="golden-disc-frame" title="The Voyager Golden Record (12-inch gold-plated copper phonograph disc)">
-                      <img src="/assets/images/voyager-gold-record-front.jpg.jpeg" 
+                      <img src="%BASE_URL%assets/images/voyager-gold-record-front.jpg.jpeg" 
                            alt="Authentic Voyager Golden Record phonograph disc rotating around its central axis" 
                            class="homepage-golden-disc-img" 
                            loading="lazy"
@@ -305,7 +317,7 @@
               <aside class="invitation-visual-col" aria-label="Candidate Invitation Photograph">
                 <div class="invitation-image-frame">
                   <img class="invitation-girl-img" 
-                       src="/assets/images/Anime Voyager Mission Poster.png" 
+                       src="%BASE_URL%assets/images/Anime Voyager Mission Poster.png" 
                        alt="1977 Flight Project Candidate with Voyager 1 Mission Emblem and Golden Record insignia" 
                        loading="lazy"
                        decoding="async" />
@@ -323,13 +335,13 @@
 
             <!-- Two-Column Balanced Hero: Left = Girl Mission Poster, Right = Content -->
             <div class="explore-two-column">
-              <!-- Left Column: The Complete Girl Mission Poster Artwork -->
-              <aside class="explore-visual-col" aria-label="Voyager 1 Mission Poster Artwork">
+              <!-- Left Column: Explore Landing Page Visual -->
+              <aside class="explore-visual-col" aria-label="Voyager 1 Exploration Overview">
                 <div class="explore-boy-frame explore-poster-frame">
                   <img class="explore-boy-img explore-poster-img" 
-                       src="/assets/images/Anime Voyager Mission Poster.png" 
-                       alt="Voyager 1 Mission Poster with candidate flight engineer, spacecraft, and Golden Record" 
-                       loading="lazy"
+                       src="%BASE_URL%assets/images/explore%20voyger%201%20page%20image%20.jpeg" 
+                       alt="Voyager 1 Historical Mission Exploration" 
+                       loading="lazy" 
                        decoding="async" />
                 </div>
               </aside>
@@ -396,6 +408,18 @@
                 <span class="dot-beacon" aria-hidden="true"></span>
                 <span>REMOTELY OBSERVING EARTH &bull; VOYAGER 1 DEPARTURE VECTOR (~24 BILLION KM)</span>
               </div>
+
+              <!-- Section 04 Dedicated Background Audio Control -->
+              <div class="hud-audio-controls about-audio-controls" style="margin-top: 1.25rem;">
+                <button id="btn-audio-toggle-about" type="button" class="btn-audio-toggle" aria-label="Toggle continuous background audio" aria-pressed="false" title="Continuous Background Music (ON/OFF)">
+                  <span class="audio-wave-icon" aria-hidden="true">
+                    <span class="audio-bar bar-1"></span>
+                    <span class="audio-bar bar-2"></span>
+                    <span class="audio-bar bar-3"></span>
+                  </span>
+                  <span class="audio-toggle-label font-mono">AUDIO: OFF</span>
+                </button>
+              </div>
             </header>
 
             <!-- Configurable Placeholders Strip -->
@@ -451,6 +475,17 @@
           <div class="page-meta-badge">
             <span class="badge-led" aria-hidden="true"></span>
             <span>FLIGHT HARDWARE BUILD &amp; QUALIFICATION</span>
+          </div>
+          <!-- Continuous Background Music ON/OFF Control -->
+          <div class="hud-audio-controls">
+            <button id="btn-audio-toggle-build" type="button" class="btn-audio-toggle" aria-label="Toggle continuous background audio" aria-pressed="false" title="Continuous Background Music (ON/OFF)">
+              <span class="audio-wave-icon" aria-hidden="true">
+                <span class="audio-bar bar-1"></span>
+                <span class="audio-bar bar-2"></span>
+                <span class="audio-bar bar-3"></span>
+              </span>
+              <span class="audio-toggle-label font-mono">AUDIO: OFF</span>
+            </button>
           </div>
         </header>
 
@@ -527,7 +562,7 @@
               </div>
               <div class="testing-image-frame" style="margin-top: 1.25rem;">
                 <img class="testing-nasa-img" 
-                     src="/assets/images/Voyager Test Model Configuration.jpeg" 
+                     src="%BASE_URL%assets/images/Voyager Test Model Configuration.jpeg" 
                      alt="Voyager Proof Test Model decagonal bus airframe and titanium fuel tank, JPL SAF 179 (1976)" 
                      loading="lazy"
                      decoding="async" />
@@ -556,7 +591,7 @@
               </div>
               <div class="testing-image-frame" style="margin-top: 1.25rem;">
                 <img class="testing-nasa-img" 
-                     src="/assets/images/spacecraft-profile.jpg.jpeg" 
+                     src="%BASE_URL%assets/images/spacecraft-profile.jpg.jpeg" 
                      alt="Voyager 1 3.7-meter High-Gain Antenna and decagonal bus cutaway (NASA P-18882)" 
                      loading="lazy"
                      decoding="async" />
@@ -583,15 +618,15 @@
                   <div class="stage-spec-val">Total 470 W DC power at launch, driven by 24 fuel spheres of plutonium-238 dioxide (PuO2) per RTG, converting radiogenic heat to electricity via silicon-germanium thermocouples.</div>
                 </div>
               </div>
-              <div class="configurable-image-slot">
-                <svg class="slot-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="2"/>
-                  <circle cx="8.5" cy="8.5" r="1.5"/>
-                  <polyline points="21 15 16 10 5 21"/>
-                </svg>
-                <div class="slot-title">ASSET SLOT: RTG BOOM INTEGRATION</div>
-                <span class="slot-status-tag">CONFIGURABLE ASSET SLOT</span>
-                <span class="slot-note">[Archival photo placeholder reserved for verified MHW-RTG mounting documentation]</span>
+              <div class="testing-image-frame" style="margin-top: 1.25rem;">
+                <img class="testing-nasa-img" 
+                     src="%BASE_URL%assets/images/Voyager%E2%80%99s%20RTG.png" 
+                     alt="Voyager Radioisotope Thermoelectric Generator (RTG) Assembly and Deployment Testing" 
+                     loading="lazy"
+                     decoding="async" />
+                <div class="testing-img-caption">
+                  <strong>NASA/JPL Archives</strong> &bull; Multi-Hundred-Watt Radioisotope Thermoelectric Generator (MHW-RTG) Integration &bull; <strong>Cape Canaveral / SAF 179</strong>
+                </div>
               </div>
             </article>
 
@@ -612,15 +647,15 @@
                   <div class="stage-spec-val">Narrow/wide-angle Vidicon cameras (ISS), infrared interferometer (IRIS), ultraviolet spectrometer (UVS), photopolarimeter (PPS), and low/high-field triaxial fluxgate magnetometers (MAG).</div>
                 </div>
               </div>
-              <div class="configurable-image-slot">
-                <svg class="slot-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="2"/>
-                  <circle cx="8.5" cy="8.5" r="1.5"/>
-                  <polyline points="21 15 16 10 5 21"/>
-                </svg>
-                <div class="slot-title">ASSET SLOT: SCAN PLATFORM MOUNTING</div>
-                <span class="slot-status-tag">CONFIGURABLE ASSET SLOT</span>
-                <span class="slot-note">[Archival photo placeholder reserved for verified Science Instrument testing]</span>
+              <div class="testing-image-frame" style="margin-top: 1.25rem;">
+                <img class="testing-nasa-img" 
+                     src="%BASE_URL%assets/images/Voyager%20Magnetometer%20Boom%20Extension%20testing%20(2).jpg.jpeg" 
+                     alt="Voyager Magnetometer Boom Extension testing at NASA JPL" 
+                     loading="lazy"
+                     decoding="async" />
+                <div class="testing-img-caption">
+                  <strong>NASA/JPL Archives</strong> &bull; 13-Meter Astromast Magnetometer Boom Extension &amp; Articulated Scan Platform Testing &bull; <strong>JPL Spacecraft Assembly Facility</strong>
+                </div>
               </div>
             </article>
 
@@ -643,7 +678,7 @@
               </div>
               <div class="testing-image-frame" style="margin-top: 1.25rem;">
                 <img class="testing-nasa-img" 
-                     src="/assets/images/pia21740-golden-record-installation.jpg" 
+                     src="%BASE_URL%assets/images/pia21740-golden-record-installation.jpg" 
                      alt="NASA JPL technicians securing the Golden Record protective cover to Voyager 1 (1977, NASA PIA21740)" 
                      loading="lazy"
                      decoding="async" />
@@ -672,7 +707,7 @@
               </div>
               <div class="testing-image-frame" style="margin-top: 1.25rem;">
                 <img class="testing-nasa-img" 
-                     src="/assets/images/Voyager%E2%80%99s%20Launch%20Vehicle%20Adapter.jpeg" 
+                     src="%BASE_URL%assets/images/Voyager%E2%80%99s%20Launch%20Vehicle%20Adapter.jpeg" 
                      alt="Centaur Conical Launch Vehicle Adapter & Spacecraft Separation Interface Ring" 
                      loading="lazy"
                      decoding="async" />
@@ -693,7 +728,7 @@
           <div class="mass-budget-strip" style="margin-bottom: 3.5rem;">
             <div class="testing-image-frame" style="background: rgba(14, 18, 30, 0.95); padding: 1rem; border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 4px;">
               <img class="testing-nasa-img" 
-                   src="/assets/images/Voyager%20Test%20Model%20Configuration.jpeg" 
+                   src="%BASE_URL%assets/images/Voyager%20Test%20Model%20Configuration.jpeg" 
                    alt="Voyager Proof Test Model structural decagonal airframe in JPL SAF 179 cleanroom high bay" 
                    loading="lazy"
                    decoding="async"
@@ -705,7 +740,7 @@
 
             <div class="testing-image-frame" style="background: rgba(14, 18, 30, 0.95); padding: 1rem; border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 4px;">
               <img class="testing-nasa-img" 
-                   src="/assets/images/voyager7.gif" 
+                   src="%BASE_URL%assets/images/voyager7.gif" 
                    alt="Spacecraft Assembly Facility Building 179 Cleanroom High Bay" 
                    loading="lazy"
                    decoding="async"
@@ -727,7 +762,7 @@
             <div class="testing-two-column">
               <div class="testing-image-frame">
                 <img class="testing-nasa-img" 
-                     src="/assets/images/pia21734.jpg" 
+                     src="%BASE_URL%assets/images/pia21734.jpg" 
                      alt="Voyager Proof Test Model inside the JPL 25-Foot Space Simulator Chamber on December 3, 1976 (NASA PIA21734)" 
                      loading="lazy"
                      decoding="async" />
@@ -778,6 +813,17 @@
           <div class="page-meta-badge">
             <span class="badge-led" aria-hidden="true"></span>
             <span>HISTORICAL RESEARCH</span>
+          </div>
+          <!-- Continuous Background Music ON/OFF Control -->
+          <div class="hud-audio-controls">
+            <button id="btn-audio-toggle-explore" type="button" class="btn-audio-toggle" aria-label="Toggle continuous background audio" aria-pressed="false" title="Continuous Background Music (ON/OFF)">
+              <span class="audio-wave-icon" aria-hidden="true">
+                <span class="audio-bar bar-1"></span>
+                <span class="audio-bar bar-2"></span>
+                <span class="audio-bar bar-3"></span>
+              </span>
+              <span class="audio-toggle-label font-mono">AUDIO: OFF</span>
+            </button>
           </div>
         </header>
 
