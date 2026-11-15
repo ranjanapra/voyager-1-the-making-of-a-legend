@@ -1,0 +1,160 @@
+         ---------------------------------------------------------
+
+                        NSSDC Master Catalog Display
+                                 Experiment
+
+         ---------------------------------------------------------
+
+Triaxial Fluxgate Magnetometer (MAG)
+
+NSSDC ID: 77-084A-05
+Mission Name: Voyager 1
+Principal Investigator: Ness
+-------------------
+Experiment mass: 5.60 kg
+Average experiment power: 2.20 W
+Average experiment bit rate: 0.12 kbps
+-------------------
+
+Description
+
+This experiment was designed to investigate the magnetic fields of Jupiter
+and Saturn, the solar-wind interaction with the magnetospheres of these
+planets, and the interplanetary magnetic field out to the solar wind
+boundary with the interstellar magnetic field and beyond, if crossed. The
+investigation was carried out using two high-field and two low-field
+triaxial fluxgate magnetometers. Data accuracy of the interplanetary fields
+was plus or minus 0.1 nT, and the range of measurements was from 0.01 nT to
+2.E-3 T.
+                            -------------------
+
+Discipline(s)
+
+    Planetary Science/Fields and Particles
+    Space Physics/Heliospheric Studies
+
+         ---------------------------------------------------------
+
+                        NSSDC Master Catalog Display
+                            Experiment Personnel
+
+         ---------------------------------------------------------
+
+Triaxial Fluxgate Magnetometer (MAG)
+
+NSSDC ID: 77-084A-05
+
+Principal Investigator
+
+Dr. Norman F. Ness
+Bartol Research Institute
+University of Delaware
+217 Sharp Laboratory
+Newark, DE   19716
+
+Electronic Mail
+  NFNESS@BARTOL.UDEL.EDU (INTERNET)
+-----
+
+Co-Investigator
+
+Dr. Ronald P. Lepping
+GSFC-Code 696
+
+Electronic Mail
+  RPL@LEPRPL.GSFC.NASA.GOV (INTERNET)
+  LEPVAX::U5RPL (NSI/DECNET)
+-----
+
+Dr. Kenneth W. Behannon
+Retired, Originally at NASA Goddard Space Flight Center
+-----
+
+Dr. Leonard F. Burlaga
+GSFC-Code 692
+
+Electronic Mail
+  LEPVAX::U2LEB (NSI/DECNET)
+-----
+
+Prof. Fritz M. Neubauer
+Institut fur Geophysik und
+Meteorologie
+Universitat zu Koln
+Albertus-Magnus-Platz
+50931 Koln
+Germany
+
+Electronic Mail
+  NEUBAUER@GEO.UNI-KOELN.DE (INTERNET)
+-----
+
+Dr. Mario H. Acuna
+GSFC-Code 695
+
+Electronic Mail
+  U2MHA@LEPVAX.GSFC.NASA.GOV (INTERNET)
+  LEPVAX::U2MHA (NSI/DECNET)
+-----
+
+NSSDC Contact
+
+Dr. Edwin V. Bell, II
+Hughes STX Corporation
+Suite 400
+7701 Greenbelt Road
+Greenbelt, MD   20770
+
+Electronic Mail
+  BELL@NSSDC (BITNET)
+  BELL@NSSDC.GSFC.NASA.GOV (INTERNET)
+  NSSDCA::BELL (NSI/DECNET)
+-----
+
+         ---------------------------------------------------------
+
+                        NSSDC Master Catalog Display
+                       Experiment Selected References
+
+         ---------------------------------------------------------
+
+Triaxial Fluxgate Magnetometer (MAG)
+
+NSSDC ID: 77-084A-05
+
+  1. Acuna, M. H., Behannon, K. W., and Connerney, J. E. P., Jupiter's
+     magnetic field and magnetosphere, In--Physics of the Jovian
+     Magnetosphere, edited by A. J. Dessler, pp. 1--50, Cambridge U.
+     Press., Cambridge, UK, 1983.
+  2. Behannon, K. W., Acuna, M. H., Burlaga, L. F., Lepping, R. P., Ness,
+     N. F., and Neubauer, F. M., Magnetic field experiment for Voyagers 1
+     and 2, Space Sci. Rev., 21, No. 3, 235-257, Dec. 1977.
+  3. Connerney, J. E. P., Acuna, M. H., and Ness, N. F., Currents in
+     Saturn's magnetosphere, J. Geophys. Res., 88, No. A11, 8779-8789, Nov.
+     1983.
+  4. Connerney, J. E. P., Acuna, M. H., and Ness, N. F., Modeling the
+     Jovian current sheet and inner magnetosphere, J. Geophys. Res., 86,
+     No. A10, 8370-8384, Sept. 1981.
+  5. Ness, N. F., Acuna, M., Lepping, R., Burlaga, L., and Neubauer, F.,
+     Magnetic field studies at Jupiter by Voyager 1 - preliminary results,
+     Science, 204, 982-987, June 1979.
+  6. Ness, N. F., Acuna, M. H., Lepping, R. P., Connerney, J. E. P.,
+     Behannon, K. W., Burlaga, L. F., and Neubauer, F. M., Magnetic field
+     studies by Voyager 1: Preliminary results at Saturn, Science, 212, No.
+     4491, 211-217, Apr. 1981.
+
+
+---------------------------------------------------------------------------
+For questions about this experiment, please contact:
+Dr. Edwin V. Bell, II, bell@nssdc.gsfc.nasa.gov
+
+For questions about the NSSDC's information systems, please contact:
+Dr. James Thieman, thieman@nssdca.gsfc.nasa.gov, (301)286-9790
+National Space Science Data Center, Code 633.2
+NASA/Goddard Space Flight Center, Greenbelt, MD 20771
+---------------------------------------------------------------------------
+
+NASA Official: J. H. King, king@nssdca.gsfc.nasa.gov
+Last Updated: 1996-03-08
+Output Generated: 1997-01-15
+Programming by: E. V. Bell, II

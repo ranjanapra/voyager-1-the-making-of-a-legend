@@ -1,0 +1,5 @@
+INVALID_DATA_HTML — EXCLUDED FROM SCIENTIFIC ANALYSIS
+
+Status: QUARANTINED
+Reason: File contains raw HTML webpage source (351,877 bytes) from an HTTP web portal redirect rather than scientific observations.
+Preservation: Original file preserved byte-for-byte; excluded from all telemetry, data lab, and scientific calculation pipelines.

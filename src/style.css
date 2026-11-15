@@ -1,0 +1,5 @@
+/* ==========================================================================
+   VOYAGER 1 — 1977 JPL ENGINEERING ENVIRONMENT
+   Canonical Stylesheet Re-export (prevents legacy template conflict)
+   ========================================================================== */
+@import './styles/main.css';

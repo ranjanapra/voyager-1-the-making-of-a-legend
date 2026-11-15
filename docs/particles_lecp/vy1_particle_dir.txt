@@ -1,0 +1,17 @@
+File: VY1_PARTICLE_DIR.txt                   Version: NSSDC 12/29/98 JFC
+------------------------------------------------------------------------
+
+Interplanetary Energetic Particle Data from Voyager 1
+
+Directory  Description
+---------  -----------
+
+CRS        Cosmic Ray (CRS) Experiment - six hour averages of rates & 
+           selected fluxes
+
+LECP       Low Energy Charged Particle (LECP) Experiment - daily averages
+
+
+See *_DIR.txt and *_FMT.txt files in each directory for further 
+information.
+

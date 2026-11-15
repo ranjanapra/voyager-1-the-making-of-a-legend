@@ -1,0 +1,211 @@
+         ---------------------------------------------------------
+
+                        NSSDC Master Catalog Display
+                                 Experiment
+
+         ---------------------------------------------------------
+
+Plasma Spectrometer (PLS)
+
+NSSDC ID: 77-084A-06
+Mission Name: Voyager 1
+Principal Investigator: Belcher
+-------------------
+Experiment mass: 9.90 kg
+Average experiment power: 8.10 W
+Average experiment bit rate: 0.03 kbps
+-------------------
+
+Description
+
+The plasma investigation made use of two Faraday-cup detectors, one pointed
+along the earth-spacecraft line and one at right angles to this line. The
+earth-pointing detector determined the macroscopic properties of the plasma
+ions, obtaining accurate values of their velocity, density, and pressure.
+Three sequential energy scans were employed with (delta E)/E equal to 20,
+7.2, and 1.8%, allowing a coverage from subsonic to highly supersonic flow.
+The side-looking Faraday cup measured electrons in the energy range from 5
+eV to 1 keV.
+                            -------------------
+
+Discipline(s)
+
+    Planetary Science/Fields and Particles
+    Space Physics/Heliospheric Studies
+
+         ---------------------------------------------------------
+
+                        NSSDC Master Catalog Display
+                            Experiment Personnel
+
+         ---------------------------------------------------------
+
+Plasma Spectrometer (PLS)
+
+NSSDC ID: 77-084A-06
+
+Principal Investigator
+
+Prof. John W. Belcher
+Massachusetts Institute of Technology
+37-695
+Cambridge, MA   02139
+
+Electronic Mail
+  JWB@SPACE.MIT.EDU (INTERNET)
+-----
+
+Co-Investigator
+
+Dr. James D. Sullivan
+Massachusetts Institute of Technology
+NW16-166
+Cambridge, MA   02139
+
+Electronic Mail
+  SULLIVAN@BU.EDU (INTERNET)
+  MIT::SULLIVAN (MFENET)
+  44390::MITL32::SULLIVAN (NSI/DECNET)
+-----
+
+Dr. Keith W. Ogilvie
+GSFC-Code 692
+
+Electronic Mail
+  U2KWO@LEPVAX.GSFC.NASA.GOV (INTERNET)
+  LEPVAX::U2KWO (NSI/DECNET)
+-----
+
+Dr. Leonard F. Burlaga
+GSFC-Code 692
+
+Electronic Mail
+  LEPVAX::U2LEB (NSI/DECNET)
+-----
+
+Prof. George L. Siscoe
+Center for Space Physics
+Boston University
+725 Commonwealth Avenue
+Boston, MA   02215
+
+Electronic Mail
+  SISCOE@BUASTA.BU.EDU (INTERNET)
+-----
+
+Prof. Vytenis M. Vasyliunas
+Max-Planck-Institut fur Aeronomie
+Postfach 20
+37191 Katlenburg
+Germany
+
+-----
+
+Dr. Alan J. Lazarus
+Room 37-687
+Center for Space Research
+Massachusetts Institute of Technology
+Cambridge, MA   02139
+
+Electronic Mail
+  AJL@SPACE.MIT.EDU (INTERNET)
+-----
+
+Dr. Richard E. Hartle
+GSFC-Code 910
+
+Electronic Mail
+  RHARTLE@MITE.GSFC.NASA.GOV (INTERNET)
+-----
+
+Dr. Arthur J. Hundhausen
+High Altitude Observatory
+National Center for Atmospheric
+Research
+Boulder, CO   80307
+
+-----
+
+Dr. S. Olbert
+Retired, Originally at Massachusetts Institute of Technology
+-----
+
+Dr. Jack D. Scudder
+Department of Physics and Astronomy
+University of Iowa
+Iowa City, IA   52242-1410
+
+Electronic Mail
+  LEPVAX::U2JDS (NSI/DECNET)
+-----
+
+Dr. Christoph K. Goertz
+Deceased, Originally at University of Iowa
+-----
+
+NSSDC Contact
+
+Dr. Edwin V. Bell, II
+Hughes STX Corporation
+Suite 400
+7701 Greenbelt Road
+Greenbelt, MD   20770
+
+Electronic Mail
+  BELL@NSSDC (BITNET)
+  BELL@NSSDC.GSFC.NASA.GOV (INTERNET)
+  NSSDCA::BELL (NSI/DECNET)
+-----
+
+Former Principal Investigator
+
+Prof. Herbert S. Bridge
+Deceased, Originally at Massachusetts Institute of Technology
+-----
+
+         ---------------------------------------------------------
+
+                        NSSDC Master Catalog Display
+                       Experiment Selected References
+
+         ---------------------------------------------------------
+
+Plasma Spectrometer (PLS)
+
+NSSDC ID: 77-084A-06
+
+  1. Bridge, H. S., Belcher, J. W., Butler, R. J., Lazarus, A. J.,
+     Mavretic, A. M., Sullivan, J. D., Siscoe, G. L., and Vasyliunas, V.
+     M., The plasma experiment on the 1977 Voyager mission, Space Sci.
+     Rev., 21, No. 3, 259-287, Dec. 1977.
+  2. Bridge, H. S., Belcher, J. W., Lazarus, A. J., Olbert, S., Sullivan,
+     J. D., Bagenal, F., Gazis, P. R., Hartle, R. E., Ogilvie, K. W.,
+     Scudder, J. D., Sittler, E. C., Eviatar, A., Siscoe, G. L., Goertz, C.
+     K., and Vasyliunas, V. M., Plasma observations near Saturn: Initial
+     results from Voyager 1, Science, 212, No. 4491, 217-224, Apr. 1981.
+  3. Bridge, H. S., Belcher, J. W., Lazarus, A. J., Sullivan, J. D.,
+     McNutt, R. L., Bagenal, F., Scudder, J. D., Sittler, E. C., Siscoe, G.
+     L., Vasyliunas, V. M., Goertz, C. K., and Yeates, C. M., Plasma
+     observations near Jupiter: Initial results from Voyager 1, Science,
+     204, No. 4396, 987-991, June 1979.
+  4. Lazarus, A. J., and McNutt, R. L., Jr., Low-energy plasma ion
+     observations in Saturn's magnetosphere, J. Geophys. Res., 88, No. A11,
+     8831-8846, Nov. 1983.
+  5. McNutt, R. L., Jr., Belcher, J. W., and Bridge, H. S., Positive ion
+     observations in the middle magnetosphere of Jupiter, J. Geophys. Res.,
+     86, No. A10, 8319-8342, Sept. 1981.
+
+---------------------------------------------------------------------------
+For questions about this experiment, please contact:
+Dr. Edwin V. Bell, II, bell@nssdc.gsfc.nasa.gov
+
+For questions about the NSSDC's information systems, please contact:
+Dr. James Thieman, thieman@nssdca.gsfc.nasa.gov, (301)286-9790
+National Space Science Data Center, Code 633.2
+NASA/Goddard Space Flight Center, Greenbelt, MD 20771
+---------------------------------------------------------------------------
+
+NASA Official: J. H. King, king@nssdca.gsfc.nasa.gov
+Last Updated: 1995-09-07
+Output Generated: 1997-01-21
+Programming by: E. V. Bell, II

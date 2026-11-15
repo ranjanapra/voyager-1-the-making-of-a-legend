@@ -1,0 +1,489 @@
+/* ==========================================================================
+   VOYAGER 1 — INDEPENDENT BUILD EXPERIENCE PAGE (PAGE 2)
+   Architecture: Dedicated full-page route (#build) with independent vertical scrolling
+   Theme: Golden & Amber Visual Identity in Deep Space
+   ========================================================================== */
+
+.independent-page-view {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  box-sizing: border-box;
+  padding: 1.5rem 2rem 6rem 2rem;
+  background: radial-gradient(ellipse at 50% 15%, rgba(45, 30, 10, 0.45) 0%, rgba(6, 10, 20, 0.8) 65%, var(--space-void) 100%);
+}
+
+/* Sticky Page Top Bar with Top-Left Back Control */
+.page-top-bar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto 3rem auto;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(245, 158, 11, 0.25);
+  background: rgba(4, 7, 14, 0.94);
+  backdrop-filter: blur(14px);
+  border-radius: 4px;
+}
+
+/* Prominent Top-Left Back Button */
+.btn-page-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1.4rem;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid #fbbf24;
+  color: #fbbf24;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s var(--ease-fast);
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.2);
+}
+
+.btn-page-back:hover {
+  background: #fbbf24;
+  color: #040711;
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.5);
+  transform: translateX(-3px);
+}
+
+.page-meta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+  color: #cbd5e1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: rgba(14, 18, 30, 0.75);
+  padding: 0.4rem 0.85rem;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: 2px;
+}
+
+.page-meta-badge .badge-led {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #f59e0b;
+  box-shadow: 0 0 8px #f59e0b;
+}
+
+/* Page Container */
+.build-page-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Hero Deck */
+.build-hero-deck {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.build-phase-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #fbbf24;
+  text-transform: uppercase;
+  padding: 0.35rem 0.85rem;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: 2px;
+  margin-bottom: 1.25rem;
+}
+
+.build-main-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #ffffff;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 25px rgba(245, 158, 11, 0.25);
+}
+
+.build-subtitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: #fef08a;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.build-lead-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* Section Headings */
+.build-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+  border-bottom: 1px solid rgba(245, 158, 11, 0.25);
+  padding-bottom: 0.85rem;
+}
+
+.build-section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.build-section-meta {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #a8a29e;
+  letter-spacing: 0.08em;
+}
+
+/* Mass Budget Breakdown Strip */
+.mass-budget-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 3.5rem;
+}
+
+.mass-metric-card {
+  background: rgba(12, 16, 28, 0.85);
+  border: 1px solid var(--space-border);
+  border-left: 3px solid #f59e0b;
+  border-radius: 4px;
+  padding: 1.25rem 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.mass-metric-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #f59e0b;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.mass-metric-value {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.mass-metric-desc {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  line-height: 1.4;
+}
+
+/* 6 Assembly Stages Grid */
+.assembly-stages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.85rem;
+  margin-bottom: 4rem;
+}
+
+.assembly-stage-card {
+  background: rgba(12, 16, 28, 0.88);
+  border: 1px solid var(--space-border);
+  border-radius: 4px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  backdrop-filter: blur(12px);
+  transition: all 0.25s var(--ease-fast);
+}
+
+.assembly-stage-card:hover {
+  border-color: #fbbf24;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.75), 0 0 25px rgba(245, 158, 11, 0.2);
+  transform: translateY(-3px);
+}
+
+.stage-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.stage-number-badge {
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+  font-weight: 700;
+  color: #fbbf24;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.6rem;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: 2px;
+}
+
+.stage-component-tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+}
+
+.stage-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.stage-card-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.stage-spec-box {
+  background: rgba(8, 12, 22, 0.75);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: 3px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.stage-spec-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #f59e0b;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.stage-spec-val {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: #e2e8f0;
+  line-height: 1.45;
+}
+
+/* Image Slots inside Stages */
+.stage-image-slot {
+  width: 100%;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.stage-slot-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border-radius: 3px;
+  border: 1px solid var(--space-border);
+}
+
+/* Configurable Image Slot / Placeholder Card */
+.configurable-image-slot {
+  background: rgba(10, 14, 24, 0.9);
+  border: 1px dashed rgba(245, 158, 11, 0.35);
+  border-radius: 4px;
+  padding: 1.75rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  min-height: 160px;
+}
+
+.slot-icon {
+  color: #fbbf24;
+  opacity: 0.85;
+}
+
+.slot-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.slot-status-tag {
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+  font-weight: 700;
+  color: #f59e0b;
+  letter-spacing: 0.08em;
+  background: rgba(245, 158, 11, 0.1);
+  padding: 0.25rem 0.6rem;
+  border-radius: 2px;
+}
+
+.slot-note {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  line-height: 1.4;
+  max-width: 440px;
+}
+
+/* ==========================================================================
+   ENGINEERING TESTING SHOWCASE (NASA PIA21734 INTEGRATION)
+   ========================================================================== */
+
+.testing-showcase-panel {
+  background: linear-gradient(135deg, rgba(12, 16, 28, 0.94) 0%, rgba(22, 18, 12, 0.92) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  border-left: 4px solid #f59e0b;
+  border-radius: 4px;
+  padding: 2.25rem;
+  margin-bottom: 4rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 35px rgba(245, 158, 11, 0.15);
+  backdrop-filter: blur(14px);
+}
+
+.testing-two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.testing-image-frame {
+  position: relative;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: 4px;
+  overflow: hidden;
+  background: #000000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+.testing-nasa-img {
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  display: block;
+}
+
+.testing-img-caption {
+  padding: 0.85rem 1rem;
+  background: rgba(6, 10, 20, 0.9);
+  border-top: 1px solid rgba(245, 158, 11, 0.2);
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.testing-img-caption strong {
+  color: #fbbf24;
+}
+
+.testing-details-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.testing-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+  font-weight: 700;
+  color: #fbbf24;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+}
+
+.testing-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.testing-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.testing-specs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.testing-spec-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: #e2e8f0;
+  line-height: 1.5;
+}
+
+.testing-spec-item .bullet {
+  color: #f59e0b;
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 980px) {
+  .testing-two-column {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .independent-page-view {
+    padding: 1rem 1rem 4rem 1rem;
+  }
+}

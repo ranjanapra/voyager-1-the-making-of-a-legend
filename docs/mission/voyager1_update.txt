@@ -1,0 +1,260 @@
+  BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Voyager 1 and 2 Cosmic Ray (CRS) experiment data in six hour and daily averages 
+have been updated through June 30, 2008. These data are located at 
+voyagerN/particle/crs (N=1,2).
+                                                              09/22/2008 JFC
+  BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Voyager 1 and 2 Cosmic Ray (CRS) experiment data in daily averages have been 
+expanded to earlier years of 1996 to 1999. These data are located at 
+voyagerN/particle/crs (N=1,2).
+                                                               02/06/2006 JFC
+  BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Voyager 1 and 2 Cosmic Ray (CRS) experiment data in six hour and daily averages 
+have been updated for July 1, 2004 to June 30, 2005. These data are located at 
+voyagerN/particle/crs (N=1,2).
+                                                               12/02/2005 JFC
+  BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Voyager 1 and 2 hourly average data sets for the interplanetary magnetic field
+during 2000 to 2004 are now in the respective directories 
+voyagerN/magnetic_fields/ip_1hour_ascii/1990-2004 for these two spacecraft with
+N = 1,2. Earlier hourly data are in the 1977-1989 directories. Note the different
+data formats for the earlier and later data sets. Please read the header
+information in each yearly data file of the later data before making use of these.
+ 
+                                                               11/29/2005 JFC
+  BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Voyager 1 and 2 hourly average data sets for the interplanetary magnetic field
+during 1990 to 1999 are now in the respective directories 
+voyagerN/magnetic_fields/ip_1hour_ascii/1990-1999 for these two spacecraft with
+N = 1,2. Earlier hourly data are in the 1977-1989 directories. Note the different
+data formats for the earlier and later data sets. Please read the header
+information in each yearly data file of the later data before making use of these.
+ 
+                                                               07/07/2005 JFC
+  BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Voyager 1 and 2 Low Energy Charged Particle (LECP) data sets at hourly, daily, 
+and 27-day time resolutions in ascii table format have been added from the LECP 
+web site at APL/JHU from 1977 through August 2004. Other data sets in CVS (comma
+separated variable) format at hourly and daily resolution will be added soon.
+These data are located at voyagerN/particle/lecp (N=1,2).
+                                                               09/29/2004 JFC
+  BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Voyager 1 and 2 Cosmic Ray (CRS) experiment data in six hour averages have been
+updated for Jan. 1 to June 30, 2004. New data sets in the same format with daily
+averages of the same parameters have now been added for years 2000 to 2004, the
+latter also being through June 30. These data are located at 
+voyagerN/particle/crs (N=1,2).
+                                                               09/17/2004 JFC
+  BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Please note that all magnetic field data are now in the magnetic_fields directory.
+These include the hourly and 48-sec ascii data sets, and the 1.9-9.6-48 second
+summary data set. The latter consists of files originally provided in VMS binary
+format and accompanied by specific file structure or attribute files in ascii
+format for each binary file. Information in the attribute files is needed to
+read the data set files staged here on a non-VMS platform. Please contact NSSDC
+for more information on procedures for using the VMS binary files.
+
+                                                               03/23/2004 JFC
+  BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Voyager 1 and 2 Cosmic Ray (CRS) experiment data in six hour averages have been
+updated for January to December 2003. These data are located at 
+voyagerN/particle/crs (N=1,2).
+                                                               03/15/2004 JFC
+  BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Voyager 1 and 2 Cosmic Ray (CRS) experiment data in six hour averages have been
+updated for July to December 2002. These data are located at 
+voyagerN/particle/crs (N=1,2).
+                                                               07/16/2003 JFC
+  BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Voyager 1 and 2 Cosmic Ray (CRS) experiment data in six hour averages have been
+updated for Jan. - June 2002. These data are located at 
+voyagerN/particle/crs (N=1,2).
+                                                               02/03/2003 JFC
+  BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Voyager 1 and 2 Cosmic Ray (CRS) experiment data in six hour averages have been
+updated for July - Dec. 2001. These data are located at 
+voyagerN/particle/crs (N=1,2).
+                                                               09/19/2002 JFC
+  BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Voyager 1 and 2 Cosmic Ray (CRS) experiment data in six hour averages have been
+updated for Jan. 2000 through June 2001. These data are located at 
+voyagerN/particle/crs (N=1,2).
+                                                               02/04/2002 JFC
+ BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Voyager 1 and 2 interplanetary magnetic field data sets at 48-second 
+resolution and in ascii format are now available. These data are located 
+at voyager/voyagerN/mag/48s_ascii/ for N= 1 or 2.
+                                                               11/24/2001 JFC
+  BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Voyager 1 and 2 Cosmic Ray (CRS) experiment data in six hour averages have been
+updated for 1999. These data are located at voyagerN/particle/crs (N=1,2).
+
+                                                               06/17/2001 JFC
+ 
+ BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Voyager 1 and 2 Cosmic Ray (CRS) experiment data in six hour averages have been
+updated for 1998. These data are located at voyagerN/particle/crs (N=1,2).
+
+                                                               12/06/1999 JFC
+
+ BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+This Voyager 1 update file has been extracted from the old aaupdate.doc file at
+the VMS anonymous FTP site for all COHO-related datasets. Directory names for
+current Voyager 1/2 data sets have been changed for new locations at this new
+site. Note that all directory and file names at this site are actually in lower
+case, even though they are given below in upper case.
+                                                               2/24/99 JFC
+
+ BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Voyager 1 and 2 Cosmic Ray (CRS) experiment data in six hour averages have been
+updated for 1997. These data are located at voyagerN/particle/crs (N=1,2).
+
+                                                               11/06/98 JFC
+
+ BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+New data sets from the Voyager 1 and 2 solar wind plasma experiments for high
+resolution solar wind parameters have been added to the new VOYAGER_n/PLASMA/
+HIRES subdirectories for the same date intervals as the hourly data,
+which now extend through 1980 for Voyager 1 and 1997 for Voyager 2.
+
+                                                               2/4/98 JFC
+
+ BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+The first Year 2000 problem has been identified in the COHO data base! The
+Voyager 1 and 2 trajectory data files in VOYAGER_1/TRAJ/SSC and
+VOYAGER_2/... incorrectly have 365 days (vs. 366) in year 2000, because day 
+60 was assigned to both Feb. 29 and March 1. This problem will be corrected 
+shortly and does not occur elsewhere in COHO to our knowledge.  
+                                                               1/15/98 JFC
+
+ BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Six-hour average cosmic ray data from the Cosmic Ray (CRS) experiment on the
+Voyager 1 and 2 spacecraft have now been updated for 1994-1996. 
+                                                                3/20/97 JFC
+
+ BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+The MIT Plasma Group has provided reprocessed and updated solar wind data
+(hourly averages in ASCII format with SEDR ephemeris data also included) for
+1977-1980 (Voyager 1) and 1977-1995 (Voyager 2). These data were obtained from
+their anonymous FTP site at space.mit.edu (cd /pub/plasma) and are also
+available via the World Wide Web. Look under cosmic/heliospheric physics on the
+Space Physics Data System at http://spds.nasa.gov/ for a link to their site. 
+The new COHO data are in subdirectories HOUR and SEDR within VOYAGER1/PLASMA/
+and VOYAGER2/PLASMA/... 
+                                                               11/16/95 JFC
+
+ BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+
+Updated hourly average ASCII versions of Voyager 1 and 2 plasma data sets from
+MIT can be obtained via the Voyager MIT Plasma home page on WWW at 
+http://web.mit.edu/afs/athena/org/s/space/www/voyager.html.
+
+Via Internet FTP, the same data can be accessed at an anonymous FTP directory
+(like COHO) located at anonymous@space.mit.edu under directory 
+pub/plasma/vgr .
+                                                                5/12/95 JFC
+
+ BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Daily averages of the Voyager 1 and 2 LECP experiment data have recently been
+extended through the end of 1994. See subdirectories VOYAGER1/PARTICLE/LECP and
+VOYAGER2/...
+                                                                JFC/02-07-95
+
+ BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Rob Decker of APL/JHU has just sent us the daily averages for twelve proton
+counting rate channels, covering energies from 30 keV to 20 MeV and above
+70 MeV, from the Voyager 1 and 2 Low Energy Charged Particle Experiment (LECP).
+These data cover the inclusive dates (yyyy/ddd) 1977/250 through 1993/364.
+The Voyager 1 and 2 LECP data are in the COHO subdirectories VOYAGER1/PARTICLE/
+LECP and VOYAGER2/... 
+                                                                JFC/01-28-94
+
+ BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+New additions to COHO now include Voyager 1 and 2 cosmic ray experiment data 
+sets (VOYAGER1/PARTICLE/CRS and VOYAGER2/...) for launch - 1992. 
+                                                                JFC/01-23-95
+
+ BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Although many users need heliographic spacecraft coordinates with latitudes
+calculated with respect to the solar equator, some may not want Carrington
+longitudes which are in a system fixed to the rotating Sun. Inertial
+longitudes are defined with respect to the ascending node of the solar equator
+on the Ecliptic; this node was at solar ecliptic longitude +74.367 degrees
+as of 1 Jan. 1900 at 1200 UT and its longitude increases by 1.4 degrees per
+century due to precession of the equinoxes in the solar ecliptic system. 
+
+Heliographic inertial longitudes have been added to the trajectory data files 
+in COHO for all missions except Helios 1/2 and Pioneer Venus Orbiter; these 
+latter missions will be done later.
+                                                                JFC/11-16-93
+
+  BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+  The format files for the Voyager 1 and 2 magnetometer data have been revised
+  to clarify the definition of the latitude and longitude vector angles in
+  spacecraft-centered heliographic coordinates, otherwise known as RTN.
+  See VOYAGER1/MAG/HOUR/VY1MAG_1H_FMT.txt and VOYAGER2/... for details.
+
+                                                               JFC/03-07-93
+
+ BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  
+  Many new datasets have been recently loaded into COHO. These include 
+  heliocentric coordinates from the [ACTIVE.HELIO]HELICOOR and PLANET programs 
+  for Galileo/Cruise & Jupiter, ICE, IMP-8/Earth, PVO/Venus, Ulysses, and 
+  Voyager 1/2. The first energetic particle data have been loaded into COHO 
+  and were taken from newly archived data (submitted by Bruce Randall) of the 
+  University of Iowa Geiger-Mueller Tube (GTT) experiment on Pioneer 10. The 
+  Voyager 2 plasma experiment data have been revised and updated through 1990,
+  based on a provisional data submission by John Belcher of MIT. Bon Appetit!
+
+                                                  J. F. Cooper  12/8/92A
+
+ BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ The Voyager 1/2 plasma experiment P.I., Prof. J. Belcher of MIT, advises that
+ recent analysis of the data finds instances of undersampling in low density
+ regions associated with high speed solar wind streams, particularly in
+ Voyager 2 data after 1989. All the Voyager 1 and 2 data are currently
+ being reviewed and the NSSDC archived datasets will be updated in the
+ near future. Until then, the Voyager plasma data should be used cautiously,
+ particularly in regard to analysis of solar cycle effects, and it would
+ be advisable to contact Prof. Belcher before publication of any analysis
+ using data currently in COHO or in the NSSDC tape archive. See the *_FMT.txt
+ files in VOYAGER1/PLASMA/HOUR and VOYAGER2/... for his direct statement.
+ {These data were later superceded in 1995} 
+                                                       J. F. Cooper 8/31/92
+
+ BULLETIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ Voyager 1 Plasma Analyzer data for 1977-09-07 thru 1980-11-03 are now
+ available. {These data were later superceded in 1995} 
+                                                      J. F. Cooper 7/16/92
+ 
+

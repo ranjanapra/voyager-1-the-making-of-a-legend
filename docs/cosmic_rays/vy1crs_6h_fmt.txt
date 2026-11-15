@@ -1,0 +1,2096 @@
+
+******************************************************************************
+NSSDC Note: The energy ranges for helium fluxes have been changed from MeV
+            to MeV/nucleon for consistency with the Voyager 2 CRS document.
+            J. F. Cooper 6/15/95
+
+******************************************************************************
+                                                                                
+Header for NSSDC submission for Voyager-1 Cruise Archive                        
+  Applies to the TEXT datasets formed by program DCFLUX from                    
+  the original BINARY IBM mainframe datasets.                                   
+                                                                                
+VOL_CREATION_DATE:     1994-10-07                                               
+                                                                                
+MEDIUM_DESCRIPTION:    1/2 inch, 9-track, 6250 bpi magnetic tape                
+                                                                                
+TECHNICAL_CONTACT:     Dr. Nand Lal                                             
+                       Goddard Space Flight Center                              
+                       Code 935                                                 
+                       Greenbelt, MD 20771                                      
+                                                                                
+                       Electronic Mail: LHEAVX::LAL                             
+                       Electronic Mail: nand@voyager.gsfc.nasa.gov              
+                       Telephone: 301-286-7350                                  
+                                                                                
+PREV_VOLS:             None                                                     
+                                                                                
+                                                                                
+                                                                                
+DATA_SET_NAME:         Voyager-1 Cruise Mode Data Archive                       
+                                                                                
+DATA_SOURCE:           Voyager-1  Cosmic Ray Subsystem                          
+                                                                                
+SCIENTIFIC_CONTACT:    Dr. Frank McDonald                                       
+                       Institute for Physical Science and                       
+                       Technology                                               
+                       University of Maryland                                   
+                       College Park, MD  20742                                  
+                                                                                
+                       Electronic Mail: fm27@umail.umd.edu                      
+                       Telephone: 301-405-4861                                  
+
+
+
+
+SPACECRAFT_CHARACTERISTICS:  Voyager-1 was launched on September 5,             
+1977, encountered Jupiter on March 5, 1979, and Saturn on November              
+12, 1980. After passing Saturn the spacecraft trajectory is taking              
+it generally toward the nose of the terminator shock of the sun's
+heliosphere. At the end of 1992 it was about 50 AU from the sun,
+and above the ecliptic plane near 33 degrees N heliolatitude.
+The spacecraft is instrumented with a full suite of                             
+magnetic field, plasma and energetic particle and cosmic ray                    
+sensors. The Imaging experiment has sent back wonderful pictures of             
+the planets and their moons and rings.                                          
+
+
+
+
+INVESTIGATION_OBJECTIVES: This instrument is designed to exploit to             
+the fullest practical degree the proposed trajectories of                       
+Voyagers-1 and -2. The significance of these measurements will be               
+greatly enhanced by concurrent measurements with similar particle               
+telescopes on satellites such as the Pioneers, IMPs, and similar                
+series in near-earth orbits. similar series in near-earth orbits.               
+The principle scientific objectives of this experiment are:                     
+                                                                                
+    1.) To measure the flow patterns of energetic solar and                     
+        galactic particles separately in the inter-planetary field.             
+        To interpret this measurement, simultaneous determination               
+        of the energy spectrum, radial gradient,  distribution, and             
+        streaming parameters is required for each nuclear species               
+        and over as wide an energy range as is practicable.                     
+                                                                                
+    2.) To measure the energy spectra, and isotopic composition of              
+        galactic and solar cosmic rays from the lowest practical                
+        energies up to ~800 MeV/nucleon  and (by use of objective               
+        1) to unfold the primary flare and interstellar spectrum.               
+                                                                                
+    3.) To measure the time variations of the differential energy               
+        spectra of electrons, hydrogen and helium nuclei over the               
+        corresponding energy intervals. During flare events, to                 
+        obtain time histories; during quiet times, to relate gross              
+        time variations to those near earth thus deducing a                     
+        spatial gradient for galactic cosmic rays.                              
+                                                                                
+    4.) To study the energy spectra, time variations and spatial                
+        gradients associated with recurrent and non-flare                       
+        associated interplanetary proton and helium streams and to              
+        define the related solar or inter-planetary acceleration                
+        processes.                                                              
+                                                                                
+    5.) To provide information on the energetic particle                        
+        distribution surrounding Jupiter and Saturn.                            
+                                                                                
+    6.) To try to determine the extent of the solar cavity, the                 
+        energetic particle phenomena occurring at this interface                
+        and the cosmic ray density in nearby interstellar space.                
+                                                                                
+                                                                                
+INSTRUMENT_ATTRIBUTES: The California Institute of Technology (CIT)/
+Goddard Space Flight Center(GSFC) experiment on Voyager-1 and -2
+(CRS) consists of three types of solid state detector telescopes,
+the High Energy Telescopes (HET-I and II), the Low Energy dE/dx vs.             
+E Telescopes (LET A,B,C, and D) and The Electron Telescope (TET).               
+The HETs and LETs are redundant and are designed to complement each             
+other and to cover a broad range in energy, intensity, and charge               
+spectra. Charged particle spectra are measured over energy                      
+intervals as follows:                                                           
+                                                                                
+       Particle Component       Energy Range                                    
+   Galactic cosmic ray protons  1.8 - 200 MeV
+     and Solar protons                                                          
+   Galactic cosmic ray helium   1.8 - 500 MeV/nucleon
+     and Solar helium                                                           
+   Galactic and Solar electrons 0.2- 13.0 MeV                                   
+   Li,Be,B,C,N,O,F,Ne and                                                       
+    their isotopic composition  6 MeV/nuc - 200 MeV/nuc                         
+   Integral flux of IONS > 70 MeV
+                                                                                
+                                                                                
+                                                                                
+               Geometrical Factors                                              
+            HET       Varies from about .74 - 1.7 depending                     
+                      if the event is A or B Stopping or                        
+                      Penetrating                                               
+            LET       0.440 cm2-ster.   (nominal)                               
+            TET       Varies from about .66 - 3.12 depending                    
+                      upon depth of penetration into the Di stack.              
+                                                                                
+High Energy Telescope:  The HET consists of a multi-element stack               
+of solid state detectors. Particles can enter this telescope from               
+both ends of this stack. The Two "A" elements (see diagram below)               
+are single lithium drift detectors, 8 cm2 area and .15 mm thick.                
+The "C1" element is a surface barrier detector 8 cm2 and 3 mm                   
+thick. Next is an array of six "C" surface barrier detectors each               
+8 cm2 and 6 mm thick and finally two curved 8 cm2 and 2 mm thick                
+"B" detectors are stacked to form a two-ended telescope.                        
+                                                                                
+For particles which come to rest within this stack (4 - 70 MeV/                 
+nucleon) three measurements are made:  energy loss (dE/dx), total               
+energy, and range. For particles which penetrate completely through             
+the stack of solid state detectors three separate dE/dx                         
+measurements are made. This multiparameter analysis reduces the                 
+back-ground level of spurious events to a negligible level. Charge              
+resolution for penetrating particles is possible up to about 200                
+MeV/nucleon. It is estimated that the absolute uncertainty in the               
+helium flux is about 7% at 400 MeV and about 5% at energies below
+200 MeV.                                                                        
+                                                                                
+Low Energy Telescope.  This detector was designed to measure                    
+low-energy solar flare particles in the interplanetary space and                
+trapped particles in the Jovian and Saturnian magnetospheres.  Its              
+geometry factor (4.4E-01 cm**2.sr) allows measurement of fluxes as              
+high as 5.0E+05/(cm**2.s.sr). The LET is a double dE/dx vs. E                   
+solid state detector.  To enter this telescope a particle must pass             
+through a 4 uM Aluminum collimator which helps define the geometry.             
+Then two thin (35 microns thickness and 2.8 cm2 area) surface                   
+barrier detectors provide a double dE/dx measurement. Two thick                 
+(450 uM thickness and 4.5 cm2 area) lithium drift detectors provide             
+another dE/dx and a total energy measurement. The LET covers the                
+energy range 1.8 to 22 MeV/nucleon with charge resolution from Z=1 to           
+8.                                                                              
+                                                                                
+The Electron Telescope.   Eight solid state detectors, each 3 mm                
+thick and 4.5 cm2 in area are used individually and in coincidence              
+as total absorption spectrometers.  Varying depths of tungsten                  
+absorber are between each Di element.                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+For more information, refer to the document:                                    
+                                                                                
+                                                                                
+D.E.Stillwell, W.D.Davis, R.M.Joyce, F.B.McDonald, J.H.Trainor,                 
+W.E.Althouse, A.C.Cummings, T.L.Garrard, E.C.Stone, and R.E.Vogt,               
+"The Voyager Cosmic Ray Instrument", ISEE                                       
+Transactions on Nuclear Science, Vol. 26, 1979, pp. 513                         
+
+                                                                                
+
+                                                                                
+                                                                                
+                                                                                
+DATA_SET_PARAMETERS:                                                            
+                                                                                
+Time of start of averaging interval in seconds from start of base               
+year, TIME;                                                                     
+                                                                                
+6 hour averages of the following fluxes, plus statistical errors                
+units of particles/(cm**2.sec.ster.MeV/nuc)  HELIUMFLUXi or                     
+PROTONFLUXi ;                                                                   
+                                                                                
+6 hour averages of the following rates, plus statistical errors                 
+units of particles/second                                                       
+                                                                                
+                                                                                
+The following diagrams are given to assist the user in                          
+understanding the meaning of the data quantities present.                       
+                                                                                
+                                                                                
+Simplistic diagram of Voyager instruments:                                      
+                                                                                
+                element                                                         
+                mnemonic              area      thickness                       
+                                                                                
+Voyager HET        A1      ---------  8 cm**2   0.15 mm                         
+                                                                                
+                                                                                
+                                                                                
+                   A2      ---------  8 cm**2   0.15 mm                         
+                                                                                
+                   C1      xxxxxxxxx  9.5 cm**2  3 mm                           
+              G1                                                                
+                |  C2a     xxxxxxxxx  9.5 cm**2  6 mm                           
+                |  C2b     xxxxxxxxx                                            
+                |                                                               
+                |  C3a     xxxxxxxxx  9.5 cm**2  6 mm                           
+                |  C3b     xxxxxxxxx                                            
+                |                                                               
+                |  C4a     xxxxxxxxx  9.5 cm**2  6 mm                           
+                |  C4b     xxxxxxxxx                                            
+                            _______                                             
+                   B2     //       \\ 8 cm**2    2 mm  curved                   
+                                                                                
+                   B1     \\_______// 8 cm**2    2 mm  curved                   
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                element                                                         
+                mnemonic              area      thickness                       
+                                                                                
+Voyager LET          *****************   4uM AL collimator                      
+                                           light baffle                         
+                                                                                
+                  L1    ---------  2.8 cm**2 surface barrier 35 uM              
+                                                                                
+                                                                                
+                                                                                
+                  L2    ---------  2.8 cm**2 surface barrier 35 uM              
+                                                                                
+                  L3    xxxxxxxxx  4.5 cm**2 surface barrier 450 uM             
+                                                                                
+                  L4    xxxxxxxxx  4.5 cm**2 surface barrier 450 uM             
+                                                                                
+
+                                                                                
+
+
+                                                                                
+
+
+Voyager TET        D1      xxxxxxxxx                                            
+                                                                                
+                                                                                
+                   D2      xxxxxxxxx                                            
+                             .25 mm tungsten absorber                           
+                   D3      xxxxxxxxx                                            
+                             .56 mm tungsten absorber                           
+                   D4      xxxxxxxxx                                            
+                            1.12 mm tungsten absorber                           
+                   D5      xxxxxxxxx                                            
+                            1.60 mm tungsten absorber                           
+                   D6      xxxxxxxxx                                            
+                            2.03 mm tungsten absorber                           
+                   D7      xxxxxxxxx                                            
+                            2.34 mm tungsten absorber                           
+                   D8      xxxxxxxxx                                            
+                                                                                
+                        Di detectors= 4.5 cm**2 Lithium drifted 3mm             
+                        tungsten absorbers are 18.0 g/cm**3                     
+                                                                                
+                   where cm = centimeters                                       
+                         mm = millimeter                                        
+                   where uM = micrometer                                        
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+Data present on our tape(s) :                                                   
+   Time in seconds from start of base year, for start of averaging              
+   interval                                                                     
+                                                                                
+   Particle fluxes are given in units  particles/(m**2.s.sr.Mev/n)
+   Rates           are given in units  particles/s                              
+                   where cm = centimeters                                       
+                         s  = second                                            
+                         sr = steradian                                         
+   Underneath the flux designations, HELIUMFLUX1, for example,                  
+      is a mnemonic code, such as M IIA2, indicating from which                 
+      calibration response table this data came from.  It is for                
+      documenting purposes only.                                                
+                                                                                
+In the following, the phrases "2 dimensional analysis" or                       
+"3 dimensional analysis" refer to events whose analysis                         
+utilized pulse height data from either 2 or 3 pulse height values               
+associated with the particular event type (detector element                     
+coincidence requirement) being measured at the time. As an example,             
+for A side events, particles enter the HET telescope from                       
+the A end, and 1) stop in A1 or A2 for 2-dimensional A stopping                 
+                  events                                                        
+               2) stop in the C123 stack for 3-dimensional                      
+                  A stopping events                                             
+               3) pass entirely through the SumC stack and                      
+                  have a B1 or B2 pulse height as well and are called           
+                  3-dimensional A penetrating events.                           
+                                                                                
+                                                                                
+                                                                                
+----------------------------------                                              
+HET fluxes :                                                                    
+----------------------------------                                              
+HELIUMFLUX1             Helium4 flux in particles/cm**2.s.sr.Mev/n              
+M IIA2                  A-stopping 2 dimensional analysis, high                 
+                        gain data from HET-II                                   
+                        4.2 - 6.0 MeV/nucleon energy range                              
+----------------------------------                                              
+HELIUMFLUX2             Helium4 flux as above, A-stopping,                      
+M IIA3                  3 dimensional analysis, high gain data                  
+                        from HET-II                                             
+                        6.0 - 42.0 MeV/nucleon energy range,                            
+----------------------------------                                              
+HELIUMFLUX3             B-stopping 2 dimensional analysis, low                  
+M IIL2                  gain HET-II                                             
+                        17.0 - 27.0 MeV/nucleon                                         
+----------------------------------                                              
+HELIUMFLUX4             B-stopping 3 dimensional analysis, low                  
+M IIL3                  gain HET-II                                             
+                        30.0 -  69.0 MeV/nucleon                                        
+----------------------------------                                              
+HELIUMFLUX5             B-stopping 2 dimensional analysis, high                 
+M IIB2                  gain HET-II                                             
+                        17.0 - 27.0 MeV/nucleon                                         
+                                                                                
+HELIUMFLUX6             B-stopping 3 dimensional analysis, high                 
+M IIB3                  gain data from HET-II                                   
+                        30.0 - 69.0 MeV/nucleon                                         
+----------------------------------                                              
+                                                                                
+HELIUMFLUX7             B-penetrating 3 dimensional analysis, low               
+M IIP                   gain penetrating data from HET-II                       
+                        193.125 - 480.486 MeV/nucleon                                   
+----------------------------------                                              
+HELIUMFLUX8             B-penetrating 3 dimensional analysis, high              
+M IIPH                  gain penetrating data from HET-II                       
+                        191.925 - 475.705 MeV/nucleon energy range                          
+----------------------------------                                              
+PROTONFLUX1             Proton  flux in particles/cm**2.s.sr.MeV/n              
+M IIA2                  A-stopping 2 dimensional analysis, high                 
+                        gain data from HET-II                                   
+                        4.2 - 6.0 MeV energy range                              
+----------------------------------                                              
+PROTONFLUX2             Proton  flux in particles/cm**2.s.sr.MeV/n              
+M IIA3                  3 dimensional analysis, high gain data from             
+                        HET-II                                                  
+                        6.0 - 42.0 MeV energy range,                            
+----------------------------------                                              
+PROTONFLUX3             B-stopping 2 dimensional analysis, high                 
+M IIB2                  gain data from HET-II                                   
+                        17.0 - 27.0 energy range                                
+----------------------------------                                              
+PROTONFLUX4             B-stopping 3 dimensional analysis, high                 
+M IIB3                  gain data from HET-II                                   
+                        30.0 - 69.0 energy range                                
+----------------------------------                                              
+PROTONFLUX5             B-penetrating 3 dimensional analysis, high              
+M IIPH                  gain penetrating data from HET-II                       
+                        132.834 - 241.963 energy range                          
+----------------------------------                                              
+LET fluxes :   (all stopping particle events)                                   
+----------------------------------                                              
+P PROTON                                                                        
+* M LC2                    NO LC2 RESPONSE FOR V1 is AVAILABLE                  
+* B    1.800     3.300                                                          
+----------------------------------                                              
+PROTONFLUX6              Proton 2-dimensional analysis from LET-D               
+M LD2                      energy range of 1.8 - 3.3 MeV                        
+----------------------------------                                              
+PROTONFLUX7              Proton 3-dimensional analysis from LET-C               
+M LC3                      energy range of 3.25 - 8.1 MeV                       
+----------------------------------                                              
+PROTONFLUX8              Proton 3-dimensional analysis from LET-D               
+M LD3                      energy range of 3.25 - 8.1 MeV                       
+----------------------------------                                              
+P ALPHA                                                                         
+* M LC2                        NO LC2 RESPONSE FOR V1 is AVAILABLE              
+* B    1.800     2.800                                                          
+----------------------------------                                              
+HELIUMFLUX9               Helium4 2-dimensional analysis from LET-D             
+M LD2                     1.800 - 2.800 MeV/nucleon energy range                        
+----------------------------------                                              
+HELIUMFLUX10              Helium4 3-dimensional analysis from LET-C             
+M LC3                     2.800 - 8.000 MeV/nucleon energy range                        
+----------------------------------                                              
+HELIUMFLUX11              Helium4 3-dimensional analysis from LET-D             
+M LD3                     2.800 - 8.000 MeV/nucleon energy range                        
+----------------------------------                                              
+----------------------------------                                              
+HET   event type RATES (for flux calculations) :                                
+----------------------------------                                              
+*   NOMINAL COINCIDENCE CONDITION status                                        
+*   exists unless otherwise noted.                                              
+*   To interpret the LOGIC EQUATIONS (refer to simplistic telescope             
+*   diagrams above) :  EXAMPLE:  BRIBSP (the BR pre-mnemonic                    
+*   indicates to our system a rate bin request and is left here for             
+*   documentation purposes only)                                                
+*              B1.B2.^SB.^C1.^G1.^A2                                            
+*   The above LOGIC EQUATION means: a particle entered the                      
+*   telescope from the B end, and met the coincidence condition of              
+*   passing through B1, stopping in either B2 or the C432 stack,                
+*   but NOT (= ^ ) tripping the Slant threshold condition SB,                   
+*   NOT going into C1, Guard G1, or A2.                                         
+*                                                                               
+----------------------------------                                              
+HET-I event type rates (for flux calculations) :                                
+----------------------------------                                              
+BRIAS                        A-Stopping High Gain                               
+  A1.A2.^C4.^G1.^B2                                                             
+                                                                                
+BRIASZ3                      A-Stopping Low Gain  Atomic Number                 
+                                  Z >= 3                                        
+  A1.A2.SA.^C4.^G3.^B2                                                          
+                                                                                
+BRIBSE                       B-Stopping electron event                          
+  B1.B2.C4.^SB.^C1.^G1.^A2                                                      
+                                                                                
+BRIBSP                       B-Stopping High Gain                               
+  B1.B2.SB.^C1.^G1.^A2                                                          
+                                                                                
+BRIBSZ2                      B-Stopping Low Gain  Atomic Number                 
+                                              Z >= 2                            
+  B1.B2.SB.^C1.^G3.^A2                                                          
+                                                                                
+BRIPENH                      B-Penetrating High Gain                            
+  B1.B2.C1                                                                      
+                                                                                
+BRIPENL                      B-Penetrating Low Gain                             
+  B1.B2.C1                                                                      
+                                                                                
+BRIPGH                       Guard High Gain                                    
+  B1.B2.C1.^G1                                                                  
+                                                                                
+BRIPGL                       Guard Low Gain                                     
+  B1.B2.C1.^G1                                                                  
+                                                                                
+BRIBS4E                                                                         
+  B1.B2.C4.^C3.^SB.^G1       Stop in C4, did NOT get into C3                    
+                                                                                
+BRIBS4P                                                                         
+  B1.B2.C4.^C3.SB.^G1              "                        , High              
+                                                              Gain              
+                                                                                
+BRIBS4                                                                          
+  B1.B2.C4.^C3.^SB.^G1             "                                            
+                                                                                
+BRIBS4Z2                                                                        
+  B1.B2.C4.^C3.SB.^G1              "                        , Low               
+                                                              Gain              
+                                                                                
+BRIBS3E                                                                         
+  B1.B2.C4.C3.^C2.^SB.^G1    Stop in C3, did NOT get into C2, High              
+                                                              Gain              
+                                                                                
+BRIBS3P                                                                         
+  B1.B2.C4.C3.^C2.SB.^G1           "                                            
+                                                                                
+BRIBS3                                                                          
+  B1.B2.C4.C3.^C2.^SB.^G1          "                                            
+                                                                                
+BRIBS3Z2                                                                        
+  B1.B2.C4.C3.^C2.SB.^G1           "                         , Low              
+                                                              Gain              
+                                                                                
+BRIBS2E                                                                         
+  B1.B2.C4.C3.C2.^C1.^SB.^G1  Stop in C2, did NOT get into C1, High             
+                                                               Gain             
+                                                                                
+BRIBS2P                                                                         
+  B1.B2.C4.C3.C2.^C1.SB.^G1        "                                            
+                                                                                
+BRIBS2                                                                          
+  B1.B2.C4.C3.C2.^C1.^SB.^G1       "                                            
+                                                                                
+BRIBS2Z2                                                                        
+  B1.B2.C4.C3.C2.^C1.SB.^G1        "                         , Low              
+                                                               Gain             
+                                                                                
+----------------------------------                                              
+HET-II event type RATES (for flux calculations) :                               
+  interpreted analagously to HET-I                                              
+----------------------------------                                              
+BRIIAS                                                                          
+  A1.A2.^C4.^G1.^B2                                                             
+                                                                                
+BRIIASZ3                                                                        
+  A1.A2.SA.^C4.^G3.^B2                                                          
+                                                                                
+BRIIBSE                                                                         
+  B1.B2.C4.^SB.^C1.^G1.^A2                                                      
+                                                                                
+BRIIBSP                                                                         
+  B1.B2.SB.^C1.^G1.^A2                                                          
+                                                                                
+BRIIBSZ2                                                                        
+  B1.B2.SB.^C1.^G3.^A2                                                          
+                                                                                
+BRIIPENH                                                                        
+  B1.B2.C1                                                                      
+                                                                                
+BRIIPENL                                                                        
+  B1.B2.C1                                                                      
+                                                                                
+BRIIPGH                                                                         
+  B1.B2.C1.^G1                                                                  
+                                                                                
+BRIIPGL                                                                         
+  B1.B2.C1.^G1                                                                  
+                                                                                
+BRIIBS4E                                                                        
+  B1.B2.C4.^C3.^SB.^G1                                                          
+                                                                                
+BRIIBS4P                                                                        
+  B1.B2.C4.^C3.SB.^G1                                                           
+                                                                                
+BRIIBS4                                                                         
+  B1.B2.C4.^C3.^SB.^G1                                                          
+                                                                                
+BRIIBS4Z2                                                                       
+  B1.B2.C4.^C3.SB.^G1                                                           
+                                                                                
+BRIIBS3E                                                                        
+  B1.B2.C4.C3.^C2.^SB.^G1                                                       
+                                                                                
+BRIIBS3P                                                                        
+  B1.B2.C4.C3.^C2.SB.^G1                                                        
+                                                                                
+BRIIBS3                                                                         
+  B1.B2.C4.C3.^C2.^SB.^G1                                                       
+                                                                                
+BRIIBS3Z2                                                                       
+  B1.B2.C4.C3.^C2.SB.^G1                                                        
+                                                                                
+BRIIBS2E                                                                        
+  B1.B2.C4.C3.C2.^C1.^SB.^G1                                                    
+                                                                                
+BRIIBS2P                                                                        
+  B1.B2.C4.C3.C2.^C1.SB.^G1                                                     
+                                                                                
+BRIIBS2                                                                         
+  B1.B2.C4.C3.C2.^C1.^SB.^G1                                                    
+                                                                                
+BRIIBS2Z2                                                                       
+  B1.B2.C4.C3.C2.^C1.SB.^G1                                                     
+                                                                                
+----------------------------------                                              
+HET-I singles rates                                                             
+----------------------------------                                              
+BRIA1H                    Singles rate, high gain, for the A1                   
+  A1                         element                                            
+                          below are all high gain until noted                   
+BRIA2H                                                                          
+  A2                                                                            
+                                                                                
+BRIC1H                                                                          
+  C1                                                                            
+                                                                                
+BRIC2H                                                                          
+  C2                                                                            
+                                                                                
+BRIB1H                                                                          
+  B1                                                                            
+                                                                                
+BRISBH                                                                          
+  SB                                                                            
+                                                                                
+BRIC3H                                                                          
+  C3                                                                            
+                                                                                
+BRIC4H                                                                          
+  C4                                                                            
+                                                                                
+BRIB2H                                                                          
+  B2                                                                            
+                                                                                
+BRIG1                                                                           
+  G1                                                                            
+                                                                                
+BRIA1L                  begin low gain singles here                             
+  A1                                                                            
+                                                                                
+BRIA2L                                                                          
+  A2                                                                            
+                                                                                
+BRIC1L                                                                          
+  C1                                                                            
+                                                                                
+BRIC2L                                                                          
+  C2                                                                            
+                                                                                
+BRIB1L                                                                          
+  B1                                                                            
+                                                                                
+BRISA1                                                                          
+  SA                                                                            
+                                                                                
+BRISA2                                                                          
+  SA                                                                            
+                                                                                
+BRISBL                                                                          
+  SB                                                                            
+                                                                                
+BRIC3L                                                                          
+  C3                                                                            
+                                                                                
+BRIC4L                                                                          
+  C4                                                                            
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+BRIB2L                                                                          
+  B2                                                                            
+                                                                                
+----------------------------------                                              
+HET-II singles rates                                                            
+  Interpreted the same as HET-I singles rates                                   
+----------------------------------                                              
+BRIIA1H                                                                         
+  A1                                                                            
+                                                                                
+BRIIA2H                                                                         
+  A2                                                                            
+                                                                                
+BRIIC1H                                                                         
+  C1                                                                            
+                                                                                
+BRIIC2H                                                                         
+  C2                                                                            
+                                                                                
+BRIIB1H                                                                         
+  B1                                                                            
+                                                                                
+BRIISBH                                                                         
+  SB                                                                            
+                                                                                
+BRIIC3H                                                                         
+  C3                                                                            
+                                                                                
+BRIIC4H                                                                         
+  C4                                                                            
+                                                                                
+BRIIB2H                                                                         
+  B2                                                                            
+                                                                                
+BRIIG1                                                                          
+  G1                                                                            
+                                                                                
+BRIIA1L                      begin low gain singles here                        
+  A1                                                                            
+                                                                                
+BRIIA2L                                                                         
+  A2                                                                            
+BRIIC1L                                                                         
+  C1                                                                            
+                                                                                
+BRIIC2L                                                                         
+  C2                                                                            
+                                                                                
+BRIIB1L                                                                         
+  B1                                                                            
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+BRIISA1                                                                         
+  SA                                                                            
+                                                                                
+BRIISA2                                                                         
+  SA                                                                            
+                                                                                
+BRIISBL                                                                         
+  SB                                                                            
+                                                                                
+BRIIC3L                                                                         
+  C3                                                                            
+                                                                                
+BRIIC4L                                                                         
+  C4                                                                            
+                                                                                
+BRIIB2L                                                                         
+  B2                                                                            
+                                                                                
+----------------------------------                                              
+LET singles rates  in high gain                                                 
+----------------------------------                                              
+BRLA1                                                                           
+  L1                                                                            
+                                                                                
+BRLA2                                                                           
+  L2                                                                            
+                                                                                
+BRLA3                                                                           
+  L3                                                                            
+                                                                                
+BRLA4                                                                           
+  L4                                                                            
+                                                                                
+BRSLA                                                                           
+  SL                                                                            
+                                                                                
+BRSLB                                                                           
+  SL                                                                            
+                                                                                
+BRLB1                                                                           
+  L1                                                                            
+                                                                                
+BRLB2                                                                           
+  L2                                                                            
+                                                                                
+BRLB3                                                                           
+  L3                                                                            
+                                                                                
+BRLB4                                                                           
+  L4                                                                            
+                                                                                
+BRLC1                                                                           
+  L1                                                                            
+                                                                                
+BRLC2                                                                           
+  L2                                                                            
+                                                                                
+BRLC3                                                                           
+  L3                                                                            
+                                                                                
+BRLC4                                                                           
+  L4                                                                            
+                                                                                
+                                                                                
+BRSLD                                                                           
+  SL                                                                            
+                                                                                
+BRLD1                                                                           
+  L1                                                                            
+                                                                                
+BRLD2                                                                           
+  L2                                                                            
+                                                                                
+BRLD3                                                                           
+  L3                                                                            
+                                                                                
+BRLD4                                                                           
+  L4                                                                            
+                                                                                
+----------------------------------                                              
+TET singles rates  H or L at end of rate indicates High or Low Gain             
+----------------------------------                                              
+BRD6L                                                                           
+  D6                                                                            
+                                                                                
+BRGA+GB                                                                         
+  GA.GB                                                                         
+                                                                                
+BRD5H                                                                           
+  D5                                                                            
+                                                                                
+BRD7L                                                                           
+  D7                                                                            
+                                                                                
+BRD6H                                                                           
+  D6                                                                            
+BRD7H                                                                           
+  D7                                                                            
+                                                                                
+BRD5L                                                                           
+  D5                                                                            
+                                                                                
+BRD8L                                                                           
+  D8                                                                            
+                                                                                
+BRD1H                                                                           
+  D1                                                                            
+                                                                                
+BRD4H                                                                           
+  D4                                                                            
+                                                                                
+BRD2L                                                                           
+  D2                                                                            
+                                                                                
+BRD3L                                                                           
+  D3                                                                            
+                                                                                
+BRD1L                                                                           
+  D1                                                                            
+                                                                                
+BRD3H                                                                           
+  D3                                                                            
+                                                                                
+BRD2H                                                                           
+  D2                                                                            
+                                                                                
+BRD4L                                                                           
+  D4                                                                            
+                                                                                
+*  MAJOR STATUS CHANGE CONFIGURATIONS IN CRUISE AFFECT THESE                    
+----------------------------------                                              
+LET event type rates (for flux calculations) :                                  
+----------------------------------                                              
+BRLATRP                                                                         
+  L1.L2.^L4                                                                     
+                                                                                
+BRLBTRP                                                                         
+  L1.L2.^L4                                                                     
+                                                                                
+BRLCTRP                                                                         
+  L1.L2.L3.^L4                                                                  
+                                                                                
+BRLCTRP                                                                         
+  L1.L2.^L4                                                                     
+                                                                                
+BRLDTRP                                                                         
+  L1.L2.^L4                                                                     
+                                                                                
+BRLC                     High Gain  (typical mnemonic)                          
+  L1.L2.L3.^SL.^L4                                                              
+BRLC                                                                            
+  L1.L2.^SL.^L4                                                                 
+                                                                                
+BRLCZ3                   Low Gain  Atomic Number Z >= 3                         
+  L1.L2.L3.SL.^L4             (typical mnemonic)                                
+                                                                                
+BRLCZ3                                                                          
+  L1.L2.SL.^L4                                                                  
+                                                                                
+* LD                       NOMINAL DEFINITION IS PRESENT                        
+*                   near launch FOR LA, LB, LD SERIES                           
+* L1.L2.L3.^SL.^L4                                                              
+BRLD                                                                            
+  L1.L2.^SL.^L4                                                                 
+                                                                                
+* LDZ3                     NOMINAL DEFINITION IS PRESENT                        
+*                   near launch FOR LA, LB, LD SERIES                           
+* L1.L2.L3.SL.^L4                                                               
+                                                                                
+BRLDZ3                                                                          
+  L1.L2.SL.^L4                                                                  
+                                                                                
+BRLA                                                                            
+  L1.L2.^SL.^L4                                                                 
+                                                                                
+BRLAZ3                                                                          
+  L1.L2.SL.^L4                                                                  
+                                                                                
+BRLB                                                                            
+  L1.L2.^SL.^L4                                                                 
+                                                                                
+BRLBZ3                                                                          
+  L1.L2.SL.^L4                                                                  
+                                                                                
+----------------------------------                                              
+TET event type rates (for flux calculations) :                                  
+----------------------------------                                              
+BRTAN                                                                           
+  W1.W2.D3.^D8.^GA.^GB                                                          
+                                                                                
+BRTAN                                                                           
+  W1.W2.^D8.^GA.^GB                                                             
+                                                                                
+BRTLO                                                                           
+  W1.W2.D3.D5.^D6.^GA.^GB.^UT                                                   
+                                                                                
+BRTLO                                                                           
+  W1.W2.D5.^D6.^GA.^GB.^UT                                                      
+                                                                                
+BRTHI                                                                           
+  W1.W2.D3.D7.^D8.^GA.^GB.^UT                                                   
+                                                                                
+BRTHI                                                                           
+  W1.W2.D7.^D8.^GA.^GB.^UT                                                      
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+Description of DATA                                                             
+                                                                                
+Files of data are in ASCII text format, variable length formatted               
+records, readable by the example program given below. The                       
+records of these datasets contain words with information on start time,         
+data quantities are present, the averaging interval , and ASCII                 
+character data descriptions of the specific coincidence logic                   
+condition which gives rise to the data quantity being presented.                
+                                                                                
+If the Error value is -1.0, data for this item is not available. If             
+the Flux and Error are 0.0 no events occurred during the collection             
+time.                                                                           
+                                                                                
+   The format of the text data is generally as follows:                         
+                                                                                
+        Record #:    general length   description                               
+                                                                                
+              1        C*12        Satellite name                               
+              2        C*n         Start time of first 6 hour average           
+                                   present                                      
+              3        C*n         Stop  time of last 6 hour average            
+                                   present                                      
+              4        C*3         Number of bins (data quantities              
+                                   present)                                     
+                                                                                
+        Records 5-(N+4) (where N = number of bins): Bin Label                   
+                          Records                                               
+                       C*3         bin number                                   
+                       C*n         Character data label description             
+                                                                                
+        Records N+4- ...  Data records:                                         
+                                                                                
+                       C*19        Start time as yy-mm-ddThh:mm:ss              
+                       C*15        Value of data quantity 1                     
+                       c*15        Error in data quantity 1                     
+                       .           .                                            
+                       .           .                                            
+                       C*15        Value of data quantity N                     
+                       C*15        Error in data quantity N                     
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+This program will list the contents of the data for one quantity.               
+                                                                                
+C       EXTRACTS SPECIFIED ITEM FROM A VOYAGER NSSDC FORMATTED FILE             
+         IMPLICIT NONE                                                          
+         CHARACTER*12 SATID                                                     
+         CHARACTER*19 START,END,T                                               
+         CHARACTER*132 LABEL                                                    
+         CHARACTER*100 FMTSTRING                                                
+         CHARACTER*40 FNAME                                                     
+         INTEGER I,IBIN,NOBINS                                                  
+         REAL FLUX,ERROR                                                        
+         WRITE (6,*) 'FILE:'                                                    
+         READ(5,'((A))') FNAME                                                  
+         OPEN(UNIT=1,FILE=FNAME,STATUS='OLD')                                   
+         READ(1,'((A))') SATID                                                  
+         WRITE(6,'((A))') SATID                                                 
+         READ(1,'((A))') START                                                  
+         WRITE(6,'((A))') START                                                 
+         READ(1,'((A))') END                                                    
+         WRITE(6,'((A))') END                                                   
+         READ(1,*) NOBINS                                                       
+         WRITE(6,*) 'BIN NUMBER:'                                               
+         READ(5,*) IBIN                                                         
+         IF ((IBIN .LT. 1) .OR. (IBIN .GT. NOBINS)) THEN                        
+              WRITE(6,*) 'BIN # ',IBIN,' NOT IN RANGE (1,',NOBINS,').'          
+                   STOP                                                         
+         ENDIF                                                                  
+         WRITE(FMTSTRING,1) 2*(IBIN-1)*15                                       
+1        FORMAT('((A),',I5,'X,2E15.5)')                                         
+         DO 10 I=1,IBIN-1                                                       
+            READ(1,'((A))') LABEL                                               
+10       CONTINUE                                                               
+                                                                                
+         READ(1,'((A))') LABEL                                                  
+         WRITE(6,*) LABEL                                                       
+                                                                                
+         DO 20 I=IBIN+1,NOBINS                                                  
+            READ(1,'((A))') LABEL                                               
+20       CONTINUE                                                               
+                                                                                
+         DO 30 I=1,1000000                                                      
+            READ(1,FMTSTRING,END=100) T,FLUX,ERROR                              
+            WRITE(6,25) T,FLUX,ERROR                                            
+25          FORMAT(1X,A19,1X,2E15.5)                                            
+30       CONTINUE                                                               
+         STOP                                                                   
+100      WRITE(6,*) 'END OF FILE'                                               
+         STOP                                                                   
+         END                                                                    
+
+
+
+
+
+
+DATA_SET_QUALITY/INSTRUMENT_PERFORMANCE:                                        
+                                                                                
+                                                                                
+Three status configurations have been used in the CRUISE portions               
+of the mission (see below).                                                     
+                                                                                
+The LET and TET are in non-nominal status states for much of the                
+CRUISE portion of the mission.  To access non-nominal rate data in              
+our system requires input to our FLUXPLOT program (which makes data             
+summaries) of the exact COINCIDENCE LOGIC EQUATION described by the             
+non-nominal instrument status.  To handle both nominal and non-                 
+nominal times we have requested both states for the lifetime cruise             
+periods.  Therefore, users of this NSSDC data need to be aware of               
+the correct status condition for times of interest, and look at the             
+corresponding data quantity for our submission, in order not to be              
+confused by thinking there is no data for those quantities                      
+affected.                                                                       
+                                                                                
+The exact order of data on our tapes is listed after the REFERENCES             
+section of this header information.                                             
+                                                                                
+                                                                                
+VOYAGER-1 CRUISE PERIODS (NON-ENCOUNTER)  STATUS SUMMARIES                      
+                                                                                
+VOLUME time                                                                     
+------ ----                                                                     
+24832  9/16/77 15:45: 0   IN STATUS CONFIG (1)                                  
+ STATUS CONFIG (1) = NOMINAL + 0020 0580 0680 0780 0880      0D0A               
+60948  9/27/78 20:45:0    IN STATUS CONFIG (2)                                  
+ STATUS CONFIG (2) = NOMINAL + 0020 0580 0600 0780 0880 0A04 0D0A               
+287502 3/14/85 19:15:0    IN STATUS CONFIG (3)                                  
+ STATUS CONFIG (3) = NOMINAL + 0020 0580 0600 0780 0880 0A00 0D0A               
+                                                                                
+Telescope nominal conditions are indicated by a 00 in the right-                
+most byte of each status word for words 5 - 10 (05 - 0A in the left             
+byte of each status word).                                                      
+                                                                                
+ status byte meanings:                                                          
+   0020    High Volt. enable indicator                                          
+   0580    delete LA3 terms                                                     
+   0600    nominal                                                              
+   0680    delete LC3 terms                                                     
+   0780    delete LB3 terms                                                     
+   0880    delete LD3 terms                                                     
+   0A00    nominal                                                              
+   0A04    delete  D3 terms                                                     
+   0D0A    Het 1 and Het 2 auto gain flag on                                    
+                                                                                
+ other status byte values sometimes used:                                       
+   OD05    Het 1 and Het 2 gain set high                                        
+                                                                                
+excluded data times (localized and non-localized data blips):                   
+    These times have been excluded from our NSSDC data:                         
+                                                                                
+SE        77/09/18 00:00:00 77/10/03 00:00:00                                   
+SE        77/10/12 00:00:00 77/10/15 00:00:00                                   
+SE        77/11/10 00:00:00 77/12/01 20:00:00                                   
+SE        78/04/08 00:00:00 78/06/07 00:00:00                                   
+SE  *     78/05/23 05:30:00 78/05/23 06:00:00                                   
+SE        78/06/23 00:00:00 78/06/29 00:00:00                                   
+SE  *     78/07/01 03:30:00 78/07/01 04:00:00                                   
+SE        78/07/02 00:00:00 78/07/06 00:00:00                                   
+SE        78/07/08 00:00:00 78/07/21 00:00:00                                   
+SE  *     78/09/27 13:30:00 78/09/27 20:45:00                                   
+SE  *     78/11/21 18:45:00 78/11/21 19:00:00                                   
+SE  *     78/12/18 08:45:00 78/12/18 09:00:00                                   
+SE  *     78/12/28 08:15:00 78/12/28 08:30:00                                   
+SE  JUP   79/02/15 00:00:00 79/03/22 00:00:00                                   
+SE  *     79/03/19 00:00:00 79/03/21 23:15:00
+SE  *     79/08/15 02:15:00 79/08/15 03:00:00                                   
+SE        80/03/14 00:00:00 80/03/15 00:00:00                                   
+SE  *     80/10/25 15:45:00 80/10/26 02:15:00                                   
+SE  SAT   80/11/12 00:00:00 80/11/23 00:00:00                                   
+SE        81/10/13 00:00:00 81/11/14 00:00:00                                   
+SE  *     81/10/30 18:00:00 81/10/31 01:30:00                                   
+SE  *     81/11/06 04:00:00 81/11/06 04:30:00                                   
+SE        83/08/15 00:00:00 83/08/16 00:00:00                                   
+SE        83/08/23 00:00:00 83/08/24 00:00:00                                   
+SE        86/12/05 08:00:00 86/12/05 12:00:00                                   
+SE        87/03/04 07:00:00 87/03/04 10:00:00                                   
+SE        87/03/16 05:00:00 87/03/16 10:00:00                                   
+SE        87/07/21 00:00:00 87/07/22 00:00:00                                   
+SE        87/07/22 07:00:00 87/07/22 10:00:00                                   
+SE        87/10/11 06:00:00 87/10/11 07:00:00                                   
+SE  *     88/02/06 20:30:00 88/02/06 23:45:00                                   
+SE        88/05/26 09:00:00 88/05/26 10:00:00                                   
+SE  *     88/11/02 05:00:00 88/22/02 05:15:00                                   
+SE  *     89/12/12 17:15:00 89/12/12 17:45:00                                   
+                                                                                
+     Whole single exclude days are probably data blips which                    
+     were never localized.                                                      
+                                                                                
+ *  indicates time derived from status listings                                 
+                                                                                
+                                                                                
+Voyater-1 Encounter times:                                                      
+   Jupiter   5Mar79  for exclude use 2/15/79 - 3/22/79                          
+                          VOLUMEs    74401   - 77758                            
+   Saturn   12Nov80                 11/02/80 - 11/23/80                         
+                          VOLUMEs   134497   - 136513                           
+                                                                                
+                                                                                
+                                                                                
+Year timeline summary                                                           
+Instrument condition /general health observations:                              
+                                                                                
+   2/8/82 PHA BLOCK for LETA,B, HET I partial failure                           
+                                                                                
+   TAN event type rates need special coincidence equations                      
+   during part of cruise:  for TAN,  TLO,  THI                                  
+    delete the D3 term from                                                     
+    9/27/78 20:45 -  3/14/85  19:15                                             
+                                                                                
+   LET event type rates need special coincidence equations                      
+   during cruise: for LA,LB,LD  high and low gains                              
+    delete the L3 term throughout the mission                                   
+    For LC set, delete L3 from launch - 9/27/78 20:45;                          
+       then LC set is nominal                                                   
+                                                                                
+1977   Status Configuration 0 essentially nominal at launch                     
+       Status Configuration 1 begins at 9/16/77 15:45                           
+                                                                                
+1978          day 100 - 160 bad times; (day 190-200 bad data/gap He             
+             ASTP)                                                              
+             Status Configuration 2 begins at 9/27/78 20:45                     
+                                                                                
+1979  day 45 - 80  Jupiter; (day 100 - 112 bad data? He IA2,IIA2)               
+                                                                                
+1980                                         day 316 - 323 Saturn               
+                                                                                
+1981                                                                            
+                                                                                
+1982   2/8/82 PHA BLOCK for LETA,B, HET I partial failure                       
+     -et IPH, IP; IB3 electron ; all gone                                       
+     -et LA2,3  LB2,3 H  data there, but la2, lb2 drop 10+1                     
+          other H  data have calib discrepancy from then on;                    
+          He is present everywhere, but with sparse periods and                 
+          no notes on calibration discrepancy                                   
+     -HET I,II calibration discrepancy IA2,IA3  H, HE from then on,             
+          and sparseness in data after day 300 of 1985; flux                    
+          discrepancy disappears after day 140 of 1989 (a)                      
+                                                                                
+1983                                                                            
+                                                                                
+1984                                                                            
+                                                                                
+1985                                           day 300 -> (a)                   
+                                                   ----------                   
+      Status Configuration 3 begins at 3/14/85 19:15                            
+                                                                                
+1986 ----------------(a)-----------------------------------------               
+                                                                                
+1987 ----------------(a)-----------------------------------------               
+                                                                                
+1988 ----------------(a)-----------------------------------------               
+                                                                                
+1989 ---(a)------~day 140.                                                      
+                                                                                
+1990                                                                            
+                                                                                
+1991                                                                            
+                                                                                
+1992                                                                            
+                                                                                
+                                                                                
+(a) After day 40 of 1982, our group uses only HET II for fluxes                 
+   The gap of day 315-335, 1977  where indicated was caused by an               
+   exclude card,  added to prevent FLUXPLOT from                                
+   returning invalid fluxes related to a data exception                         
+   it did not handle properly.                                                  
+                                                                                
+                                                                                
+HE IB2,IIB2 all ok, but H IB2,IIB2 has flux discrepancy after ~day              
+160 of 1982                                                                     
+
+
+
+
+-----------------------------------------------------------------               
+-----------------------------------------------------------------               
+Dr. A. Cummings (Principle Investigator, CIT) has provided the
+following information from the theses indicated, to summarize
+instrument health and experiment problems.
+                                                                                
+START OF THESIS INFORMATION  ------------------------------------------         
+From the Rick Cook thesis-                                                      
+                                                                                
+Appendix B   Problems                                                           
+                                                                                
+B.1 LET B of Voyager-1                                                          
+                                                                                
+  The response of this telescope was unusual in that (1) the HE                 
+mass measurement, M1, showed a relatively large energy and time                 
+dependence, (2) a relatively large 'background' of events was                   
+present in the charge range near fluorine, and (3) the L1 versus                
+L2+L3 element tracks had an uncharacteristically blurred appear-                
+ance.  The problem may be electronic instability, but was not                   
+investigated in detail; instead the data from this telescope                    
+were excluded from use in the measurements presented in Chapter                 
+4, Tables 4.1 through 4.12.                                                     
+                                                                                
+B.2 LET C of Voyager-2                                                          
+                                                                                
+  On April 1, 1978 the L1 detector of this telescope experienced                
+a simultaneous shift in energy calibration and increase in count                
+rate, perhaps as the result of a light leak in the thin AL entrance             
+window.  Subsequent data from this telescope were not used in the               
+measurements of Chapter 4, Tables 4.1 through 4.12.                             
+                                                                                
+B.3 Pulse Height Multiplication in the LET 35 um Detectors                      
+                                                                                
+  A background effect specific to the iron group nuclei was                     
+identified in Sections 3.3 and 3.5 and necessitated the further                 
+study and special handling which is discussed here.  The affected               
+PHA events were clearly seen in Figure 3.7, a plot of the charge                
+measurements Z1 versus Z2, as a clump of points near (Z1=26,                    
+Z2=28).  Inspection of the L1, L2 and L3 pulse heights of the                   
+events in this clump revealed a very specific signature:                        
+  (1) The events lie directly on the L1 versus L3 track for iron,               
+but lie just above the L2 versus L3 iron track, indicating that                 
+the L1 and L3 pulse heights are normal, but that the L2 pulse                   
+height is abnormally large.                                                     
+  (2) The events have relatively small L3 pulse heights (E{L3}                  
+less than about 170 MeV), indicating that the nuclei responsible                
+for the events just barely penetrated detector L2.                              
+                                                                                
+   The effect also occurs for a fraction of the iron nuclei                     
+which barely penetrate the L1 detectors.  In this case, the                     
+affected events may be seen as the unusual clump of points near                 
+Z1=28 in Figure 3.6.                                                            
+                                                                                
+   The above signature suggests a pulse height multiplication                   
+effect in the LET 35 um surface barrier detectors that is very                  
+similar to one observed earlier in the response of such detectors               
+to fission fragments.  The effect (discussed by Walter 1969)                    
+occurs for nuclei which deposit a large ionization charge density               
+in the depleted silicon near the gold electrode.  The large                     
+ionization charge density is thought to induce tunneling of                     
+additional carriers (electrons) from the electrode through the                  
+thin oxide layer which separates the electrode frm the depleted                 
+bulk silicon.  The orientation of the LET 35 um detectors is                    
+consistent with this multiplication hypothesis: The gold electrodes             
+face toward the L3 detector, such that the ionization charge                    
+density near a gold electrode is largest for nuclei which just barely           
+penetrate the detector, as in (2) above.                                        
+                                                                                
+  To further stydy the problem, three detector PHA events with                  
+charge measurements Z1> 24 were re-analyzed.  For each event the                
+L1 and L3 energy measurements (E{L1} and E{L3}) were used to                    
+calculate a new charge measurement Z' and obtain an estimate                    
+E'{L2} of the energy deposited in detector L2 by solving:                       
+                                                                                
+    T{L1} = R(E{L1} + E'{L2} + E{L3}, Z', M) -                                  
+                R(E'{L2} + E{L3}, Z', M)                                        
+    T{L2} = R(E'{L2} + E{L3}, Z', M) =                                          
+                R(E{L3}, Z', M)                                                 
+                                                                                
+      taking  M = 2.132 * Z'                                                    
+                                                                                
+R is the generalized range-energy function discussed in Section                 
+3.4.  T{L1} and T{L2} are the mean pathlengths for the L1 and L2                
+detectors respectively.  The results are illustrated in Figure                  
+B.1, a plot of E{L2} (the measured L2 energy) versus E'{L2} (the                
+L2 energy inferred from the L1 and L3 energy measurements).                     
+Normal events lie along the diagonal, while events with abnormally              
+large L2 energy measurements lie above the diagonal. (Events                    
+below the diagonal may be due to L2 edge effects and other                      
+processes discussed in Section 3.5.2)  The abnormal events occur                
+predominantly at large values of E'{L2} which can only be obtained              
+by nuclei which barely penetrate L2, consistent with observation                
+(2) above.  Figure B.2 shows two histograms of E{L2}/E'{L2} ; one               
+histogram for events which barely penetrate L2 (E{L3} < 170 MeV)                
+and one for the remaining events (E{L3} > 170 MeV).  These                      
+histograms are summed over all the LETs used on both Voyagers and               
+indicate that (1) about 15 percent of the events with E{L3} less                
+than 170 MeV have L2 energy measurements which are abnormally large             
+by an average of about 12 percent and (2) the L2 energy measure-                
+ments are essentially normal for events with E{L3} greater than                 
+170 MeV.                                                                        
+                                                                                
+B.3.1  Three Parameter Analysis for Iron Nuclei                                 
+                                                                                
+  The results for iron nuclei presented in Table 4.2 (8.7-15.0                  
+MeV/nucleon) are based on PHA events selected as follows:                       
+                                                                                
+  (1) Normal iron events (i.e. those with normal L2 pulse height)               
+were selected using the charge consistency requirement and charge               
+boundaries discussed in Section 3.5, and were counted if the total              
+energy measurement, E{L1}+E{L2}+E{L3}, was appropriate to the                   
+8.7 - 15.0 MeV/nucleon interval.                                                
+                                                                                
+  (2) Iron PHA events having abnormally large L2 pulse heights were             
+identified as those events with charge measurements near (Z1=26,                
+Z2=28).  (Specifically, the requirement was (Z1+Z2)/2 > 25                      
+and (Z1-Z2) < -0.85.)  For each of the PHA events the L2 energy                 
+measurement was divided by 1.125 (the mean shift of the abnormal                
+L2 energy measurements; see Figure B.2) to obtain a corrected value             
+E*{L2}.  Then the event was counted if E{L1}+E*{L2}+E{L3} was within            
+the total energy interval corresponding to 8.7 - 15.0 MeV/nucleon.              
+                                                                                
+  PHA events with abnormal L2 pulse heights constitute about 15                 
+percent of the iron nuclei counts presented in Table 4.2.  Any                  
+additional systematic error (beyond that discussed in Section 4.4.1)            
+in the iron nuclei counts due to the abnormal L2 pulse heights                  
+should be small.  For example, if no corrections at all are applied             
+to the abnormal L2 energy measurements (as was the case for the iron            
+abundances reported earlier in Cook et. al. 1979 and Cook, Stone                
+and Vogt 1980), the resulting iron abundance measurements differ                
+from those of Table 4.2 by less than 5 percent.                                 
+                                                                                
+B.3.2 Two Parameter Analysis for Iron Nuclei                                    
+                                                                                
+  In the two parameter analysis of iron (for the fluence measure-               
+ments of Tables 4.4 through 4.11) the multiplication effect in the              
+L1 detectors was taken into account as follows:                                 
+                                                                                
+  (1) Iron PHA events with normal L1 pulse heights were identified              
+as those events with charge measurement Z1 in the range 24.8 to                 
+27.2 and were binned according to energy/nucleon as described                   
+in Section 3.4.                                                                 
+                                                                                
+  (2) PHA events with charge Z1 in the range 27.2 to 32.0 and                   
+L2+L3 energy measurements of less than 170 MeV are primarily due                
+to iron nuclei with abnormally large L1 pulse heights, rather than              
+nickel or other nuclei.  Therefore, the L1 energy measurements of               
+these events were divided by 1.125 before energy/nucleon binning.               
+The remaining events with Z1 in the range 27.2 to 32.0 (i.e. those              
+with E{L2}+E{L3} > 170 MeV) are mainly nickel nuclei an were                    
+included with no L1 energy adjustment.  All PHA events were sorted              
+into energy/nucleon binns as if they were due to iron nuclei, exactly           
+as in (1) above.                                                                
+                                                                                
+   In the two parameter iron analysis, no special treatment was                 
+applied to account for multiplication effects in the L2 detectors.              
+They do not significantly affect the Z1 charge measurement and                  
+at most shift a small fraction (about 5 percent) of the PHA events              
+which should fall in th 7.8-8.7 MeV/nucleon interval into the 8.7               
+- 10.6 MeV/nucleon interval.                                                    
+                                                                                
+   The inclusion of nickel and other nuclei (27 <= Z <= 32) increases           
+the fluence measurements over measurements of pure iron by roughly              
+the combined abundance of these elements relative to iron, or about             
+10  percent.  However, the inclusion of these nuclei probably has               
+only a negligible effect on the spectral index( gamma, see Section 4.5),        
+since the energy spectra of the various elements of the iron group are          
+likely to be similar.  (Spectral index variations among the elements            
+appear to be roughly ordered by nuclear charge Z, such that, in a               
+given flare event, neighboring elements have similar spectral                   
+indices;  see Section 5.2.  Further, the nickel to iron ratio {8.7              
+-15 MeV/nucleon, Table 4.2} is nearly constant from flare to flare.)            
+                                                                                
+   The multiplication effect in the L1 detectors is potentially an              
+additional source of systematic error (beyond those discussed in                
+Section 4.5) in the iron fluence measurements of Tables 4.4 through             
+4.11 and the iron spectral index measurements of Tabl 4.12. Upper               
+limits to these possible additional errors were obtained by re-                 
+computing the fluences and spectral indices without the L1 energy               
+corrections discussed in (2) above.  The changes in the iron fluence            
+measurements were typically less than 10 percent for energy bins in             
+the range 5.0-8.7 MeV/nucleon, and wer zero for the other higher                
+energy bins.  The iron spectral indices changed by less than 5                  
+percent.  Since the actual systematic error induced in the iron                 
+spectral indices is probably much less than 5 percent (and therefore            
+is small compared to statistical error and the possible systematic              
+error from other sources discussed in Section 4.5) this error is                
+negligible.                                                                     
+                                                                                
+--------------------------------------------------------------------            
+HH Breneman Thesis.  Flare analysis treated differently from                    
+interplanetary data.                                                            
+                                                                                
+Appendix G   Instrumental Anomalies and Other Problems                          
+                                                                                
+The analysis of data form the Voyager CRS LET and HET telescopes                
+was complicated by several instrumental problems.  These are                    
+described in detail elsewhere (Breneman 1984); they are summarized              
+here.                                                                           
+                                                                                
+G.1.  Pulse Height 'Multiplicaton' Effect                                       
+                                                                                
+  This effect has been observed many times in numerous surface-                 
+barrier detectors, both in flight and in the laboratory (Cook                   
+1981, Breneman 1982).  Particles passing completely through                     
+a detector sometimes yield pulse heights that are anomalously                   
+high By about 10 - 30 %).  It occurs most often for particles                   
+with high dI/dx in the detector in question, and therefore                      
+at a given initial energy, the errect occurs more often for                     
+elements higher on the charge scale;  in the data it is most                    
+prominent for Fe.  On a delta E versus E' plot, the effect                      
+appears as a more or less diffuse 'track' above and roughly                     
+parallel to the nominal track for the element, since delta                      
+E is anomalously high for the affected particles (Fig. G.1).                    
+A charge determination of such an event will of course be high,                 
+generally by ~2-3 charge units at Fe.  Since the effect is                      
+strongly dependent on dE/dx, it is usually evident only in                      
+the delta E detector immediately before the E' detector.                        
+When z is calculated for 3-parameter events involving such                      
+anomalous pulse heights, Z2 is more strongly affected than                      
+Z1, since the anomalous pulse height has the role of delta                      
+E for Z2, while for Z1 the same detector PHA usually makes                      
+only a modest contribution to E' with delta E normal.  On a                     
+Z1 versus Z2 plot (e.e., Fig. 3.1), the effect takes the form                   
+of a cluster fo events to the right of, and slightly above, the                 
+main cluster along the diagonal.  All of the Voyager LETs show                  
+the effect for Fe; although its rate of occurrence varies                       
+somewhat between the different telescopes, it is generally in                   
+the range of ~5 - 10 % of all the 3-parameter Fe SEP events in                  
+a given telescope.  The fraction of 2-parameter events affected                 
+is larger, since the E' detector is thinner and therefore a                     
+larger fraction of the data has high dE/dx in the delta E                       
+detector.  At least one LET (Voyager 1 LET A) shows evidence                    
+for the effect at charges as low as 20.                                         
+                                                                                
+  In the HETs the problem is worse in several respects.  Its                    
+rate of occurrence at Fe, as a percentage of the total Fe                       
+event ample, is generally much larger than in the LETs                          
+(~40 % for Voayger 1 HET 2); it is clearly seen for elements                    
+as low on the charge scale as Mg in some telescopes (Voyager                    
+1 HET 2 and Voyager 2 HET 2); and for 3-parameter events it                     
+can sometimes be seen occurring in either (or both) delta E                     
+detectors, rather than just the last one, resulting in                          
+several displaced clusters of events in those telescopes                        
+(Voyager 1 HET 1 and Voayger 2 HET 2).                                          
+                                                                                
+  Two actions were necessary to deal with this problem.  For                    
+abundant elements affected by the problem, mainly Fe and Ni,                    
+the 3-parameter charge consistency requirement was made                         
+lenient enough to include the particles affected by pulse                       
+height multiplication.  The rate of occurrence in LET for                       
+elements lower than Fe was negligible compared to other sources                 
+of uncertainty in the abundance determination, and no correc-                   
+tion was made for these elements.  Based on the observed rates                  
+in some HET telescopes for the abundant elements (e.e., Fig.                    
+G.2 for Voayger 1 HET 2), the rate of occurrence in these                       
+thelscopes for elements in the Z = 17-25 charge range was                       
+significant even though limited statistics make it less                         
+apparent and less quantifiable.  However, HET data were not                     
+used for these elements for the reasons given in Section 3.3.                   
+                                                                                
+  In addition, the energy loss in the delta E detector had to                   
+be corrected in an approximate way for affected events, so that                 
+the total incident energy, which is required for construct-                     
+ing energy spectra, would be accurate.                                          
+                                                                                
+  For 2-parameter events, there is no second independent                        
+determination fo Z to permit unambiguous separation of normal                   
+and abnormal events.  This is not a serious problem for                         
+abundant elements, since the only abundant element                              
+significantly affected is Fe, which has no other elements of                    
+comparable abundance near it on the charge scale with which                     
+it could be confused.  For rare elements the situation would                    
+be more serious, but as noted in Section 3.3, 2-parameter                       
+data were not used for rare element abundances due to                           
+excessive background contamination from other sources.                          
+                                                                                
+G.2.  LET Telescope ID Tag Bit Errors at High Counting Rates                    
+                                                                                
+  For each Block I or Block II LET event, there is a single                     
+tag bit which specifies from whih LET telescope in that Block                   
+the event originated.  A near coincidence in the triggering                     
+of LETs A and B, as is possible during periods of very high                     
+count rates, can result in the bit being set for a LET A                        
+event, causing that event to be read out as a LET B event                       
+(similarly for C and D).  Since the bit is ordinarily set                       
+only for LET B events and is otherwise not set, LET A                           
+events can be misidentified as LET B events but never the                       
+reverse.                                                                        
+                                                                                
+  The telescope identification bit is used in all subsequent                    
+data analysis to determine the appropriate detector thick-                      
+nessess and gains to use in calculating energy losses in the                    
+detectors and, ultimately, the charge of the particle.  If                      
+the telescope identification is erroneous, incorrect thick=                     
+nesses and gains are used in the calculations, resulting in                     
+incorrect determinations of Z.  The magnitude and sign of                       
+the discrepancy in Z depends only on the (coincidental)                         
+relationship between the thicknesses of the detectors in the                    
+paired telescopes, and, to a lesser degree, differences in                      
+the energy calibrations fo the respective detectors.                            
+                                                                                
+  On a Z1 versus Z2 plot of 3-parameter Voyager data, this                      
+effect has the appearance of small clusters of events dis-                      
+placed slightly from the main clusters along the diagonal                       
+for all the more abundant elements.  It appears only in                         
+plots of the B and D telescopes, sine it is events with                         
+these identifications which contain some misidentified                          
+particles.  In the Voyager flight data the effect is notice-                    
+able only during flare period 7, for which the peak LET B                       
+singles rate is ~ 5 * 10**3 /sec, the highest seen during                       
+the Voayger mission through August 1984.   Its rate of occur-                   
+rence is about 3 % at this peak rate, an average of about                       
+1 % for flare period 7 as a whole, and is the same for all                      
+elements for which statistics permit a measurement.  On delta                   
+E versus E' plots of both 2- and 3-parameter data, these                        
+effects have the appearance of 'ghost' tracks falling                           
+between or partially overlapping the real tracks of nearby                      
+elements (Fig. G.3).                                                            
+                                                                                
+  Later laboratory work using the backup GRS and pulse                          
+generators (Martin 1983) was able to reproduce the effect                       
+with greatly improved statistics, and verified the magni-                       
+tude of the time constant (~6 us) implied by the flight data                    
+while extending coverage to event rates more than an order                      
+of magnitude above the highest seen in the flight data.                         
+                                                                                
+  The impact of this problm on the data analysis is relatively                  
+minor.  For 3-parameter data, the previously chosen charge-                     
+consistency requirement is restrictive enough to easily                         
+exclude the misidentified events;  the amount of data lost                      
+is an insignificant 0.2% of the total, and the remaining data                   
+set is as 'clean' as that from the other telescopes.  The                       
+problem is more serious for the 2-parameter data, since there                   
+is no second determination of Z to permit separation of the                     
+normal and abnormal events;  it is an unremovable source of                     
+background in the data.  For abundant elements this is un-                      
+important, since the error introduced by this background is                     
+on the order of 1 % or less.  But the problem would be serious                  
+for rare elements in cases where the 'ghost' trakc of an                        
+abundant element overlaps the true location fo a rare element,                  
+since even 1 % of an abundant element could seriously contam-                   
+inate a much rarer element.  However, as noted previously,                      
+the 2-parameter LET data are not useful in obtaining rare                       
+element abundances on account of other background contri-                       
+butions.                                                                        
+                                                                                
+G.3. LET L1 Detector Jupiter Encounter Radiation Damage                         
+            and Post-Encounter Annealing                                        
+                                                                                
+  As a result of their exposure to intense charged particle                     
+fluxes in the inner Jovian magnetosphere during the 1979                        
+Jupiter encounters, the L1 detectors of the LETs experienced                    
+radiation damage which can be modeled as a reduction in the                     
+'effective thickness' of the detectors.  It is thought to be                    
+due to the implantation of energetic oxygen and sulfur ions                     
+known to be present in the inner Jovain magnetosphere (Gehrels                  
+1982).  Although all LETs on both spacecraft were affected to                   
+some degree, the Voayger 1 LETs were affected much worse than                   
+those on Voyager 2, since the former spacecraft passed closer                   
+to Jupiter and experienced a more intense radiation environ-                    
+ment.  On each spacecraft, LET C was by far the most seriously                  
+affected;  this telescope was sparially oriented so as to                       
+receive the most intense radiation exposure during the Jupiter                  
+encounters.  (LET B on Voyager 2 experienced unrelated types                    
+of radiation damage during the Jovian encounter and has re-                     
+turned no data since tha encounter.)  The front detectors of                    
+the HETs, being much thicker than those of the LETs and pro-                    
+tected by a thiker window, showed no detectable effective                       
+thichness reduction.                                                            
+                                                                                
+  The impact of the radiation damage on the post-Jupiter data                   
+is apparent as a shift in the location fo the element tracks on                 
+a delta E versus E' plot of data from flares 16 and 17, the                     
+first large post-Jupiter flares, relative to their location in                  
+plots of pre-Jupiter flares.  Similarly, Z1 versus Z2 plots                     
+of flares 16 and 17 show Z values shifted from their proper                     
+values when  Z is calculated using the detector thicknesses                     
+measured before launch, which served adequately for all pre-                    
+Jupiter flares.  The change in effective thickness appears to                   
+be somewhat dependent on Z, with the magnitude of the reduc-                    
+tion increasing with Z for any given detector.  Furthermore, with               
+the passage of time the radiation damage seems to gradually                     
+undergo a partial reversal.  This 'annealing' effect is                         
+evident in data from the later large flares, 20 and 24, which show              
+less shift in Z than do the flares immediately following                        
+Jupiter encounter.                                                              
+                                                                                
+  In the analysis of post-Jupiter data, this problem was dealt                  
+with by adjusting the L1 detector thicknesses used in the calcu-                
+lation of Z so as to make the calculated charges fall in the                    
+proper places on the charge scale.  Flares 16 and 17 were used                  
+to define the required shift for the more abundant elements;                    
+a linear or weakly quadratic function of Z was fit to these to                  
+define the Z dependence for all Z.  Data from flare periods                     
+20 and 24 were used in conjunction with the flare 16/17 data                    
+to mathematically characterize the time-dependence of the                       
+annealing effect, by fitting to a decaying-exponential                          
+function of time.  This procedure, repeated for each LET,                       
+defined the L1 thickness to be used in analyzing any given                      
+post-Jupiter event.  The adjustment of the L1 thickness was                     
+then incorporated into the iterative cycle for calculating                      
+Z.  The radiation damage did not have a noiceable effect                        
+on the inherent charge resolution of the telescopes, so with                    
+the above modifications the post-Jupiter flare data could be                    
+treated the same way as the pre-Jupiter data.                                   
+                                                                                
+  Table G.1 lists the adjustment made to the thickness for                      
+each L1 detector cor carbon and iron at two different times                     
+during the post-Jupiter phase.  The actual expression for the                   
+thickness L(Z,t) of each L1 detector was given by                               
+                                                                                
+        L(Z,t) = L0 - deltaL0(Z) + K exp(delta t / 562.56)                      
+                                                                                
+where K is a constant, L0 is the pre-Jupiter thickness,                         
+delta t is the time since the Jupiter encounter in days, and                    
+deltaL0(z) is the linear or quadratic function of Z that                        
+closely fits the required thickness changes for the first                       
+post-Jupiter flares.                                                            
+                                                                                
+G.4. Voyager 2 LET C Temporary Gain Shift                                       
+                                                                                
+  During the time period 1978 APR 3 - June 9, the L1 detector                   
+of LET C on Voayger 2 experienced, for unknown reasons, a                       
+temporary gain shift (~ 47 % decrease) and an associated                        
+excessively high L1 count rate (~ 9* 10**3 /sec). The gain                      
+shift and excessive count rate set in abruptly, remained                        
+nearly constant until about May 29, and then gradually                          
+reverted to their former levels; a very slight decline during                   
+the central phase was consistent with the decrease in the                       
+intensity of sunlight during the smae time period and suggests                  
+the possibility of a light leak in the telescope's aluminum                     
+window.                                                                         
+                                                                                
+  The effect on the data was to shift the locations of the                      
+element tracks on a delta E versus E' plot, and yield shifted                   
+charge estimates when nominal gain factors were used in the                     
+analysis.  The only flares occurring duting this time period                    
+were the three large events of flare period 7.  Since the                       
+gain was constant at the shifted value during these flares,                     
+the data could be analyzed by generating the appropriate                        
+gain factors by fitting the oxygen flight data from flare                       
+period 7 in the manner described in Appendix A.  The resulting                  
+values are included in Table A.1.                                               
+                                                                                
+  This anomaly was previously noted (Cook 1981), and the                        
+telescope was rejected for analysis because of the problem.                     
+However, since the energy calibration used in the analysis                      
+is easily adjusted to compensate for the problem, since the                     
+charge resolution and background of the telescope do not                        
+seem to be affected by the problem and since the three 7                        
+flares include a major fraction of all SEP data, it was                         
+decided to inlude Voayger 2 LET C in the analysis with                          
+the special treatment described above.                                          
+                                                                                
+G.5  CRS Instrument Configuration Changes                                       
+                                                                                
+  At certain times during the Voayger mission, the config-                      
+uation of the CRS instruments was changed in ways that                          
+influence data analysis.  At the beginning of each flight                       
+the LETs were configured to require triggering of the L3                        
+detector for pulse height analysis;  that is, only 3-                           
+parameter events were analyzed.  About 12 days after launch                     
+the L3 coincidence requirement was removed, permitting                          
+both 2- and 3-parameter events to be analyzed.  For Voyager                     
+2 this occurred before the first flares were seen, but on                       
+Voyager 1 flares 1a and 1b occurred before the configuration                    
+was changed, so no 2-parameter events were obtained from                        
+these flares.   A similar situation occurred on 17 Jun 1978                     
+when Voyager 1 LET C was switched back to requiring L3                          
+coincidence.  Thus for all flares from 8 onward there are no                    
+2-parameter events from this telescope.  These situations                       
+required changes in the weightings of 2-parameter relative                      
+to 3-parameter events for the affected spacecraft and                           
+flares.  There could still be a residual abundance bias in                      
+flares 1a dna 1b if the particle composition was energy-                        
+dependent and if the two spacecraft saw particles with                          
+different spectra, but the possibility of a bias comparable                     
+to the statistical uncertainty in the abundances is very                        
+unlikely.                                                                       
+                                                                                
+ Another important configuration change is the HET gain state.                  
+Normally the instrument cycles between high and low gain                        
+modes, but after Jupiter encounter HET 1 on Voyager 2 was                       
+switched to a high-gain-only mode, so no post-Jupiter SEP                       
+heavy ion data were obtained from this telescope.  This                         
+required changes in the partile wwighting factors of HET                        
+relative to LET for Voyager 2 for all post-Jupiter flares.                      
+                                                                                
+  The event weighting factors tabulated in Table 3.8 include                    
+the effects of all instrument configuration changes.                            
+                                                                                
+G.6. Voyager 1 Block I PHA Problem                                              
+                                                                                
+  On 1982 Feb 8, the Voayger 1 CRS experienced a failure                        
+affecting the readout of PHA information from the Block I                       
+telescopes (LETs A and B and HET 1).  The result of the                         
+failure is that in place of PHA2, the instrument reads out                      
+whichever of the three PHAs has the largest numerical value.                    
+If PHA2 happens to be numerically the largest pulse height,                     
+as is true over some energy ranges, the event is read out                       
+normally; otherwise some information si lost.  The effect                       
+of this problem is that some of the 2-parameter events are                      
+lost completely, and that some of the 3-parameter events                        
+are degraded to 2-parameter events.                                             
+                                                                                
+  The effect of this problem on the data analysis was minimal                   
+because it occurred very late in the time span included in the                  
+SEP data set, and thus affected only two relatively small                       
+flares.  The problem was dealt with by simply discarding                        
+the data on these flares from the three telescopes affected.                    
+                                                                                
+                                                                                
+END OF THESIS INFORMATION  ------------------------------------------           
+                                                                                
+                                                                                
+Summary of Voyager-1 LET L1 thickness and delta Z correction                    
+from Dr. Cummings:                                                              
+                                                                                
+  LET L1 Thickness before VOLUME 94465                                          
+             = 37.91 um   LET A                                                 
+               30.91 um   LET B                                                 
+               37.07 um   LET C                                                 
+               35.45 um   LET D                                                 
+                          um = micrometers                                      
+                                                                                
+  LET L1 Thickness after  VOLUME 94465                                          
+             = 37.09 um + 0.82 {1 - exp{-(boi-94465)/943693} }  LET A           
+               27.97 um + 0.94 {1 - exp{-(boi-94465)/943693} }  LET B           
+               30.81 um + 6.26 {1 - exp{-(boi-94465)/943693} }  LET C           
+               34.68 um + 0.77 {1 - exp{-(boi-94465)/943693} }  LET D           
+                          um = micrometers                                      
+                                                                                
+  Z1 is computed from L1 vs L2+L3  energies                                     
+  After VOLUME 94465 Z1 is corrected as follows if Z1 > 9,                      
+               rho{123} = (E{L1}+E{L2}+E{L3}) / 2Z1   <   25                    
+                                                                                
+  Z1'  =  Z1 + delta Z  where                                                   
+                                                                                
+  delta Z{A} = (Z1/26)**2 x (1.0461- 0.0418(rho{123})) x                        
+                               {1 - exp{-(boi-94465)/943693} }                  
+                                                                                
+  delta Z{B} = (Z1/26)**2 x (0.9254- 0.0370(rho{123})) x                        
+                               {1 - exp{-(boi-94465)/943693} }                  
+                                                                                
+  delta Z{C} = (Z1/26)**2 x (1.5190- 0.0608(rho{123})) x                        
+                               {1 - exp{-(boi-94465)/943693} }                  
+                                                                                
+  delta Z{D} = (Z1/26)**2 x (0.8730- 0.0349(rho{123})) x                        
+                               {1 - exp{-(boi-94465)/943693} }                  
+                                                                                
+Summary of Voyager-2 LET C L1 thickness and delta Z correction                  
+(post-Jupiter) from Dr. Cummings:                                               
+                                                                                
+  LET C L1 Thickness before VOLUME 93985                                        
+             = 35.33 um   LET C                                                 
+                          um = micrometers                                      
+                                                                                
+  LET C L1 Thickness after  VOLUME 93985                                        
+             = 32.43 um + 2.90 {1 - exp{-(boi-93985)/943693} }                  
+                          um = micrometers                                      
+                                                                                
+  Z1 is computed from L1 vs L2+L3 energies                                      
+  After VOLUME 93985 Z1 is corrected as follows if Z1 > 9,                      
+               rho{123} = (E{L1}+E{L2}+E{L3}) / 2Z1   <   25 ,                  
+               and if LET = C or D :                                            
+                                                                                
+  Z1'  =  Z1 + delta Z  where                                                   
+                                                                                
+  delta Z{C} = (Z1/26)**2 x (1.8530- 0.0741(rho{123})) x                        
+                               {1 - exp{-(boi-93985)/943693} }                  
+                                                                                
+  delta Z{D} = (Z1/26)**2 x (0.6970- 0.0279(rho{123})) x                        
+                               {1 - exp{-(boi-93985)/943693} }                  
+                                                                                
+                                                                                
+-----------------------------------------------------------------               
+-----------------------------------------------------------------               
+                                                                                
+DATA_PROCESSING_OVERVIEW: Four generic types of data are sent back              
+by the cosmic ray telescopes: rates data, pulse height data,                    
+internal calibration data and engineering housekeeping data.  All               
+are preserved in the reduction steps described below.                           
+                                                                                
+A time-ordered dataset containing fifteen minute data blocks                    
+(VOLUMEs) of PHA and RATE data is created from the experimenter                 
+data records. The data are decompressed and reorganized while                   
+preserving the time order. Each VOLUME contains summarized counts               
+and accumulation times for RATES.  In addition, the PHA data is                 
+sorted and organized by event types.  Time tags of individual                   
+particles are lost in this process.  This database is called the                
+ENCYCLOPEDIA Database.                                                          
+                                                                                
+Using the instrument response matrices and the ENCY database, rates             
+and particle fluxes averaged over multiples of fifteen minutes can              
+be derived. The desired count rates and fluxes are computed on                  
+demand, and the NSSDC data is produced in this manner.  We have                 
+submitted encounter data at 15 minute resolution and the rest of                
+the data at 6 hour time resolution. The interplanetary dataset                  
+submitted to NSSDC may be periodically updated, and the new                     
+submission will supercede the previous data.                                    
+                                                                                
+ENCY database volumes for Voyager-1 and Voyager-2 are approximately             
+5 Gbytes each.  All permanent databases reside on magnetic tape                 
+volumes in the library at the NCCS IBM 9021.                                    
+                                                                                
+                                                                                
+This data set is not intended to be used as an encounter data set.              
+                                                                                
+                                                                                
+LIT_REFERENCES:                                                                 
+                                                                                
+                                                                                
+                                                                                
+                               INSTRUMENTATION                                  
+                                                                                
+                                                                                
+D.E.Stillwell, W.D.Davis, R.M.Joyce, F.B.McDonald, J.H.Trainor,                 
+W.E.Althouse, A.C.Cummings, T.L.Garrard, E.C.Stone, and R.E.Vogt,               
+"The Voyager Cosmic Ray Instrument", ISEE                                       
+Transactions on Nuclear Science, Vol. 26, 1979, pp. 513                         
+                                                                                
+                                                                                
+                                                                                
+                              SCIENTIFIC PAPERS                                 
+                                                                                
+    See file VOYAGER-REFERENCES in the data directory                           
+                                                                                
+VOL_TIME_COVERAGE:      1977-09-07 to 1992-12-31                                
+                                                                                
+                                                                                
+FILE_NAMING_CONVENTION: CRS files are named according to the start              
+time of the data contained in the file as follows: V1xx.NSSDC .                 
+Here the xx stands for the two digits of the year of                            
+the data contained in the file.                                                 
+                                                                                
+FILE_TIME_COVERAGE:                                                             
+   Data appear as one file for each year from 1977 - 1992.                      
+                                                                                
+   V177.NSSDC              1977 launch - 78/01/01 00:00:00                      
+                                                                                
+   Other similarly named file sets contain each year's data                     
+   starting from January 1.                                                     
+                                                                                
+                                                                                
+/* EOF  */                                                                      
+/* list of data quantities in order on the files follows */                     
+                                                                                
+SUBM_NAME:    Dr. Nand Lal                                                      
+SUBM_ADDR:    Goddard Space Flight Center                                       
+              Code 935                                                          
+              Greenbelt, MD 20771                                               
+                                                                                
+              Electronic mail:  nand@voyager.gsfc.nasa.gov                      
+                                LHEAVX::LAL                                     
+SUBM_DATE:    1994-10-07                                                        
+TITLE:        Format for Voyager-1 CRS Cruise Data Archive Data Set             
+DESCR:        Format description of the Voyager-1 Cosmic Ray                    
+              Subsystem cruise phase energetic particle data                    
+              measurements archive data set, September 7, 1977                  
+              through 1993.                                                     
+REL_DATE:     1994-10-07                                                        
+                                                                                
+                                                                                
+RECORD_FIELD_MNEMONICS:  See above in the DATA_SET_PARAMETERS for               
+basic description of quantities.                                                
+                        TIME,                                                   
+                        HELIUMFLUX1,                                            
+                        HELIUMFLUX2,                                            
+                        HELIUMFLUX3,                                            
+                        HELIUMFLUX4,                                            
+                        HELIUMFLUX5,                                            
+                        HELIUMFLUX6,                                            
+                        HELIUMFLUX7,                                            
+                        HELIUMFLUX8,                                            
+                        PROTONFLUX1,                                            
+                        PROTONFLUX2,                                            
+                        PROTONFLUX3,                                            
+                        PROTONFLUX4,                                            
+                        PROTONFLUX5,                                            
+                        PROTONFLUX6,                                            
+                        PROTONFLUX7,                                            
+                        PROTONFLUX8,                                            
+                        HELIUMFLUX9,                                            
+                        HELIUMFLUX10,                                           
+                        HELIUMFLUX11,                                           
+                                                                                
+BRIAS        .                                                                  
+BRIASZ3      .                                                                  
+BRIBSE       .                                                                  
+BRIBSP       .                                                                  
+BRIBSZ2      .                                                                  
+BRIPENL      .                                                                  
+BRIPENH      .                                                                  
+BRIPGL       .                                                                  
+BRIPGH       .                                                                  
+BRIBS4E      .                                                                  
+BRIBS4P      .                                                                  
+BRIBS4       .                                                                  
+BRIBS4Z2     .                                                                  
+BRIBS2E      .                                                                  
+BRIBS2P      .                                                                  
+BRIBS2       .                                                                  
+BRIBS2Z2     .                                                                  
+BRIBS3E      .                                                                  
+BRIBS3P      .                                                                  
+BRIBS3       .                                                                  
+BRIBS3Z2     .                                                                  
+BRISA1       .                                                                  
+BRISA2       .                                                                  
+BRIG1        .                                                                  
+BRIISA1      .                                                                  
+BRIISA2      .                                                                  
+BRIIG1       .                                                                  
+BRIIAS       .                                                                  
+BRIIASZ3     .                                                                  
+BRIIBSE      .                                                                  
+BRIIBSP      .                                                                  
+BRIIBSZ2     .                                                                  
+BRIIPENL     .                                                                  
+BRIIPENH     .                                                                  
+BRIIPGL      .                                                                  
+BRIIPGH      .                                                                  
+BRIIBS4E     .                                                                  
+BRIIBS4P     .                                                                  
+BRIIBS4      .                                                                  
+BRIIBS4Z2    .                                                                  
+BRIIBS2E     .                                                                  
+BRIIBS2P     .                                                                  
+BRIIBS2      .                                                                  
+BRIIBS2Z2    .                                                                  
+BRIIBS3E     .                                                                  
+BRIIBS3P     .                                                                  
+BRIIBS3      .                                                                  
+BRIIBS3Z2    .                                                                  
+BRIA1H       .                                                                  
+BRIA2H       .                                                                  
+BRIB1H       .                                                                  
+BRIB2H       .                                                                  
+BRIC1H       .                                                                  
+BRIC2H       .                                                                  
+BRIC3H       .                                                                  
+BRIC4H       .                                                                  
+BRISBH       .                                                                  
+BRIA1L       .                                                                  
+BRIA2L       .                                                                  
+BRIB1L       .                                                                  
+BRIB2L       .                                                                  
+BRIC1L       .                                                                  
+BRIC2L       .                                                                  
+BRIC3L       .                                                                  
+BRIC4L       .                                                                  
+BRISBL       .                                                                  
+BRIIA1H      .                                                                  
+BRIIA2H      .                                                                  
+BRIIB1H      .                                                                  
+BRIIB2H      .                                                                  
+BRIIC1H      .                                                                  
+BRIIC2H      .                                                                  
+BRIIC3H      .                                                                  
+BRIIC4H      .                                                                  
+BRIISBH      .                                                                  
+BRIIA1L      .                                                                  
+BRIIA2L      .                                                                  
+BRIIB1L      .                                                                  
+BRIIB2L      .                                                                  
+BRIIC1L      .                                                                  
+BRIIC2L      .                                                                  
+BRIIC3L      .                                                                  
+BRIIC4L      .                                                                  
+BRIISBL      .                                                                  
+BRLA1        .                                                                  
+BRLB1        .                                                                  
+BRLC1        .                                                                  
+BRLD1        .                                                                  
+BRLA2        .                                                                  
+BRLB2        .                                                                  
+BRLC2        .                                                                  
+BRLD2        .                                                                  
+BRLA3        .                                                                  
+BRLB3        .                                                                  
+BRLC3        .                                                                  
+BRLD3        .                                                                  
+BRLA4        .                                                                  
+BRLB4        .                                                                  
+BRLC4        .                                                                  
+BRLD4        .                                                                  
+BRSLA        .                                                                  
+BRSLB        .                                                                  
+BRSLC        .                                                                  
+BRSLD        .                                                                  
+BRLATRP      .                                                                  
+BRLBTRP      .                                                                  
+BRLCTRP      .                                                                  
+BRLDTRP      .                                                                  
+BRD1L        .                                                                  
+BRD2L        .                                                                  
+BRD3L        .                                                                  
+BRD4L        .                                                                  
+BRD5L        .                                                                  
+BRD6L        .                                                                  
+BRD7L        .                                                                  
+BRD8L        .                                                                  
+BRGA+GB      .                                                                  
+BRD1H        .                                                                  
+BRD2H        .                                                                  
+BRD3H        .                                                                  
+BRD4H        .                                                                  
+BRD5H        .                                                                  
+BRD6H        .                                                                  
+BRD7H        .                                                                  
+*  MAJOR STATUS CHANGE CONFIGURATIONS IN CRUISE AFFECT THESE                    
+BRLC         .           Y Y                                                    
+    X                                                                           
+                                                                                
+    X                                                                           
+  L1.L2.L3.^SL.^L4                                                              
+BRLC         .                                                                  
+    X                                                                           
+                                                                                
+    X                                                                           
+  L1.L2.^SL.^L4                                                                 
+BRLCZ3       .                                                                  
+    X                                                                           
+                                                                                
+    X                                                                           
+  L1.L2.L3.SL.^L4                                                               
+BRLCZ3       .                                                                  
+    X                                                                           
+                                                                                
+    X                                                                           
+  L1.L2.SL.^L4                                                                  
+BRLD         .                                                                  
+    X                                                                           
+                                                                                
+    X                                                                           
+  L1.L2.L3.^SL.^L4                                                              
+BRLD         .                                                                  
+    X                                                                           
+                                                                                
+    X                                                                           
+  L1.L2.^SL.^L4                                                                 
+BRLDZ3       .                                                                  
+    X                                                                           
+                                                                                
+    X                                                                           
+  L1.L2.L3.SL.^L4                                                               
+BRLDZ3       .                                                                  
+    X                                                                           
+                                                                                
+    X                                                                           
+  L1.L2.SL.^L4                                                                  
+BRLA         .                                                                  
+    X                                                                           
+                                                                                
+    X                                                                           
+  L1.L2.L3.^SL.^L4                                                              
+BRLA         .                                                                  
+    X                                                                           
+                                                                                
+    X                                                                           
+  L1.L2.^SL.^L4                                                                 
+BRLAZ3       .                                                                  
+    X                                                                           
+                                                                                
+    X                                                                           
+  L1.L2.L3.SL.^L4                                                               
+BRLAZ3       .                                                                  
+    X                                                                           
+                                                                                
+    X                                                                           
+  L1.L2.SL.^L4                                                                  
+BRLB         .                                                                  
+    X                                                                           
+                                                                                
+    X                                                                           
+  L1.L2.L3.^SL.^L4                                                              
+BRLB         .                                                                  
+    X                                                                           
+                                                                                
+    X                                                                           
+  L1.L2.^SL.^L4                                                                 
+BRLBZ3       .                                                                  
+    X                                                                           
+                                                                                
+    X                                                                           
+  L1.L2.L3.SL.^L4                                                               
+BRLBZ3       .                                                                  
+    X                                                                           
+                                                                                
+    X                                                                           
+  L1.L2.SL.^L4                                                                  
+BRTAN        .                                                                  
+    X                                                                           
+                                                                                
+    X                                                                           
+  W1.W2.D3.^D8.^GA.^GB                                                          
+BRTAN        .                                                                  
+    X                                                                           
+                                                                                
+    X                                                                           
+  W1.W2.^D8.^GA.^GB                                                             
+BRTLO        .                                                                  
+BRTLO        .                                                                  
+    X                                                                           
+                                                                                
+    X                                                                           
+  W1.W2.D5.^D6.^GA.^GB.^UT                                                      
+BRTHI        .                                                                  
+BRTHI        .                                                                  
+    X                                                                           
+                                                                                
+    X                                                                           
+  W1.W2.D7.^D8.^GA.^GB.^UT                                                      
+                                                                                
+                                                                                
+DATA_RECORD_SYNTAX:  See the Description of Data segment of the                 
+DATA_SET_PARAMETER section.                                                     
+Each record has terminators of the \n form.                                     
+                                                                                
+                                                                                
+/* EOF */                                                                       
+                                                                               

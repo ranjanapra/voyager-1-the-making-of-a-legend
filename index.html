@@ -1,0 +1,955 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>VOYAGER 1 — The Making of a Legend | 1977 Historical Engineering Archive</title>
+    <meta name="description" content="Step into 1977. Join the mission. Build the spacecraft. A vertical cinematic educational journey through Voyager 1's historical engineering and assembly at JPL." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Critical Pre-Paint Styling Guard: Eliminates White Flashes & FOUC -->
+    <style>
+      html, body {
+        background-color: #020409 !important;
+        color: #f8fafc !important;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        overflow-x: hidden;
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      }
+      #bg-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 0;
+        pointer-events: none;
+        background-color: #020409;
+      }
+      .crt-overlay {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+      }
+      #app {
+        position: relative;
+        z-index: 2;
+        min-height: 100vh;
+        background: transparent;
+      }
+      .site-view {
+        display: block;
+      }
+      .independent-page-view {
+        display: none;
+      }
+      /* Instant deep-route visibility guard to prevent FOUC / route flash */
+      html.route-build #view-main-site { display: none !important; }
+      html.route-build #view-page-build { display: block !important; }
+      html.route-explore #view-main-site { display: none !important; }
+      html.route-explore #view-page-explore { display: block !important; }
+    </style>
+
+    <!-- Synchronous Early Route Determination -->
+    <script>
+      (function() {
+        try {
+          var hash = (window.location.hash || '').toLowerCase().replace('#', '');
+          var buildRoutes = ['build', 'dashboard', 'tasks', 'assembly', 'components', 'decisions', 'labs', 'datalab', 'codelab', 'aimllab', 'completion', 'mission-report', 'launch'];
+          if (buildRoutes.indexOf(hash) !== -1) {
+            document.documentElement.classList.add('route-build');
+          } else if (hash === 'explore-hub' || hash === 'explore-page') {
+            document.documentElement.classList.add('route-explore');
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Primary Stylesheet & Application Modules -->
+    <link rel="stylesheet" href="/src/styles/main.css" />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <!-- Three.js Cosmic Starfield & 3D Voyager 1 Spacecraft Canvas (Fixed Background) -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- WP-24: Screen Reader Announcement Live Region -->
+    <div id="sr-announcements" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- CRT Scanline & Lens Vignette -->
+    <div class="crt-overlay" aria-hidden="true"></div>
+
+    <div id="app">
+      <!-- Main Website (Four-Section Vertical Storytelling Flow) -->
+      <div id="view-main-site" class="site-view active">
+        <!-- Minimal Header -->
+        <header class="hud-header" role="banner" style="display: flex; justify-content: space-between; align-items: center;">
+          <div class="edu-badge" title="Independent educational historical simulation. Not an official NASA website.">
+            <span class="edu-badge-pulse" aria-hidden="true"></span>
+            <span>EDUCATIONAL SIMULATION</span>
+          </div>
+        </header>
+
+      <!-- Main Natural Vertical Content Flow -->
+      <main class="main-content-flow" role="main">
+
+        <!-- ====================================================================
+             SECTION 01 — HOME
+             ==================================================================== -->
+        <section id="section-home" class="site-section section-home" aria-label="Section 01 — Home">
+          <div class="section-container">
+            <div class="hero-two-column">
+              <!-- Left Column: Simple, clean hero content -->
+              <div class="hero-content-col">
+                <div class="mission-phase-tag">
+                  <span class="phase-led" aria-hidden="true"></span>
+                  <span>1972–1977 MISSION INCEPTION</span>
+                </div>
+
+                <h1 class="main-title">VOYAGER 1</h1>
+                <div class="main-subtitle">THE MAKING OF A LEGEND</div>
+
+                <div class="tagline-banner">
+                  &ldquo;Beyond the Solar System. Beyond Imagination.&rdquo;
+                </div>
+
+                <p class="introductory-text">
+                  Travel back to 1977 and experience the engineering journey behind humanity&rsquo;s most distant spacecraft.
+                </p>
+
+                <!-- Primary Actions -->
+                <div class="entry-actions-row">
+                  <button id="btn-enter-mission" class="btn-enter-mission" data-target="section-invitation" type="button" aria-label="Enter mission and proceed to invitation">
+                    <span class="btn-crosshair" aria-hidden="true"></span>
+                    <span class="btn-text">ENTER MISSION</span>
+                    <span class="btn-led" aria-hidden="true"></span>
+                  </button>
+
+                  <button id="btn-briefing" class="btn-secondary" type="button" aria-label="Open historical briefing modal">
+                    <span>EXPLORE HISTORICAL BRIEFING</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Right Column: Spacecraft 3D Frame & Fallback -->
+              <aside class="hero-visual-col" aria-label="Voyager 1 Spacecraft Visualization">
+                <div class="spacecraft-hud-badge">
+                  <span class="badge-dot" aria-hidden="true"></span>
+                  <span>VOYAGER 1 // 3.7M HIGH-GAIN REFLECTOR &amp; BUS</span>
+                </div>
+
+                <!-- Dedicated instruction line with its own proper spacing, no overlap -->
+                <div class="rotation-instruction-line">
+                  <button id="model-rotate-hint" class="model-rotate-hint" type="button" aria-label="Interactive 3D model: drag to rotate">
+                    <span class="rotate-hint-icon" aria-hidden="true">&#x27F3;</span>
+                    <span>DRAG TO ROTATE 3D</span>
+                  </button>
+                </div>
+                
+                <div id="spacecraft-render-frame" class="spacecraft-render-frame" title="Drag to rotate 3D spacecraft, double-click to reset view">
+                  <!-- Subtle loading indicator, visible only while 3D model is downloading -->
+                  <div id="spacecraft-loader" class="spacecraft-loader font-mono" aria-live="polite">
+                    <span class="loader-pulse-dot" aria-hidden="true"></span>
+                    <span>INITIALIZING 3D SPACECRAFT MODEL...</span>
+                  </div>
+
+                  <!-- Fallback Image (hidden by default, displayed only if WebGL fails) -->
+                  <img id="spacecraft-fallback" class="spacecraft-fallback-img" 
+                       src="/assets/images/voyager1-jpl-pia17046.jpg" 
+                       alt="Authentic NASA/JPL rendering of the Voyager 1 spacecraft in space (Catalog PIA17046)"
+                       loading="eager"
+                       decoding="async"
+                       style="display: none;" />
+                </div>
+              </aside>
+            </div>
+
+            <!-- Prominent Golden Milestone Showcase: One Light-Day From Earth -->
+            <section class="official-milestone-panel" aria-label="Upcoming Voyager 1 Milestone">
+              <div class="milestone-status-header">
+                <div class="milestone-badge-group">
+                  <span class="milestone-pulse-dot" aria-hidden="true"></span>
+                  <span class="milestone-status-tag">UPCOMING PROJECTED MILESTONE</span>
+                </div>
+                <span class="milestone-telemetry-source">NASA/JPL VOYAGER INTERSTELLAR MISSION</span>
+              </div>
+
+              <div class="milestone-body-grid">
+                <!-- Left: Headline, Dates, and Facts -->
+                <div class="milestone-content-col">
+                  <div class="milestone-headline-block">
+                    <h2 class="milestone-main-title">ONE LIGHT-DAY FROM EARTH</h2>
+                    <div class="milestone-date-hero"><span class="gold-highlight">18 NOVEMBER 2026</span></div>
+                  </div>
+
+                  <div class="milestone-facts-box">
+                    <p class="milestone-fact-primary">
+                      Voyager 1 is expected to be approximately <span class="gold-highlight">one light-day</span> away from Earth.
+                    </p>
+                    <div class="milestone-details-grid">
+                      <div class="milestone-detail-item">
+                        <span class="detail-label">PROJECTED DISTANCE:</span>
+                        <span class="detail-value"><span class="gold-highlight">Approximately 16.1 billion miles</span> (25.9 billion kilometres) from Earth</span>
+                      </div>
+                      <div class="milestone-detail-item">
+                        <span class="detail-label">ONE-WAY COMMUNICATION TIME:</span>
+                        <span class="detail-value">Its radio signal will take <span class="gold-highlight">approximately 24 hours</span> to travel one way between Voyager 1 and Earth</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="milestone-footer-note">
+                    <span class="note-bracket">[NOTE:</span> Speed of light is approximately 299,792 km/s. The scientifically verified term is <strong>ONE LIGHT-DAY</strong> (not one light-year). This is an upcoming projected milestone based on mission trajectory models, not an already achieved event or live telemetry.<span class="note-bracket">]</span>
+                  </div>
+                </div>
+
+                <!-- Right: Continuous Slow Rotating Golden Disc Visual (Directly below NASA/JPL VOYAGER INTERSTELLAR MISSION) -->
+                <div class="milestone-disc-col" aria-label="Floating Voyager Golden Record Visual">
+                  <div class="homepage-golden-disc-wrapper">
+                    <div class="golden-disc-frame" title="The Voyager Golden Record (12-inch gold-plated copper phonograph disc)">
+                      <img src="/assets/images/voyager-gold-record-front.jpg.jpeg" 
+                           alt="Authentic Voyager Golden Record phonograph disc rotating around its central axis" 
+                           class="homepage-golden-disc-img" 
+                           loading="lazy"
+                           decoding="async" />
+                    </div>
+                    <div class="golden-disc-caption">
+                      <span class="disc-dot" aria-hidden="true"></span>
+                      <span>GOLDEN RECORD &bull; 16⅔ RPM</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Single Concise Historical Introduction (Below the Hero) -->
+            <div class="historical-intro-deck">
+              <div class="intro-deck-header">
+                <span class="phase-led" aria-hidden="true"></span>
+                <h2 class="intro-deck-title">HISTORICAL MISSION INCEPTION &bull; 1972–1977</h2>
+              </div>
+              <div class="historical-intro-card">
+                <p>
+                  In 1972, NASA approved the Mariner Jupiter/Saturn 1977 program, developed and constructed at the Jet Propulsion Laboratory (JPL) in Pasadena, California. Driven by a rare planetary alignment occurring <span class="gold-highlight">once every 175 years</span>, engineers designed an extraordinary 815-kilogram probe capable of navigating the outer solar system using gravitational assists.
+                </p>
+                <p>
+                  Equipped with a 3.7-meter high-gain antenna, radioisotope thermoelectric generators, and eleven sophisticated scientific instruments, Voyager 1 launched on <span class="gold-highlight">September 5, 1977</span>. What began as a five-year reconnaissance of Jupiter and Saturn transformed into humanity&rsquo;s most ambitious deep-space journey, <span class="gold-highlight">crossing the heliopause in August 2012</span> to explore interstellar space.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ====================================================================
+             SECTION 02 — THE INVITATION: CAN I BE A PART OF THIS?
+             ==================================================================== -->
+        <section id="section-invitation" class="site-section section-invitation" aria-label="Section 02 — The Invitation">
+          <div class="section-container invitation-inner">
+            <div class="invitation-two-column">
+              <!-- Left Column: All Invitation Content & Actions -->
+              <div class="invitation-content-col">
+                <div class="invitation-phase-tag">
+                  <span class="invitation-pulse-led" aria-hidden="true"></span>
+                  <span>PHASE 02 // CANDIDATE INVITATION &bull; 1977</span>
+                </div>
+
+                <div class="character-speech-bubble">
+                  "Can I be a part of this?"
+                </div>
+
+                <h2 class="invitation-heading">
+                  CAN YOU BE A PART OF THIS?
+                </h2>
+
+                <div class="invitation-body-text">
+                  <p>
+                    Imagine stepping into 1977. A team of engineers at the Jet Propulsion Laboratory is building a spacecraft that will travel farther than humanity has ever gone before.
+                  </p>
+                  <p>
+                    You have an opportunity to join them.
+                  </p>
+                  <p class="invitation-question-prompt">
+                    Would you take on the challenge?
+                  </p>
+                </div>
+
+                <!-- Two Clear Action Choices -->
+                <div class="invitation-choices-row">
+                  <button id="btn-choice-build" class="btn-choice-build" type="button" aria-label="Open independent Build Experience">
+                    <span class="btn-build-led" aria-hidden="true"></span>
+                    <span>LET'S TRY TO BUILD IT</span>
+                  </button>
+
+                  <button id="btn-choice-explore" class="btn-choice-explore" data-target="section-explore" type="button" aria-label="Scroll to Explore Voyager 1">
+                    <span>I JUST WANT TO EXPLORE</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </button>
+                </div>
+
+                <div class="invitation-subtext">
+                  <span class="subtext-line" aria-hidden="true"></span>
+                  <span>YOUR MISSION STARTS HERE.</span>
+                  <span class="subtext-line" aria-hidden="true"></span>
+                </div>
+              </div>
+
+              <!-- Right Column: The Girl's Photograph -->
+              <aside class="invitation-visual-col" aria-label="Candidate Invitation Photograph">
+                <div class="invitation-image-frame">
+                  <img class="invitation-girl-img" 
+                       src="/assets/images/Anime Voyager Mission Poster.png" 
+                       alt="1977 Flight Project Candidate with Voyager 1 Mission Emblem and Golden Record insignia" 
+                       loading="lazy"
+                       decoding="async" />
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <!-- ====================================================================
+             SECTION 03 — EXPLORE VOYAGER 1
+             ==================================================================== -->
+        <section id="section-explore" class="site-section section-explore" aria-label="Section 03 — Explore Voyager 1">
+          <div class="section-container explore-hub-wrapper">
+
+            <!-- Two-Column Balanced Hero: Left = Girl Mission Poster, Right = Content -->
+            <div class="explore-two-column">
+              <!-- Left Column: The Complete Girl Mission Poster Artwork -->
+              <aside class="explore-visual-col" aria-label="Voyager 1 Mission Poster Artwork">
+                <div class="explore-boy-frame explore-poster-frame">
+                  <img class="explore-boy-img explore-poster-img" 
+                       src="/assets/images/Anime Voyager Mission Poster.png" 
+                       alt="Voyager 1 Mission Poster with candidate flight engineer, spacecraft, and Golden Record" 
+                       loading="lazy"
+                       decoding="async" />
+                </div>
+              </aside>
+
+              <!-- Right Column: All Explore Content & Actions -->
+              <div class="explore-content-col">
+                <header class="explore-header-deck">
+                  <div class="explore-badge">
+                    <span class="phase-led" aria-hidden="true"></span>
+                    <span>HISTORICAL RESOURCE HUB</span>
+                  </div>
+                  <h2 class="explore-main-title">EXPLORE VOYAGER 1</h2>
+                  <p class="explore-subtitle">
+                    &ldquo;Discover how humanity built, launched and operated one of its most remarkable spacecraft.&rdquo;
+                  </p>
+                </header>
+
+                <!-- Prominent Verified Fact Card -->
+                <div class="explore-fact-card">
+                  <div class="fact-card-header">
+                    <span class="fact-beacon-dot" aria-hidden="true"></span>
+                    <span class="fact-badge">HISTORIC SCIENTIFIC MILESTONE // INTERSTELLAR MEDIUM</span>
+                  </div>
+                  <div class="fact-highlight-text">
+                    &ldquo;On August 25, 2012, Voyager 1 crossed the heliopause and entered interstellar space, becoming the first human-made object to do so.&rdquo;
+                  </div>
+                  <div class="fact-source-citation">
+                    <span class="citation-label">HISTORICAL &amp; SCIENTIFIC RECORD:</span>
+                    NASA Jet Propulsion Laboratory (JPL) &bull; Science Vol 341, Issue 6148 (Sep 2013). At ~121 AU (~18.1 billion km) from the Sun, Voyager 1 transitioned beyond the solar wind heliosphere into the local interstellar plasma. Voyager 1 remains gravitationally bound within the broader Solar System (Oort Cloud).
+                  </div>
+                </div>
+
+                <!-- Single Primary Action Button to Open Independent Full-Page Explore Hub -->
+                <div class="explore-intro-action">
+                  <button id="btn-start-explore" class="btn-start-explore" type="button" aria-label="Open Explore Voyager 1 Hub">
+                    <span>LET'S EXPLORE!</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ====================================================================
+             SECTION 04 — ABOUT US / CREDITS
+             ==================================================================== -->
+        <section id="section-about" class="site-section section-about" aria-label="Section 04 — About Us / Credits">
+          <div class="section-container">
+            <header class="about-header-deck">
+              <div class="about-badge">
+                <span class="spec-led" aria-hidden="true"></span>
+                <span>ARCHIVAL INITIATIVE // MISSION RECONSTRUCTION</span>
+              </div>
+              <h2 class="about-main-title">ABOUT US &amp; CREDITS</h2>
+              <div class="about-tagline">Preserving the Human Ingenuity That Reached the Stars</div>
+              <p class="about-intro-text">
+                Inspired by the Pale Blue Dot perspective—looking back across billions of kilometers at our fragile home—this project was created to immerse students, educators, and space enthusiasts in the untold engineering decisions of 1977.
+              </p>
+              
+              <!-- Receding Earth / Pale Blue Dot Perspective Indicator -->
+              <div class="pale-blue-dot-indicator">
+                <span class="dot-beacon" aria-hidden="true"></span>
+                <span>REMOTELY OBSERVING EARTH &bull; VOYAGER 1 DEPARTURE VECTOR (~24 BILLION KM)</span>
+              </div>
+            </header>
+
+            <!-- Configurable Placeholders Strip -->
+            <div id="about-meta-deck" class="meta-deck">
+              <!-- Dynamically populated from about-data.js -->
+            </div>
+
+            <!-- Vision Deck -->
+            <div id="about-vision-deck" class="vision-deck">
+              <!-- Dynamically populated from about-data.js -->
+            </div>
+
+            <!-- Team Member Editable Placeholders -->
+            <section class="team-section" aria-label="Project Team Members">
+              <div class="section-header-row">
+                <h3 class="section-heading-text">PROJECT TEAM &amp; ROLES</h3>
+                <span class="section-meta-note">[EDITABLE PROFILE PLACEHOLDERS &bull; NO FAKE REAL DATA]</span>
+              </div>
+              <div id="about-team-grid" class="team-grid">
+                <!-- Dynamically populated from about-data.js -->
+              </div>
+            </section>
+
+            <!-- Documentary Credits & Archival Sources -->
+            <section class="credits-deck" aria-label="Credits &amp; References">
+              <div class="section-header-row">
+                <h3 class="section-heading-text">DOCUMENTARY REFERENCES &amp; CREDITS</h3>
+                <span class="section-meta-note">OFFICIAL ARCHIVAL SOURCES</span>
+              </div>
+              <div id="about-credits-grid" class="credits-grid">
+                <!-- Dynamically populated from about-data.js -->
+              </div>
+              <p class="about-disclaimer">
+                This website is an independent educational historical simulation. It is not affiliated with, sponsored by, or endorsed by NASA or the Jet Propulsion Laboratory. All NASA historical imagery and 3D geometries are utilized under NASA Media Usage Guidelines.
+              </p>
+            </section>
+          </div>
+        </section>
+
+      </main>
+      </div> <!-- /#view-main-site -->
+
+      <!-- ====================================================================
+           PAGE 2 — INDEPENDENT BUILD EXPERIENCE PAGE (#build)
+           ==================================================================== -->
+      <div id="view-page-build" class="independent-page-view" style="display: none;" aria-hidden="true">
+        <!-- Sticky Top Bar with Top-Left Back Button -->
+        <header class="page-top-bar" role="banner">
+          <button class="btn-page-back" data-action="back-to-main" type="button" aria-label="Return to Main Website">
+            <span aria-hidden="true">&larr;</span>
+            <span>BACK</span>
+          </button>
+          <div class="page-meta-badge">
+            <span class="badge-led" aria-hidden="true"></span>
+            <span>FLIGHT HARDWARE BUILD &amp; QUALIFICATION</span>
+          </div>
+        </header>
+
+        <main class="build-page-container">
+          <!-- Hero Deck -->
+          <div class="build-hero-deck">
+            <div class="build-phase-tag">
+              <span class="phase-led" aria-hidden="true"></span>
+              <span>SUBSYSTEM INTEGRATION &bull; 1972–1977</span>
+            </div>
+            <h1 class="build-main-title">BUILD WITH US — 1977 SPACECRAFT ASSEMBLY</h1>
+            <div class="build-subtitle">
+              &ldquo;Engineering the probe that defied the boundaries of the solar system.&rdquo;
+            </div>
+            <p class="build-lead-text">
+              Examine the rigorous sequence of mechanical integration, structural assembly, and environmental qualification conducted at the Jet Propulsion Laboratory Spacecraft Assembly Facility (SAF) Building 179 in Pasadena, California.
+            </p>
+          </div>
+
+          <!-- Section 1: Spacecraft Mass & Dimensional Budget -->
+          <div class="build-section-heading">
+            <span class="phase-led" aria-hidden="true"></span>
+            <h2 class="build-section-title">SPACECRAFT MASS &amp; DIMENSIONAL BUDGET</h2>
+            <span class="build-section-meta">[VERIFIED LAUNCH CONFIGURATION &bull; SEPT 1977]</span>
+          </div>
+
+          <div class="mass-budget-strip">
+            <div class="mass-metric-card">
+              <div class="mass-metric-label">TOTAL LAUNCH MASS</div>
+              <div class="mass-metric-value">815 kg</div>
+              <div class="mass-metric-desc">Including 105 kg hydrazine propellant, 710 kg dry spacecraft mass</div>
+            </div>
+            <div class="mass-metric-card">
+              <div class="mass-metric-label">HIGH-GAIN REFLECTOR</div>
+              <div class="mass-metric-value">3.7 m</div>
+              <div class="mass-metric-desc">Diameter parabolic graphite epoxy composite dish (~65 kg)</div>
+            </div>
+            <div class="mass-metric-card">
+              <div class="mass-metric-label">SCIENCE PAYLOAD</div>
+              <div class="mass-metric-value">117 kg</div>
+              <div class="mass-metric-desc">11 scientific instruments across scan platform and deployable booms</div>
+            </div>
+            <div class="mass-metric-card">
+              <div class="mass-metric-label">ELECTRICAL POWER</div>
+              <div class="mass-metric-value">470 W</div>
+              <div class="mass-metric-desc">3 MHW-RTGs powered by plutonium-238 dioxide radioisotope decay</div>
+            </div>
+          </div>
+
+          <!-- Section 2: Assembly & Construction Stages -->
+          <div class="build-section-heading">
+            <span class="phase-led" aria-hidden="true"></span>
+            <h2 class="build-section-title">FLIGHT HARDWARE ASSEMBLY SEQUENCE</h2>
+            <span class="build-section-meta">[JPL SAF 179 STAGES 01 TO 06]</span>
+          </div>
+
+          <div class="assembly-stages-grid">
+            <!-- Stage 01 -->
+            <article class="assembly-stage-card">
+              <div>
+                <div class="stage-card-header">
+                  <span class="stage-number-badge">STAGE 01</span>
+                  <span class="stage-component-tag">CORE AIRFRAME</span>
+                  <span class="stage-role-pill" style="font-family: var(--font-mono); font-size: 0.6875rem; color: #10b981; margin-left: auto;">[Role: Systems Integration]</span>
+                </div>
+                <h3 class="stage-card-title">10-Sided Polygonal Bus &amp; Fuel Tank Integration</h3>
+                <p class="stage-card-desc">
+                  Construction began with the 10-sided decagonal aluminium ring structure housing 10 electronics bays. The central spherical titanium propellant tank (105 kg hydrazine) was mounted at the geometric center of gravity.
+                </p>
+                <div class="stage-spec-box">
+                  <div class="stage-spec-label">MATERIALS &amp; STRUCTURAL ALLOY:</div>
+                  <div class="stage-spec-val">Titanium 6Al-4V tank, beryllium structural struts, 2024-T4 aluminium alloy bay chassis with multilayer aluminized Mylar thermal blankets.</div>
+                </div>
+              </div>
+              <div class="testing-image-frame" style="margin-top: 1.25rem;">
+                <img class="testing-nasa-img" 
+                     src="/assets/images/Voyager Test Model Configuration.jpeg" 
+                     alt="Voyager Proof Test Model decagonal bus airframe and titanium fuel tank, JPL SAF 179 (1976)" 
+                     loading="lazy"
+                     decoding="async" />
+                <div class="testing-img-caption">
+                  <strong>NASA/JPL SAF 179</strong> &bull; Voyager 10-Sided Decagonal Airframe &amp; Propellant Tank Integration &bull; <strong>Pasadena, CA</strong>
+                </div>
+              </div>
+            </article>
+
+            <!-- Stage 02 -->
+            <article class="assembly-stage-card">
+              <div>
+                <div class="stage-card-header">
+                  <span class="stage-number-badge">STAGE 02</span>
+                  <span class="stage-component-tag">COMMUNICATIONS</span>
+                  <span class="stage-role-pill" style="font-family: var(--font-mono); font-size: 0.6875rem; color: #38bdf8; margin-left: auto;">[Role: Telecommunications]</span>
+                </div>
+                <h3 class="stage-card-title">3.7-Meter High-Gain Antenna &amp; Feed Horn Alignment</h3>
+                <p class="stage-card-desc">
+                  The primary 3.7-meter parabolic dish antenna was structurally mounted above the 10-sided bus. A Cassegrain sub-reflector and dual S-band and X-band feed horn assembly were precision-aligned on optical benches.
+                </p>
+                <div class="stage-spec-box">
+                  <div class="stage-spec-label">MICROWAVE SUBSYSTEM:</div>
+                  <div class="stage-spec-val">Dual S-band (2.3 GHz) and X-band (8.4 GHz) parabolic reflector with graphite epoxy honeycomb construction for extreme dimensional stability across -150&deg;C to +100&deg;C.</div>
+                </div>
+              </div>
+              <div class="testing-image-frame" style="margin-top: 1.25rem;">
+                <img class="testing-nasa-img" 
+                     src="/assets/images/spacecraft-profile.jpg.jpeg" 
+                     alt="Voyager 1 3.7-meter High-Gain Antenna and decagonal bus cutaway (NASA P-18882)" 
+                     loading="lazy"
+                     decoding="async" />
+                <div class="testing-img-caption">
+                  <strong>NASA P-18882</strong> &bull; 3.7-Meter Parabolic High-Gain Dish &amp; Sub-Reflector Feed Horn Alignment &bull; <strong>JPL Cleanroom</strong>
+                </div>
+              </div>
+            </article>
+
+            <!-- Stage 03 -->
+            <article class="assembly-stage-card">
+              <div>
+                <div class="stage-card-header">
+                  <span class="stage-number-badge">STAGE 03</span>
+                  <span class="stage-component-tag">POWER GENERATION</span>
+                  <span class="stage-role-pill" style="font-family: var(--font-mono); font-size: 0.6875rem; color: #f59e0b; margin-left: auto;">[Role: Thermal &amp; Propulsion]</span>
+                </div>
+                <h3 class="stage-card-title">Radioisotope Thermoelectric Generators (RTG)</h3>
+                <p class="stage-card-desc">
+                  Three Multi-Hundred-Watt RTGs (MHW-RTG) were integrated on a 3.7-meter deployable fiberglass boom to thermally isolate nuclear heat and radioactive decay from sensitive electronic subsystems.
+                </p>
+                <div class="stage-spec-box">
+                  <div class="stage-spec-label">POWER SUBSYSTEM SPECS:</div>
+                  <div class="stage-spec-val">Total 470 W DC power at launch, driven by 24 fuel spheres of plutonium-238 dioxide (PuO2) per RTG, converting radiogenic heat to electricity via silicon-germanium thermocouples.</div>
+                </div>
+              </div>
+              <div class="configurable-image-slot">
+                <svg class="slot-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+                <div class="slot-title">ASSET SLOT: RTG BOOM INTEGRATION</div>
+                <span class="slot-status-tag">CONFIGURABLE ASSET SLOT</span>
+                <span class="slot-note">[Archival photo placeholder reserved for verified MHW-RTG mounting documentation]</span>
+              </div>
+            </article>
+
+            <!-- Stage 04 -->
+            <article class="assembly-stage-card">
+              <div>
+                <div class="stage-card-header">
+                  <span class="stage-number-badge">STAGE 04</span>
+                  <span class="stage-component-tag">SCIENCE SUITE</span>
+                  <span class="stage-role-pill" style="font-family: var(--font-mono); font-size: 0.6875rem; color: #fbbf24; margin-left: auto;">[Role: Science Instruments]</span>
+                </div>
+                <h3 class="stage-card-title">Scan Platform &amp; 13-Meter Astromast Magnetometer Boom</h3>
+                <p class="stage-card-desc">
+                  The two-axis articulating scan platform (housing cameras, spectrometers, and radiometers) was mounted opposite the RTG boom. A 13-meter deployable Astromast boom was coiled for launch to keep magnetometers far from spacecraft magnetic fields.
+                </p>
+                <div class="stage-spec-box">
+                  <div class="stage-spec-label">INSTRUMENT SPECIFICATION:</div>
+                  <div class="stage-spec-val">Narrow/wide-angle Vidicon cameras (ISS), infrared interferometer (IRIS), ultraviolet spectrometer (UVS), photopolarimeter (PPS), and low/high-field triaxial fluxgate magnetometers (MAG).</div>
+                </div>
+              </div>
+              <div class="configurable-image-slot">
+                <svg class="slot-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+                <div class="slot-title">ASSET SLOT: SCAN PLATFORM MOUNTING</div>
+                <span class="slot-status-tag">CONFIGURABLE ASSET SLOT</span>
+                <span class="slot-note">[Archival photo placeholder reserved for verified Science Instrument testing]</span>
+              </div>
+            </article>
+
+            <!-- Stage 05 -->
+            <article class="assembly-stage-card">
+              <div>
+                <div class="stage-card-header">
+                  <span class="stage-number-badge">STAGE 05</span>
+                  <span class="stage-component-tag">INTERSTELLAR MESSAGE</span>
+                  <span class="stage-role-pill" style="font-family: var(--font-mono); font-size: 0.6875rem; color: #fbbf24; margin-left: auto;">[Role: Science Instruments]</span>
+                </div>
+                <h3 class="stage-card-title">The Golden Record &amp; Uranium-238 Shield Integration</h3>
+                <p class="stage-card-desc">
+                  The 12-inch gold-plated copper phonograph record containing sounds and images of Earth was bolted to Bay 4 of the bus. An electroplated ultra-pure uranium-238 sample was enclosed within the gold-anodized protective aluminum cover as a radio-decay clock.
+                </p>
+                <div class="stage-spec-box">
+                  <div class="stage-spec-label">ARTIFACT SPECIFICATION:</div>
+                  <div class="stage-spec-val">12-inch phonograph record, 115 analog images, greetings in 55 languages, 90 minutes of music, needle and cartridge included, designed to endure for over a billion years in deep space.</div>
+                </div>
+              </div>
+              <div class="testing-image-frame" style="margin-top: 1.25rem;">
+                <img class="testing-nasa-img" 
+                     src="/assets/images/pia21740-golden-record-installation.jpg" 
+                     alt="NASA JPL technicians securing the Golden Record protective cover to Voyager 1 (1977, NASA PIA21740)" 
+                     loading="lazy"
+                     decoding="async" />
+                <div class="testing-img-caption">
+                  <strong>NASA PIA21740</strong> &bull; Technicians mounting the Golden Record protective aluminum cover to Bay 4 of Voyager 1 &bull; <strong>JPL SAF 1977</strong>
+                </div>
+              </div>
+            </article>
+
+            <!-- Stage 06 -->
+            <article class="assembly-stage-card">
+              <div>
+                <div class="stage-card-header">
+                  <span class="stage-number-badge">STAGE 06</span>
+                  <span class="stage-component-tag">PROPULSION &amp; ATTITUDE</span>
+                  <span class="stage-role-pill" style="font-family: var(--font-mono); font-size: 0.6875rem; color: #f59e0b; margin-left: auto;">[Role: Thermal &amp; Propulsion]</span>
+                </div>
+                <h3 class="stage-card-title">Attitude Propulsion Subsystem &amp; Star Tracker Alignment</h3>
+                <p class="stage-card-desc">
+                  Sixteen 0.2-pound-force (0.9 N) catalytic hydrazine thrusters arranged in dual redundant clusters were integrated for 3-axis attitude orientation. Precision Sun sensor and Canopus star tracker optics were calibrated to maintain lock with Earth.
+                </p>
+                <div class="stage-spec-box">
+                  <div class="stage-spec-label">GUIDANCE &amp; CONTROL SPECS:</div>
+                  <div class="stage-spec-val">Computer Command System (CCS with dual-redundant 4,096 18-bit words), Attitude and Articulation Control Subsystem (AACS), and Flight Data Subsystem (FDS with 16-bit words).</div>
+                </div>
+              </div>
+              <div class="testing-image-frame" style="margin-top: 1.25rem;">
+                <img class="testing-nasa-img" 
+                     src="/assets/images/Voyager%E2%80%99s%20Launch%20Vehicle%20Adapter.jpeg" 
+                     alt="Centaur Conical Launch Vehicle Adapter & Spacecraft Separation Interface Ring" 
+                     loading="lazy"
+                     decoding="async" />
+                <div class="testing-img-caption">
+                  <strong>NASA KSC / General Dynamics</strong> &bull; Conical Launch Vehicle Adapter &amp; Separation Interface Ring &bull; <strong>Cape Canaveral 1977</strong>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Section 3: Archival Cleanroom Facilities & Testing (Verified SAF 179 Records) -->
+          <div class="build-section-heading">
+            <span class="phase-led" aria-hidden="true"></span>
+            <h2 class="build-section-title">CLEANROOM HIGH BAY &amp; COMPONENT ARCHIVES</h2>
+            <span class="build-section-meta">[NASA/JPL SAF BUILDING 179 ARCHIVES]</span>
+          </div>
+
+          <div class="mass-budget-strip" style="margin-bottom: 3.5rem;">
+            <div class="testing-image-frame" style="background: rgba(14, 18, 30, 0.95); padding: 1rem; border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 4px;">
+              <img class="testing-nasa-img" 
+                   src="/assets/images/Voyager%20Test%20Model%20Configuration.jpeg" 
+                   alt="Voyager Proof Test Model structural decagonal airframe in JPL SAF 179 cleanroom high bay" 
+                   loading="lazy"
+                   decoding="async"
+                   style="max-height: 240px; object-fit: contain; width: 100%; border-radius: 2px;" />
+              <div class="testing-img-caption" style="margin-top: 0.75rem;">
+                <strong>NASA/JPL SAF 179:</strong> Voyager Proof Test Model (PTM) structural decagonal airframe without thermal blankets in the Spacecraft Assembly Facility cleanroom high bay (Pasadena, CA).
+              </div>
+            </div>
+
+            <div class="testing-image-frame" style="background: rgba(14, 18, 30, 0.95); padding: 1rem; border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 4px;">
+              <img class="testing-nasa-img" 
+                   src="/assets/images/voyager7.gif" 
+                   alt="Spacecraft Assembly Facility Building 179 Cleanroom High Bay" 
+                   loading="lazy"
+                   decoding="async"
+                   style="max-height: 240px; object-fit: contain; width: 100%; border-radius: 2px;" />
+              <div class="testing-img-caption" style="margin-top: 0.75rem;">
+                <strong>NASA/JPL Archives:</strong> Spacecraft Assembly Facility (SAF) Building 179 Cleanroom High Bay operations during flight qualification and integration.
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 4: Engineering Testing Showcase (Verified NASA PIA21734) -->
+          <div class="build-section-heading">
+            <span class="phase-led" aria-hidden="true"></span>
+            <h2 class="build-section-title">ENGINEERING TESTING &amp; QUALIFICATION</h2>
+            <span class="build-section-meta">[VERIFIED NASA ARCHIVAL PHOTOGRAPH PIA21734]</span>
+          </div>
+
+          <section class="testing-showcase-panel" aria-label="JPL Space Simulator Chamber Testing">
+            <div class="testing-two-column">
+              <div class="testing-image-frame">
+                <img class="testing-nasa-img" 
+                     src="/assets/images/pia21734.jpg" 
+                     alt="Voyager Proof Test Model inside the JPL 25-Foot Space Simulator Chamber on December 3, 1976 (NASA PIA21734)" 
+                     loading="lazy"
+                     decoding="async" />
+                <div class="testing-img-caption">
+                  <strong>NASA PIA21734</strong> &bull; Voyager Proof Test Model inside the 25-Foot Space Simulator Chamber, Jet Propulsion Laboratory, Pasadena, California &bull; <strong>3 December 1976</strong>
+                </div>
+              </div>
+
+              <div class="testing-details-col">
+                <div class="testing-badge">
+                  <span class="phase-led" aria-hidden="true"></span>
+                  <span>THERMAL VACUUM QUALIFICATION // 1976</span>
+                </div>
+                <h3 class="testing-title">Voyager Proof Test Model in the JPL 25-Foot Space Simulator</h3>
+                <p class="testing-desc">
+                  On December 3, 1976, JPL engineers subjected the full-scale Voyager Proof Test Model (PTM) to extreme environmental tests in the 25-Foot Space Simulator vacuum chamber. The chamber simulated both intense solar radiation using xenon arc lamps and the absolute cold of deep space (-180&deg;C) using liquid nitrogen shrouds.
+                </p>
+                <ul class="testing-specs-list">
+                  <li class="testing-spec-item">
+                    <span class="bullet">&gt;</span>
+                    <span><strong>Thermal Extreme Qualification:</strong> Verified temperature regulation across internal electronics bays when operating under direct solar heating and deep planetary shadow.</span>
+                  </li>
+                  <li class="testing-spec-item">
+                    <span class="bullet">&gt;</span>
+                    <span><strong>High-Gain Microwave Test:</strong> Validated antenna feed alignment and radio transmission integrity under hard vacuum conditions of 10<sup>-6</sup> torr.</span>
+                  </li>
+                  <li class="testing-spec-item">
+                    <span class="bullet">&gt;</span>
+                    <span><strong>Jovian Radiation Hardening:</strong> Ensured custom radiation shielding and triple-redundant logic gates withstood the massive radiation belts of Jupiter.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+
+      <!-- ====================================================================
+           PAGE 3 — INDEPENDENT EXPLORE VOYAGER 1 EXPERIENCE (#explore-hub)
+           ==================================================================== -->
+      <div id="view-page-explore" class="independent-page-view" style="display: none;" aria-hidden="true">
+        <!-- Sticky Top Bar with Top-Left Back Button -->
+        <header class="page-top-bar" role="banner">
+          <button class="btn-page-back" data-action="back-to-main" type="button" aria-label="Return to Main Website">
+            <span aria-hidden="true">&larr;</span>
+            <span>BACK</span>
+          </button>
+          <div class="page-meta-badge">
+            <span class="badge-led" aria-hidden="true"></span>
+            <span>HISTORICAL RESEARCH</span>
+          </div>
+        </header>
+
+        <div class="explore-page-container" style="max-width: 1280px; margin: 0 auto;">
+          <!-- LEVEL 1: EXPLORE HUB MASTER VIEWS -->
+          <div id="explore-level-1" class="explore-level-view active">
+            <!-- Master Top Nav Tabs -->
+            <nav class="explore-hub-nav-tabs" role="tablist" aria-label="Explore Sections">
+              <button id="tab-btn-spacecraft" class="btn-explore-nav-tab active" data-explore-tab="spacecraft" type="button" role="tab" aria-selected="true">
+                <span class="tab-nav-dot" aria-hidden="true"></span>
+                <span>01 VISUALIZE VOYAGER 1</span>
+              </button>
+              <button id="tab-btn-golden-record" class="btn-explore-nav-tab" data-explore-tab="golden-record" type="button" role="tab" aria-selected="false">
+                <span class="tab-nav-dot" aria-hidden="true"></span>
+                <span>02 THE GOLDEN RECORD</span>
+              </button>
+              <button id="tab-btn-categories" class="btn-explore-nav-tab" data-explore-tab="categories" type="button" role="tab" aria-selected="false">
+                <span class="tab-nav-dot" aria-hidden="true"></span>
+                <span>03 RESEARCH ARCHIVE</span>
+              </button>
+              <button id="tab-btn-silent-archive" class="btn-explore-nav-tab" data-explore-tab="silent-archive" type="button" role="tab" aria-selected="false">
+                <span class="tab-nav-dot" aria-hidden="true"></span>
+                <span>04 THE SILENT HARDWARE ARCHIVE</span>
+              </button>
+            </nav>
+
+            <!-- Container for Tab 1: Visualize Voyager 1 Spacecraft -->
+            <div id="explore-pane-spacecraft" class="explore-tab-pane active">
+              <!-- Dynamically rendered by renderSpacecraftExplorer -->
+            </div>
+
+            <!-- Container for Tab 2: The Golden Record -->
+            <div id="explore-pane-golden-record" class="explore-tab-pane" style="display: none;">
+              <!-- Dynamically rendered by renderGoldenRecordExplorer -->
+            </div>
+
+            <!-- Container for Tab 3: Research Archive (6 Categories) -->
+            <div id="explore-pane-categories" class="explore-tab-pane" style="display: none;">
+              <div class="categories-deck-header">
+                <h2 class="categories-deck-title">SELECT A RESEARCH CATEGORY</h2>
+                <p class="categories-deck-desc">
+                  [Click any card below to examine verified JPL engineering subtopics and hardware dossiers]
+                </p>
+              </div>
+              <!-- 6 Independent Category Cards Grid -->
+              <div id="category-cards-grid" class="category-cards-grid">
+                <!-- Dynamically populated from explore-data.js -->
+              </div>
+            </div>
+
+            <!-- Container for Tab 4: The Silent Hardware Archive (Dedicated View) -->
+            <div id="explore-pane-silent-archive" class="explore-tab-pane" style="display: none;">
+              <!-- Dynamically rendered by renderSilentArchiveInto -->
+            </div>
+          </div>
+
+          <!-- LEVEL 2: CATEGORY SUBTOPICS -->
+          <div id="explore-level-2" class="explore-level-view">
+            <div id="level-2-content" class="level-content-container">
+              <!-- Dynamically populated when a category is selected -->
+            </div>
+          </div>
+
+          <!-- LEVEL 3: DEDICATED DETAILED RESEARCH DOSSIER -->
+          <div id="explore-level-3" class="explore-level-view">
+            <div id="level-3-content" class="level-content-container">
+              <!-- Dynamically populated when a subtopic is selected -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           MODALS & OVERLAYS
+           ==================================================================== -->
+
+      <!-- Dedicated Mission-Entry Experience Overlay (Section 02 — YES, I'M IN!) -->
+      <div id="mission-entry-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="mission-entry-title">
+        <div class="modal-backdrop btn-return-website"></div>
+        <div class="dossier-terminal-card">
+          <header class="dossier-terminal-header">
+            <div class="modal-header-meta">
+              <span class="spec-led" style="background: var(--terminal-green); box-shadow: 0 0 8px var(--terminal-green);" aria-hidden="true"></span>
+              <h3 id="mission-entry-title" style="font-family: var(--font-heading); font-size: 1.05rem; color: #ffffff;">
+                SIMULATED MISSION REGISTRATION TERMINAL // JPL SAF 1977
+              </h3>
+            </div>
+            <button class="btn-close-modal btn-return-website" type="button" aria-label="Return to main website">Return</button>
+          </header>
+          <div class="dossier-terminal-body">
+            <div class="terminal-row">
+              <span class="terminal-label">CANDIDATE ID:</span>
+              <span id="terminal-candidate-id" class="terminal-val">MJS77-CANDIDATE-7701</span>
+            </div>
+            <div class="terminal-row">
+              <span class="terminal-label">ASSIGNED FACILITY:</span>
+              <span class="terminal-val">JPL SAF BLDG 179 &bull; PASADENA, CA</span>
+            </div>
+            <div class="terminal-row">
+              <span class="terminal-label">WORKSHOP DIVISION:</span>
+              <span class="terminal-val">FLIGHT SPACECRAFT MECHANICAL &amp; BUS INTEGRATION</span>
+            </div>
+            <div class="terminal-row">
+              <span class="terminal-label">SIMULATED CLEARANCE:</span>
+              <span class="terminal-val">LEVEL-1 WORKSHOP ARCHIVE CLEARANCE</span>
+            </div>
+            <div class="terminal-row">
+              <span class="terminal-label">MISSION STATUS:</span>
+              <span class="terminal-val" style="color: #6ee7b7;">ENROLLED // AUTHORIZED TO INSPECT FLIGHT HARDWARE</span>
+            </div>
+
+            <p style="font-size: 0.825rem; color: var(--text-secondary); line-height: 1.6; margin-top: 0.75rem;">
+              Your candidate registration is authorized in this local simulation session. You are cleared to proceed with deep-space subsystem inspection, historical launch telemetry, and flight hardware analysis.
+            </p>
+
+            <div class="terminal-checklist">
+              <div class="checklist-item"><span class="check-led"></span> Thermal vacuum qualification log verified</div>
+              <div class="checklist-item"><span class="check-led"></span> 3.7m high-gain dish microwave link cleared</div>
+              <div class="checklist-item"><span class="check-led"></span> Golden Record cover uranium-238 clock verified</div>
+            </div>
+
+            <div class="terminal-action-row" style="display: flex; gap: 1rem; margin-top: 1.25rem; flex-wrap: wrap;">
+              <button class="btn-return-website" type="button" style="padding: 0.85rem 1.6rem; font-family: var(--font-mono); font-size: 0.85rem; background: rgba(245, 158, 11, 0.15); border: 1px solid var(--gold-core, #f59e0b); color: var(--gold-light, #fbbf24); cursor: pointer; border-radius: 4px;">
+                &larr; RETURN TO MAIN WEBSITE
+              </button>
+              <button id="btn-overlay-proceed-explore" type="button" style="padding: 0.85rem 1.6rem; font-family: var(--font-mono); font-size: 0.85rem; background: var(--amber-glow); border: 1px solid var(--amber-glow); color: #040711; font-weight: 700; cursor: pointer; border-radius: 4px;">
+                PROCEED TO EXPLORE VOYAGER 1 &darr;
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Historical Briefing Modal (Section 01) -->
+      <div id="briefing-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title">
+        <div id="modal-backdrop" class="modal-backdrop"></div>
+        <div class="modal-card">
+          <header class="modal-header">
+            <div class="modal-header-meta">
+              <span class="spec-led" aria-hidden="true"></span>
+              <h2 id="modal-title" class="modal-title">HISTORICAL BRIEFING &amp; SUBSYSTEMS</h2>
+            </div>
+            <button id="btn-close-modal" class="btn-close-modal" type="button" aria-label="Close historical briefing modal">Close</button>
+          </header>
+
+          <nav class="modal-tabs" role="tablist" aria-label="Briefing Sections">
+            <button id="tab-btn-chronology" class="modal-tab-btn active" role="tab" aria-selected="true" type="button">
+              CHRONOLOGY (1972–1977)
+            </button>
+            <button id="tab-btn-dossier" class="modal-tab-btn" role="tab" aria-selected="false" type="button">
+              SUBSYSTEM HARDWARE DOSSIER
+            </button>
+          </nav>
+
+          <div class="modal-body">
+            <div id="view-chronology" class="modal-view">
+              <p class="modal-summary-text">
+                The Voyager mission originated from NASA's ambitious late-1960s "Outer Planets Grand Tour" concept. When budget constraints cancelled the original four-probe plan in 1972, engineers at the Jet Propulsion Laboratory re-engineered Mariner spacecraft architecture into the high-endurance <strong>Mariner Jupiter/Saturn 1977</strong> probes.
+              </p>
+              <ul id="modal-chronology" class="chronology-list"></ul>
+            </div>
+
+            <div id="view-dossier" class="modal-view" style="display: none;">
+              <p class="modal-summary-text">
+                Detailed mechanical and scientific subsystem documentation engineered at JPL for Voyager 1:
+              </p>
+              <ul id="modal-dossier" class="dossier-list"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>

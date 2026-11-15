@@ -1,0 +1,255 @@
+/* ==========================================================================
+   VOYAGER 1 — 1977 JPL ENGINEERING ENVIRONMENT
+   Theme: Vintage 1970s Spaceflight Instrumentation & Deep Space Console
+   Master CSS Entrypoint & Subsystem Stylesheets
+   ========================================================================== */
+
+@import './hud.css';
+@import './entry.css';
+@import './invitation.css';
+@import './explore.css';
+@import './build-page.css';
+@import './mission-engine.css';
+@import './about.css';
+
+:root {
+  /* Cosmic & Deep Space Palette */
+  --space-void: #020409;
+  --space-surface: #060913;
+  --space-panel: rgba(10, 14, 24, 0.85);
+  --space-panel-hover: rgba(18, 24, 38, 0.95);
+  --space-border: rgba(245, 158, 11, 0.22);
+  --space-border-bright: rgba(251, 191, 36, 0.45);
+
+  /* Golden & Amber Visual Identity */
+  --gold-core: #f59e0b;
+  --gold-light: #fbbf24;
+  --gold-antique: #fef08a;
+  --gold-warm: #d97706;
+  --gold-glow: rgba(245, 158, 11, 0.35);
+  --gold-glow-bright: rgba(251, 191, 36, 0.45);
+  --amber-core: #f59e0b;
+  --amber-glow: rgba(245, 158, 11, 0.3);
+  --terminal-green: #34d399;
+  --terminal-green-glow: rgba(52, 211, 153, 0.4);
+  --alert-red: #ef4444;
+
+  /* Aliasing legacy cyan variables to gold so any reference defaults to golden theme */
+  --cyan-telemetry: #f59e0b;
+  --cyan-glow: rgba(245, 158, 11, 0.35);
+
+  /* Typography Colors */
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-dim: #94a3b8;
+  --text-amber: #fbbf24;
+  --text-gold: #fef08a;
+
+  /* Vintage Monospace & Technical Fonts */
+  --font-mono: 'SF Mono', 'Fira Code', 'Roboto Mono', Menlo, Consolas, Monaco, monospace;
+  --font-heading: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Transitions */
+  --ease-fast: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Subtle Golden Information Highlight for High-Value Scientific Data & Dates */
+.gold-highlight {
+  color: #fef08a;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.28);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--space-void);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Three.js Background Canvas */
+#bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* CRT Vignette & Subtle Technical Grain */
+.crt-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: 
+    radial-gradient(circle at center, transparent 40%, rgba(3, 4, 7, 0.75) 100%),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.012) 0px,
+      rgba(255, 255, 255, 0.012) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+}
+
+/* Accessibility: Screen Reader Only Utility */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Accessibility: Respect Reduced Motion (WP-25) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .edu-badge-pulse, .dot-beacon, .pulse-ring, .crt-overlay {
+    animation: none !important;
+  }
+}
+
+/* ==========================================================================
+   WP-21: ULTRA-WIDE (>1920px) GRID & READABILITY CONSTRAINTS
+   ========================================================================== */
+@media (min-width: 1921px) {
+  .section-container,
+  .explore-hub-wrapper,
+  .build-workspace-container,
+  .explore-page-container,
+  .hud-header {
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Limit text blocks to below 80 characters for optimal reading ergonomics */
+  .hero-tagline,
+  .hero-body-text,
+  .explore-subtitle,
+  .about-intro-text,
+  .testing-desc,
+  .stage-card-desc,
+  .fact-source-citation,
+  .build-intro-desc {
+    max-width: 75ch;
+  }
+}
+
+/* ==========================================================================
+   WP-23: HIGH-CONTRAST THEME MODE (WCAG AAA COMPLIANCE)
+   ========================================================================== */
+body.theme-high-contrast {
+  --space-void: #000000;
+  --space-surface: #000000;
+  --space-panel: #050505;
+  --space-panel-hover: #151515;
+  --space-border: #ffffff;
+  --space-border-bright: #ffff00;
+  --text-primary: #ffffff;
+  --text-secondary: #ffffff;
+  --text-dim: #e5e5e5;
+  --gold-core: #ffff00;
+  --gold-light: #ffff66;
+  --gold-warm: #ffdd00;
+  --text-amber: #ffff00;
+  --text-gold: #ffff00;
+}
+
+body.theme-high-contrast .site-section,
+body.theme-high-contrast .technical-bracket-panel,
+body.theme-high-contrast .category-card,
+body.theme-high-contrast .assembly-stage-card,
+body.theme-high-contrast .explore-boy-frame,
+body.theme-high-contrast .invitation-image-frame,
+body.theme-high-contrast .hud-header {
+  border-color: #ffffff !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+body.theme-high-contrast button,
+body.theme-high-contrast a {
+  outline-offset: 3px;
+}
+
+body.theme-high-contrast button:focus-visible,
+body.theme-high-contrast a:focus-visible {
+  outline: 3px solid #ffff00 !important;
+}
+
+/* ==========================================================================
+   WP-28: PRINT STYLESHEET FOR RESEARCH DOSSIERS & ARCHIVE
+   ========================================================================== */
+@media print {
+  #bg-canvas,
+  .crt-overlay,
+  .hud-header,
+  .btn-hud-tool,
+  .btn-page-back,
+  .btn-start-explore,
+  .btn-choice-explore,
+  .explore-intro-action,
+  .explore-hub-nav-tabs,
+  #cheat-sheet-modal,
+  #briefing-modal {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #111827 !important;
+    font-size: 11pt;
+  }
+
+  .site-section,
+  .independent-page-view {
+    display: block !important;
+    background: transparent !important;
+    color: #111827 !important;
+    min-height: auto !important;
+    padding: 1rem 0 !important;
+  }
+
+  .instrument-box,
+  .assembly-stage-card,
+  .category-card,
+  .dossier-item,
+  .chronology-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border: 1px solid #d1d5db !important;
+    background: #f9fafb !important;
+    color: #111827 !important;
+    margin-bottom: 1rem !important;
+    box-shadow: none !important;
+  }
+}

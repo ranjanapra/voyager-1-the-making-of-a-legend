@@ -1,0 +1,36 @@
+File: VY1MAG_DIR.txt                        Version: NSSDC 03/23/2004 JFC
+-------------------------------------------------------------------------
+
+This directory contains interplanetary magnetic field data from the
+Voyager 1 Triaxial Fluxgate Magnetometer (MAG) experiment, which is
+briefly described in the file VY1MAG_NMC.txt extracted from the NSSDC
+Master Catalog. The directories ip_48S_ascii and ip_1hour_ascii respectively 
+include 48-second and hourly averaged ASCII data in heliographic 
+coordinates for 1977 - 1989. Higher resolution (1.9 - 9.6 sec) summary 
+data in VMS binary format are provided in directory ip_sum_vmsbin for the
+same time period. Since this is a non-VMS site, please note that special
+procedures are needed to read the VMS binary files by using the file
+attribute information provided separately for each binary file. Contact
+NSSDC for further information on these procedures.
+
+
+Related Information and Data:
+
+Further details on the spacecraft, experiment, data sets at NSSDC, and 
+related WWW sites can be found on the Voyager 1/2 flight project page 
+under
+
+http://nssdc.gsfc.nasa.gov/space/
+
+Hour averages of the interplanetary solar wind data from, and hourly 
+heliocentric coordinates of, Voyager 1/2 and other interplanetary 
+spacecraft may be also be accessed and plotted on-line through the 
+COHOWeb service based at the same WWW site as above.
+
+Acknowledgement:
+
+Use of these data in publications should be accompanied at minimum by
+acknowledgements of the National Space Science Data Center and the 
+responsible Principal Investigator defined in the experiment documentation 
+provided here. 
+

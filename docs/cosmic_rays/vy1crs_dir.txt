@@ -1,0 +1,47 @@
+File: VY1CRS_DIR.txt                        Version: NSSDC 02/05/2006 JFC
+-------------------------------------------------------------------------
+
+VOYAGER 1 COSMIC RAY (CRS) Experiment: SIX HOUR INTERPLANETARY COUNTING 
+RATES AND FLUXES
+
+Principal Investigator: Prof. Edward C. Stone
+                        Jet Propulsion Laboratory
+                        California Institute of Technology
+
+Data Contact:  Dr. Nand Lal
+               Code 612.4
+               NASA Goddard Space Flight Center
+               Greenbelt, MD 20771              
+               Internet: Nand.Lal@nasa.gov             
+               Phone: 301-286-7350
+
+Description: The SIX_HOUR subdirectory includes the full six-hour average
+interplanetary cruise count rate and flux data set in ASCII format from 
+the Voyager 1 Cosmic Ray (CRS) experiment. The data set documentation in 
+the VY1CRS_6H_FMT.txt file describes in detail the CRS experiment, 
+processing of the data, and the format of this data set, and the 
+VY1CRS_PUB.txt file gives a comprehensive list of publications from the 
+CRS experiment team. Also see file VY1CRS_NMC.txt in the current directory 
+for the experiment description from the NSSDC Master Catalog. 
+                                                
+Data Source: NSSDC magnetic tape archive, data set 77-084A-08B
+
+Related Information and Data:
+
+Further details on the spacecraft, experiment, data sets at NSSDC, and 
+related WWW sites can be found on the Voyager 1/2 flight project page 
+under
+
+http://nssdc.gsfc.nasa.gov/space/
+
+Hour averages of the interplanetary solar wind data from, and hourly 
+heliocentric coordinates of, Voyager 1/2 and other interplanetary 
+spacecraft may be also be accessed and plotted on-line through the 
+COHOWeb service based at the same WWW site as above.
+
+Acknowledgement:
+
+Use of these data in publications should be accompanied at minimum by
+acknowledgements of the National Space Science Data Center and the 
+responsible Principal Investigator defined in the experiment documentation 
+provided here.

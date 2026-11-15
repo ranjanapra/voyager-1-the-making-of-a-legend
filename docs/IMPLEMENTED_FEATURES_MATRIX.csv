@@ -1,0 +1,21 @@
+Feature_ID,Feature_Name,Subsystem_or_Module,Implementation_Status,Verification_Method,Evidence_or_File
+TASK-01,3D Voyager Model Scene Graph Attachment,Three.js / stars.js,Complete,Scene graph add & Draco check,src/scripts/three/stars.js
+TASK-02,Draco Mesh Compression Decoder,Assets / WebGL,Complete,Local Draco WASM decoders in public/draco/,public/draco/draco_decoder.wasm
+TASK-03,Authentic Fallback JPEG Asset (PIA17046),Assets / Home,Complete,NASA Images API binary download,public/assets/images/voyager1-jpl-pia17046.jpg
+TASK-04,Pale Blue Dot Image Integration (PIA00452),Assets / About & Explore,Complete,NASA Photojournal binary download,public/assets/images/pia00452-pale-blue-dot.jpg
+TASK-05,Jupiter Great Red Spot Asset (PIA00058),Assets / Explore 05.01,Complete,NASA Photojournal binary download,public/assets/images/pia00058-jupiter-red-spot.jpg
+TASK-06,Saturn Crescent Ring Asset (PIA01492),Assets / Explore 05.02,Complete,NASA Photojournal binary download,public/assets/images/pia01492-saturn-crescent.jpg
+TASK-07,Clean Up Fabricated Asset IDs,Config / assets.js,Complete,Manual audit & removal of synthetic IDs,src/config/assets.js
+TASK-08,Code Lab Challenge 2 RTG Decay Formula,Labs / code-lab.js,Complete,Automated unit tests passing 4/4 cases,src/scripts/labs/code-lab.js
+TASK-09,Task Quiz Option Distribution Rebalance,Tasks / task-data.js,Complete,Automated distribution check (3-3-3-3),src/scripts/tasks/task-data.js
+TASK-10,CCS Architecture 18-Bit Word Correction,Simulation / components-data.js,Complete,Codebase audit & verification,src/scripts/simulation/components-data.js
+TASK-11,Hydrazine Mass 105 kg Correction,Story / explore-data.js,Complete,Codebase audit & verification,src/scripts/story/explore-data.js
+TASK-12,Decahedral Bus Terminology Standardization,Story / mission-data.js,Complete,Codebase audit & verification,src/scripts/story/mission-data.js
+TASK-13,Quarantine Legacy HTML Data File,Data / Manifest,Complete,Status marker file created,data/voyager1_data.txt.STATUS.txt
+TASK-14,NASA Source Manifest Validation,Data / SOURCE_MANIFEST.json,Complete,JSON verification & unit consistency,data/SOURCE_MANIFEST.json
+TASK-15,Real NASA Datasets Extraction,Labs / historical-data.js,Complete,Parsed authentic records for 6 datasets,src/scripts/labs/historical-data.js
+TASK-16,Data Lab Dual-Mode Architecture,UI / build-screen.js,Complete,Interactive toggle & metadata card,src/scripts/ui/build-screen.js
+TASK-17,Data Lab SVG Trend Visualizations,UI / build-screen.js,Complete,Inline SVG plots for all 6 real datasets,src/scripts/ui/build-screen.js
+TASK-18,Data Lab CSV Export Functionality,UI / build-screen.js,Complete,Dynamic CSV blob generator & download,src/scripts/ui/build-screen.js
+TASK-19,The Silent Hardware Archive Dataset,Story / silent-hardware-data.js,Complete,7 silent + 4 active instruments,src/scripts/story/silent-hardware-data.js
+TASK-20,Silent Hardware Archive UI & Navigation,UI / Router / HTML,Complete,Section 04 + #silent-archive route,src/scripts/ui/silent-archive-screen.js
